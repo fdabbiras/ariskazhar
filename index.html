@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="Ariska Devina Azharyani, emerging modest fashion creator creating feminine, thoughtful and relatable fashion content."
+    content="Ariska Devina Azharyani, an emerging modest fashion creator exploring feminine styling, syar'i fashion and relatable visual storytelling."
   />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,15 +31,20 @@
       --brown: #5d4b40;
       --brown-dark: #302621;
       --brown-soft: #806f63;
-      --blush: #ead1ce;
-      --blush-light: #f3e3e0;
+
+      --blush: #dfc0bb;
+      --blush-light: #f2e1de;
+
       --white: #ffffff;
 
       --border: rgba(48, 38, 33, 0.12);
-      --shadow: 0 24px 70px rgba(48, 38, 33, 0.09);
 
-      --radius: 28px;
-      --max-width: 1240px;
+      --shadow:
+        0 22px 60px rgba(48, 38, 33, 0.10);
+
+      --radius: 26px;
+
+      --max-width: 1180px;
     }
 
 
@@ -55,20 +60,24 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 90px;
     }
 
     body {
-      margin: 0;
       background: var(--cream);
       color: var(--brown-dark);
+
       font-family: "DM Sans", sans-serif;
+
       line-height: 1.6;
+
       overflow-x: hidden;
     }
 
     img {
       display: block;
       width: 100%;
+      height: 100%;
       object-fit: cover;
     }
 
@@ -88,12 +97,15 @@
 
     .navbar {
       position: fixed;
+
       top: 0;
       left: 0;
+
       width: 100%;
+
       z-index: 999;
 
-      padding: 22px 5%;
+      padding: 19px 5%;
 
       transition:
         background 0.3s ease,
@@ -102,14 +114,21 @@
     }
 
     .navbar.scrolled {
-      padding: 15px 5%;
-      background: rgba(248, 245, 239, 0.88);
+      padding: 13px 5%;
+
+      background:
+        rgba(248, 245, 239, 0.90);
+
       backdrop-filter: blur(18px);
-      box-shadow: 0 1px 0 var(--border);
+
+      box-shadow:
+        0 1px 0 var(--border);
     }
 
     .nav-container {
+      width: 100%;
       max-width: var(--max-width);
+
       margin: auto;
 
       display: flex;
@@ -119,8 +138,11 @@
 
     .logo {
       font-family: "Playfair Display", serif;
+
       font-size: 27px;
+
       font-weight: 600;
+
       letter-spacing: -1px;
     }
 
@@ -131,10 +153,13 @@
     .nav-menu {
       display: flex;
       align-items: center;
-      gap: 34px;
+
+      gap: 32px;
 
       font-size: 13px;
+
       font-weight: 600;
+
       color: var(--brown);
     }
 
@@ -144,17 +169,18 @@
 
     .nav-menu a:not(.nav-cta)::after {
       content: "";
+
       position: absolute;
 
       left: 0;
-      bottom: -7px;
+      bottom: -6px;
 
       width: 0;
       height: 1px;
 
       background: var(--brown);
 
-      transition: width 0.3s ease;
+      transition: width 0.25s ease;
     }
 
     .nav-menu a:not(.nav-cta):hover::after {
@@ -162,37 +188,41 @@
     }
 
     .nav-cta {
-      padding: 11px 20px;
+      padding: 10px 19px;
 
       border: 1px solid var(--brown);
+
       border-radius: 100px;
 
       transition:
-        background 0.3s ease,
-        color 0.3s ease,
-        transform 0.3s ease;
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
     }
 
     .nav-cta:hover {
       background: var(--brown-dark);
+
       color: var(--white);
+
       transform: translateY(-2px);
     }
 
     .menu-toggle {
       display: none;
 
-      width: 42px;
-      height: 42px;
+      width: 40px;
+      height: 40px;
 
       border: 1px solid var(--border);
+
       border-radius: 50%;
 
       background: transparent;
-      color: var(--brown-dark);
 
       cursor: pointer;
-      font-size: 18px;
+
+      font-size: 17px;
     }
 
 
@@ -204,9 +234,7 @@
       min-height: 100vh;
 
       padding:
-        110px
-        5%
-        45px;
+        115px 5% 65px;
 
       display: flex;
       align-items: center;
@@ -214,141 +242,168 @@
 
     .hero-container {
       width: 100%;
+
       max-width: var(--max-width);
+
       margin: auto;
 
       display: grid;
-      grid-template-columns: 0.88fr 1.12fr;
+
+      grid-template-columns:
+        0.92fr
+        1.08fr;
 
       gap: 55px;
+
       align-items: center;
     }
 
-
-    /* HERO COPY */
-
     .hero-copy {
       position: relative;
+
       z-index: 2;
+
+      padding-bottom: 5px;
     }
 
     .eyebrow {
       display: inline-flex;
-      align-items: center;
-      gap: 9px;
 
-      padding: 8px 14px;
+      align-items: center;
+
+      gap: 8px;
+
+      padding: 8px 13px;
+
+      margin-bottom: 22px;
 
       background: var(--blush-light);
+
       border-radius: 100px;
 
       color: var(--brown);
 
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
+      font-size: 9px;
 
-      margin-bottom: 24px;
+      font-weight: 700;
+
+      letter-spacing: 1.4px;
+
+      text-transform: uppercase;
     }
 
     .eyebrow-dot {
-      width: 7px;
-      height: 7px;
+      width: 6px;
+      height: 6px;
 
       border-radius: 50%;
+
       background: #9b726d;
     }
 
     .hero-title {
+      max-width: 550px;
+
+      margin-bottom: 24px;
+
       font-family: "Playfair Display", serif;
 
       font-size: clamp(
-        55px,
+        54px,
         5.5vw,
-        80px
+        76px
       );
 
-      line-height: 0.93;
+      line-height: 0.91;
 
       letter-spacing: -3px;
 
       font-weight: 500;
-
-      margin-bottom: 27px;
     }
 
     .hero-title .italic {
       font-style: italic;
+
       color: var(--brown-soft);
     }
 
     .hero-description {
-      max-width: 465px;
+      max-width: 450px;
+
+      margin-bottom: 26px;
 
       color: var(--brown-soft);
 
-      font-size: 14px;
-      line-height: 1.8;
+      font-size: 13px;
 
-      margin-bottom: 29px;
+      line-height: 1.8;
     }
 
     .hero-buttons {
       display: flex;
-      align-items: center;
-      gap: 11px;
 
       flex-wrap: wrap;
+
+      align-items: center;
+
+      gap: 10px;
     }
 
     .button {
+      min-height: 45px;
+
+      padding: 0 20px;
+
       display: inline-flex;
+
       align-items: center;
       justify-content: center;
 
-      min-height: 46px;
-
-      padding: 0 21px;
-
       border-radius: 100px;
 
-      font-size: 12px;
+      font-size: 11px;
+
       font-weight: 700;
 
       transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        background 0.3s ease;
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
     }
 
     .button-primary {
       background: var(--brown-dark);
+
       color: var(--white);
     }
 
     .button-primary:hover {
       transform: translateY(-3px);
+
       box-shadow: var(--shadow);
     }
 
     .button-outline {
       border: 1px solid var(--border);
-      background: rgba(255,255,255,0.3);
+
+      background: rgba(255,255,255,0.35);
     }
 
     .button-outline:hover {
       background: var(--white);
+
       transform: translateY(-3px);
     }
 
 
-    /* HERO VISUAL */
+    /* =========================================================
+       HERO VISUAL
+    ========================================================= */
 
     .hero-visual {
       position: relative;
 
-      height: 610px;
+      height: 560px;
 
       min-width: 0;
     }
@@ -357,18 +412,19 @@
       position: absolute;
 
       top: 0;
-      right: 0;
+      right: 4%;
 
-      width: 69%;
-      height: 555px;
+      width: 66%;
+
+      height: 510px;
 
       overflow: hidden;
 
       border-radius:
-        170px
-        170px
-        28px
-        28px;
+        155px
+        155px
+        26px
+        26px;
 
       background: var(--cream-dark);
 
@@ -376,25 +432,27 @@
     }
 
     .hero-main-image img {
-      height: 100%;
-      object-position: center;
+      object-position: center 35%;
     }
 
     .hero-small-image {
       position: absolute;
 
-      left: 4%;
+      left: 2%;
+
       bottom: 0;
 
-      width: 38%;
-      height: 235px;
+      width: 39%;
+
+      height: 220px;
+
+      padding: 7px;
 
       overflow: hidden;
 
-      border: 8px solid var(--cream);
-      border-radius: 27px;
+      border-radius: 25px;
 
-      background: var(--cream-dark);
+      background: var(--cream);
 
       box-shadow: var(--shadow);
 
@@ -402,25 +460,25 @@
     }
 
     .hero-small-image img {
-      height: 100%;
+      border-radius: 18px;
+
+      object-position: center 30%;
     }
-
-
-    /* FLOATING CARD */
 
     .style-card {
       position: absolute;
 
       right: 0;
-      bottom: 7px;
+
+      bottom: 5px;
 
       width: 190px;
 
-      padding: 17px 19px;
+      padding: 16px 18px;
 
       background: var(--white);
 
-      border-radius: 19px;
+      border-radius: 18px;
 
       box-shadow: var(--shadow);
 
@@ -432,19 +490,22 @@
 
       margin-bottom: 5px;
 
+      color: var(--brown-soft);
+
       font-size: 8px;
+
       font-weight: 700;
 
       letter-spacing: 1.4px;
-      text-transform: uppercase;
 
-      color: var(--brown-soft);
+      text-transform: uppercase;
     }
 
     .style-card-title {
       font-family: "Playfair Display", serif;
 
       font-size: 17px;
+
       line-height: 1.2;
 
       font-weight: 600;
@@ -452,6 +513,7 @@
 
     .style-card-line {
       width: 30px;
+
       height: 1px;
 
       margin-top: 11px;
@@ -461,30 +523,34 @@
 
 
     /* =========================================================
-       INTRO STATEMENT
+       STATEMENT
     ========================================================= */
 
     .statement {
-      padding: 100px 5%;
+      padding: 90px 5%;
 
       background: var(--brown-dark);
+
       color: var(--cream);
     }
 
     .statement-inner {
-      max-width: 950px;
+      max-width: 880px;
+
       margin: auto;
 
       text-align: center;
     }
 
     .small-label {
-      margin-bottom: 24px;
+      margin-bottom: 20px;
 
-      font-size: 9px;
+      font-size: 8px;
+
       font-weight: 700;
 
-      letter-spacing: 2.2px;
+      letter-spacing: 2px;
+
       text-transform: uppercase;
 
       opacity: 0.55;
@@ -494,12 +560,12 @@
       font-family: "Playfair Display", serif;
 
       font-size: clamp(
-        38px,
-        5vw,
-        63px
+        37px,
+        4.8vw,
+        58px
       );
 
-      line-height: 1.1;
+      line-height: 1.08;
 
       font-weight: 500;
     }
@@ -514,24 +580,26 @@
     ========================================================= */
 
     .section {
-      padding: 110px 5%;
+      padding: 92px 5%;
     }
 
     .section-container {
       max-width: var(--max-width);
+
       margin: auto;
     }
 
     .section-header {
-      margin-bottom: 50px;
+      margin-bottom: 38px;
     }
 
     .section-number {
-      margin-bottom: 13px;
+      margin-bottom: 10px;
 
       color: var(--brown-soft);
 
-      font-size: 9px;
+      font-size: 8px;
+
       font-weight: 700;
 
       letter-spacing: 2px;
@@ -541,16 +609,16 @@
       font-family: "Playfair Display", serif;
 
       font-size: clamp(
-        42px,
-        5vw,
-        62px
+        40px,
+        4.8vw,
+        58px
       );
 
-      line-height: 1;
+      line-height: 0.98;
 
       font-weight: 600;
 
-      letter-spacing: -1px;
+      letter-spacing: -1.5px;
     }
 
 
@@ -562,66 +630,78 @@
       background: var(--cream);
     }
 
+    .about .section-header {
+      margin-bottom: 32px;
+    }
+
     .about-grid {
       display: grid;
 
       grid-template-columns:
-        0.82fr
-        1.18fr;
+        0.72fr
+        1.28fr;
 
-      gap: 85px;
+      gap: 72px;
 
       align-items: center;
     }
 
     .about-image {
-      height: 535px;
+      width: 100%;
+
+      height: 510px;
 
       overflow: hidden;
 
-      border-radius: 30px;
+      border-radius: 28px;
 
       background: var(--cream-dark);
+
+      box-shadow:
+        0 15px 50px rgba(48, 38, 33, 0.07);
     }
 
     .about-image img {
-      height: 100%;
+      object-position: center 35%;
     }
 
     .about-content {
-      max-width: 610px;
+      max-width: 600px;
     }
 
     .about-lead {
+      margin-bottom: 22px;
+
       font-family: "Playfair Display", serif;
 
-      font-size: 29px;
-      line-height: 1.3;
+      font-size: 28px;
 
-      margin-bottom: 25px;
+      line-height: 1.27;
     }
 
     .about-content p {
+      margin-bottom: 16px;
+
       color: var(--brown-soft);
 
-      font-size: 14px;
-      line-height: 1.85;
+      font-size: 13px;
 
-      margin-bottom: 18px;
+      line-height: 1.85;
     }
 
     .signature {
-      margin-top: 28px;
+      margin-top: 22px;
 
       font-family: "Playfair Display", serif;
 
-      font-size: 25px;
+      font-size: 24px;
+
       font-style: italic;
     }
 
 
     /* =========================================================
-       CREATIVE DIRECTION
+       DIRECTION
     ========================================================= */
 
     .direction {
@@ -629,14 +709,15 @@
     }
 
     .direction-intro {
-      max-width: 650px;
+      max-width: 620px;
+
+      margin-bottom: 34px;
 
       color: var(--brown-soft);
 
-      font-size: 14px;
-      line-height: 1.8;
+      font-size: 13px;
 
-      margin-bottom: 42px;
+      line-height: 1.8;
     }
 
     .direction-grid {
@@ -645,35 +726,30 @@
       grid-template-columns:
         repeat(3, 1fr);
 
-      gap: 17px;
+      gap: 15px;
     }
 
     .direction-card {
-      min-height: 255px;
+      min-height: 235px;
 
-      padding: 30px;
+      padding: 27px;
 
       border:
-        1px solid
-        var(--border);
+        1px solid var(--border);
 
       border-radius: var(--radius);
 
-      background: rgba(
-        255,
-        255,
-        255,
-        0.42
-      );
+      background:
+        rgba(255,255,255,0.42);
 
       transition:
-        transform 0.35s ease,
-        background 0.35s ease,
-        box-shadow 0.35s ease;
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
     }
 
     .direction-card:hover {
-      transform: translateY(-7px);
+      transform: translateY(-6px);
 
       background: var(--white);
 
@@ -681,36 +757,39 @@
     }
 
     .direction-icon {
+      width: 41px;
+      height: 41px;
+
       display: flex;
+
       align-items: center;
       justify-content: center;
 
-      width: 43px;
-      height: 43px;
-
-      margin-bottom: 25px;
+      margin-bottom: 20px;
 
       border-radius: 50%;
 
       background: var(--blush-light);
 
-      font-size: 17px;
+      font-size: 16px;
     }
 
     .direction-card h3 {
-      margin-bottom: 10px;
+      margin-bottom: 8px;
 
       font-family: "Playfair Display", serif;
 
-      font-size: 25px;
+      font-size: 23px;
+
       line-height: 1.2;
     }
 
     .direction-card p {
       color: var(--brown-soft);
 
-      font-size: 13px;
-      line-height: 1.75;
+      font-size: 12px;
+
+      line-height: 1.7;
     }
 
 
@@ -724,26 +803,24 @@
       grid-template-columns:
         repeat(2, 1fr);
 
-      gap: 18px;
+      gap: 15px;
     }
 
     .pillar {
       position: relative;
 
-      height: 390px;
+      height: 370px;
 
       overflow: hidden;
 
-      border-radius: 29px;
+      border-radius: 27px;
 
       background: var(--brown);
     }
 
     .pillar img {
-      height: 100%;
-
       transition:
-        transform 0.7s ease;
+        transform 0.6s ease;
     }
 
     .pillar:hover img {
@@ -760,17 +837,17 @@
       background:
         linear-gradient(
           to top,
-          rgba(35, 27, 23, 0.78),
-          rgba(35, 27, 23, 0.05) 65%
+          rgba(35,27,23,0.80),
+          rgba(35,27,23,0.02) 65%
         );
     }
 
     .pillar-content {
       position: absolute;
 
-      left: 28px;
-      right: 28px;
-      bottom: 26px;
+      left: 25px;
+      right: 25px;
+      bottom: 23px;
 
       z-index: 2;
 
@@ -778,33 +855,36 @@
     }
 
     .pillar-number {
-      margin-bottom: 7px;
+      margin-bottom: 5px;
 
-      font-size: 9px;
+      font-size: 8px;
+
       font-weight: 700;
 
       letter-spacing: 2px;
 
-      opacity: 0.7;
+      opacity: 0.72;
     }
 
     .pillar-title {
-      margin-bottom: 5px;
+      margin-bottom: 4px;
 
       font-family: "Playfair Display", serif;
 
-      font-size: 30px;
+      font-size: 28px;
+
       line-height: 1.1;
     }
 
     .pillar-description {
-      font-size: 12px;
-      opacity: 0.83;
+      font-size: 11px;
+
+      opacity: 0.84;
     }
 
 
     /* =========================================================
-       WHAT I CAN CREATE
+       SERVICES
     ========================================================= */
 
     .services {
@@ -815,10 +895,10 @@
       display: grid;
 
       grid-template-columns:
-        0.8fr
-        1.2fr;
+        0.82fr
+        1.18fr;
 
-      gap: 80px;
+      gap: 75px;
 
       align-items: start;
     }
@@ -828,7 +908,8 @@
 
       color: var(--brown-soft);
 
-      font-size: 14px;
+      font-size: 13px;
+
       line-height: 1.8;
     }
 
@@ -840,11 +921,12 @@
       display: flex;
 
       align-items: center;
+
       justify-content: space-between;
 
       gap: 20px;
 
-      padding: 20px 0;
+      padding: 18px 0;
 
       border-bottom: 1px solid var(--border);
     }
@@ -852,13 +934,13 @@
     .service-row span:first-child {
       font-family: "Playfair Display", serif;
 
-      font-size: 22px;
+      font-size: 21px;
     }
 
     .service-row span:last-child {
       color: var(--brown-soft);
 
-      font-size: 11px;
+      font-size: 9px;
 
       text-transform: uppercase;
 
@@ -878,19 +960,25 @@
       display: flex;
 
       align-items: end;
+
       justify-content: space-between;
 
       gap: 35px;
 
-      margin-bottom: 45px;
+      margin-bottom: 35px;
+    }
+
+    .lookbook-top .section-header {
+      margin-bottom: 0;
     }
 
     .lookbook-description {
-      max-width: 410px;
+      max-width: 390px;
 
       color: var(--brown-soft);
 
-      font-size: 13px;
+      font-size: 12px;
+
       line-height: 1.8;
     }
 
@@ -900,13 +988,15 @@
       grid-template-columns:
         repeat(3, 1fr);
 
-      gap: 15px;
+      gap: 14px;
+
+      align-items: start;
     }
 
     .look {
       position: relative;
 
-      height: 490px;
+      height: 470px;
 
       overflow: hidden;
 
@@ -916,16 +1006,14 @@
     }
 
     .look:nth-child(2) {
-      margin-top: 45px;
+      margin-top: 35px;
     }
 
     .look:nth-child(3) {
-      margin-top: 90px;
+      margin-top: 70px;
     }
 
     .look img {
-      height: 100%;
-
       transition:
         transform 0.6s ease;
     }
@@ -937,35 +1025,32 @@
     .look-label {
       position: absolute;
 
-      top: 17px;
-      left: 17px;
+      top: 15px;
+      left: 15px;
 
-      padding: 7px 11px;
+      padding: 7px 10px;
 
       border-radius: 100px;
 
-      background: rgba(
-        255,
-        255,
-        255,
-        0.9
-      );
+      background:
+        rgba(255,255,255,0.92);
 
       font-size: 8px;
+
       font-weight: 700;
 
-      letter-spacing: 1.2px;
+      letter-spacing: 1px;
 
       text-transform: uppercase;
     }
 
 
     /* =========================================================
-       BRAND COLLAB
+       COLLABORATION
     ========================================================= */
 
     .collaboration {
-      padding: 115px 5%;
+      padding: 100px 5%;
 
       background: var(--blush-light);
 
@@ -973,24 +1058,25 @@
     }
 
     .collab-inner {
-      max-width: 850px;
+      max-width: 820px;
+
       margin: auto;
     }
 
     .collab-title {
+      margin-bottom: 20px;
+
       font-family: "Playfair Display", serif;
 
       font-size: clamp(
-        43px,
-        5.5vw,
-        72px
+        42px,
+        5vw,
+        68px
       );
 
       line-height: 1.02;
 
       font-weight: 500;
-
-      margin-bottom: 23px;
     }
 
     .collab-title em {
@@ -998,15 +1084,15 @@
     }
 
     .collab-description {
-      max-width: 600px;
+      max-width: 570px;
 
       margin:
-        0 auto
-        30px;
+        0 auto 27px;
 
       color: var(--brown-soft);
 
-      font-size: 14px;
+      font-size: 13px;
+
       line-height: 1.8;
     }
 
@@ -1017,28 +1103,25 @@
 
       flex-wrap: wrap;
 
-      gap: 8px;
+      gap: 7px;
 
-      margin-bottom: 35px;
+      margin-bottom: 30px;
     }
 
     .collab-tag {
-      padding: 9px 14px;
+      padding: 8px 12px;
 
       border:
         1px solid
-        rgba(93, 75, 64, 0.16);
+        rgba(93,75,64,0.15);
 
       border-radius: 100px;
 
-      background: rgba(
-        255,
-        255,
-        255,
-        0.38
-      );
+      background:
+        rgba(255,255,255,0.40);
 
-      font-size: 10px;
+      font-size: 9px;
+
       font-weight: 600;
     }
 
@@ -1055,39 +1138,39 @@
       display: grid;
 
       grid-template-columns:
-        0.85fr
-        1.15fr;
+        0.82fr
+        1.18fr;
 
-      gap: 85px;
+      gap: 75px;
 
       align-items: start;
     }
 
     .contact-copy p {
-      max-width: 430px;
+      max-width: 420px;
 
       color: var(--brown-soft);
 
-      font-size: 14px;
+      font-size: 13px;
+
       line-height: 1.8;
     }
 
     .contact-card {
-      padding: 35px 38px;
+      padding: 32px 35px;
 
       background: var(--white);
 
-      border-radius: 29px;
+      border-radius: 27px;
 
       box-shadow: var(--shadow);
     }
 
     .contact-item {
-      padding: 19px 0;
+      padding: 17px 0;
 
       border-bottom:
-        1px solid
-        var(--border);
+        1px solid var(--border);
     }
 
     .contact-item:first-child {
@@ -1096,17 +1179,19 @@
 
     .contact-item:last-child {
       padding-bottom: 0;
+
       border-bottom: none;
     }
 
     .contact-label {
       display: block;
 
-      margin-bottom: 5px;
+      margin-bottom: 4px;
 
       color: var(--brown-soft);
 
       font-size: 8px;
+
       font-weight: 700;
 
       letter-spacing: 1.5px;
@@ -1117,7 +1202,7 @@
     .contact-value {
       font-family: "Playfair Display", serif;
 
-      font-size: 20px;
+      font-size: 19px;
     }
 
     .contact-value:hover {
@@ -1130,7 +1215,7 @@
     ========================================================= */
 
     .footer {
-      padding: 35px 5%;
+      padding: 32px 5%;
 
       background: var(--brown-dark);
 
@@ -1139,11 +1224,13 @@
 
     .footer-container {
       max-width: var(--max-width);
+
       margin: auto;
 
       display: flex;
 
       align-items: center;
+
       justify-content: space-between;
 
       gap: 20px;
@@ -1152,11 +1239,11 @@
     .footer-logo {
       font-family: "Playfair Display", serif;
 
-      font-size: 24px;
+      font-size: 23px;
     }
 
     .footer-copy {
-      font-size: 10px;
+      font-size: 9px;
 
       opacity: 0.5;
 
@@ -1165,21 +1252,22 @@
 
 
     /* =========================================================
-       ANIMATIONS
+       REVEAL
     ========================================================= */
 
     .reveal {
       opacity: 0;
 
-      transform: translateY(25px);
+      transform: translateY(20px);
 
       transition:
-        opacity 0.75s ease,
-        transform 0.75s ease;
+        opacity 0.7s ease,
+        transform 0.7s ease;
     }
 
     .reveal.visible {
       opacity: 1;
+
       transform: translateY(0);
     }
 
@@ -1191,13 +1279,13 @@
     @media (max-width: 950px) {
 
       .hero {
-        padding-top: 105px;
+        padding-top: 110px;
       }
 
       .hero-container {
         grid-template-columns: 1fr;
 
-        gap: 45px;
+        gap: 42px;
       }
 
       .hero-copy {
@@ -1205,7 +1293,7 @@
       }
 
       .hero-visual {
-        height: 540px;
+        height: 520px;
       }
 
       .about-grid,
@@ -1213,18 +1301,17 @@
       .contact-grid {
         grid-template-columns: 1fr;
 
-        gap: 45px;
+        gap: 42px;
       }
 
       .about-image {
-        max-width: 600px;
+        max-width: 570px;
       }
 
       .direction-grid {
         grid-template-columns:
           repeat(2, 1fr);
       }
-
     }
 
 
@@ -1235,11 +1322,11 @@
     @media (max-width: 650px) {
 
       .navbar {
-        padding: 15px 5%;
+        padding: 14px 5%;
       }
 
       .navbar.scrolled {
-        padding: 12px 5%;
+        padding: 11px 5%;
       }
 
       .nav-menu {
@@ -1247,25 +1334,23 @@
 
         position: absolute;
 
-        top: 70px;
+        top: 65px;
+
         left: 5%;
         right: 5%;
 
-        padding: 24px;
+        padding: 22px;
 
         flex-direction: column;
+
         align-items: flex-start;
 
-        gap: 20px;
+        gap: 18px;
 
-        border-radius: 22px;
+        border-radius: 20px;
 
-        background: rgba(
-          255,
-          255,
-          255,
-          0.96
-        );
+        background:
+          rgba(255,255,255,0.97);
 
         backdrop-filter: blur(20px);
 
@@ -1288,6 +1373,7 @@
         display: flex;
 
         align-items: center;
+
         justify-content: center;
       }
 
@@ -1298,125 +1384,157 @@
         min-height: auto;
 
         padding:
-          105px
+          100px
           5%
-          60px;
+          55px;
       }
 
       .hero-container {
-        gap: 42px;
+        gap: 36px;
       }
 
       .eyebrow {
-        margin-bottom: 20px;
+        margin-bottom: 18px;
+
+        font-size: 8px;
       }
 
       .hero-title {
-        font-size: 55px;
+        font-size: 51px;
+
+        line-height: 0.93;
 
         letter-spacing: -2px;
 
-        line-height: 0.94;
+        margin-bottom: 21px;
+      }
+
+      .hero-description {
+        font-size: 12px;
+
+        line-height: 1.75;
 
         margin-bottom: 23px;
       }
 
-      .hero-description {
-        font-size: 13px;
+      .button {
+        min-height: 43px;
 
-        line-height: 1.75;
+        padding: 0 17px;
 
-        margin-bottom: 25px;
+        font-size: 10px;
       }
 
+
+      /* HERO IMAGE */
+
       .hero-visual {
-        height: 450px;
+        height: 430px;
       }
 
       .hero-main-image {
-        width: 76%;
-        height: 410px;
+        width: 74%;
+
+        height: 395px;
+
+        right: 1%;
 
         border-radius:
-          115px
-          115px
+          105px
+          105px
           22px
           22px;
       }
 
       .hero-small-image {
+        left: 0;
+
         width: 43%;
-        height: 180px;
 
-        left: 2%;
+        height: 165px;
 
-        border-width: 6px;
+        padding: 5px;
 
-        border-radius: 20px;
+        border-radius: 19px;
+      }
+
+      .hero-small-image img {
+        border-radius: 14px;
       }
 
       .style-card {
         right: 0;
-        bottom: 1px;
+
+        bottom: 0;
 
         width: 145px;
 
-        padding: 13px 14px;
+        padding: 12px 13px;
 
-        border-radius: 16px;
+        border-radius: 15px;
       }
 
       .style-card-title {
-        font-size: 14px;
+        font-size: 13px;
       }
 
-      .style-card-line {
-        margin-top: 8px;
+      .style-card-label {
+        font-size: 7px;
       }
 
 
-      /* GENERAL */
+      /* SECTION */
 
       .section {
-        padding: 80px 5%;
+        padding: 72px 5%;
       }
 
       .section-header {
-        margin-bottom: 35px;
+        margin-bottom: 31px;
       }
 
       .section-title {
-        font-size: 44px;
+        font-size: 41px;
+
+        letter-spacing: -1px;
       }
 
 
       /* STATEMENT */
 
       .statement {
-        padding: 75px 5%;
+        padding: 70px 5%;
       }
 
       .statement h2 {
-        font-size: 38px;
+        font-size: 35px;
       }
 
 
       /* ABOUT */
 
+      .about .section-header {
+        margin-bottom: 25px;
+      }
+
       .about-grid {
-        gap: 38px;
+        gap: 32px;
       }
 
       .about-image {
         height: 420px;
+
+        max-width: none;
+
+        border-radius: 23px;
       }
 
       .about-lead {
-        font-size: 27px;
+        font-size: 25px;
       }
 
       .about-content p {
-        font-size: 13px;
+        font-size: 12px;
       }
 
 
@@ -1425,13 +1543,13 @@
       .direction-grid {
         grid-template-columns: 1fr;
 
-        gap: 12px;
+        gap: 11px;
       }
 
       .direction-card {
         min-height: auto;
 
-        padding: 26px;
+        padding: 24px;
       }
 
 
@@ -1440,34 +1558,32 @@
       .pillars-grid {
         grid-template-columns: 1fr;
 
-        gap: 14px;
+        gap: 12px;
       }
 
       .pillar {
-        height: 340px;
-      }
+        height: 350px;
 
-      .pillar-title {
-        font-size: 28px;
+        border-radius: 23px;
       }
 
 
       /* SERVICES */
 
       .services-layout {
-        gap: 38px;
+        gap: 32px;
       }
 
       .service-row {
-        padding: 17px 0;
+        padding: 16px 0;
       }
 
       .service-row span:first-child {
-        font-size: 19px;
+        font-size: 18px;
       }
 
       .service-row span:last-child {
-        font-size: 9px;
+        font-size: 8px;
       }
 
 
@@ -1476,23 +1592,25 @@
       .lookbook-top {
         display: block;
 
-        margin-bottom: 32px;
+        margin-bottom: 28px;
       }
 
       .lookbook-description {
-        margin-top: 18px;
+        margin-top: 16px;
+
+        font-size: 12px;
       }
 
       .lookbook-grid {
         grid-template-columns: 1fr;
 
-        gap: 13px;
+        gap: 12px;
       }
 
       .look,
       .look:nth-child(2),
       .look:nth-child(3) {
-        height: 460px;
+        height: 455px;
 
         margin-top: 0;
       }
@@ -1501,30 +1619,30 @@
       /* COLLAB */
 
       .collaboration {
-        padding: 80px 5%;
+        padding: 75px 5%;
       }
 
       .collab-title {
-        font-size: 45px;
+        font-size: 43px;
       }
 
       .collab-description {
-        font-size: 13px;
+        font-size: 12px;
       }
 
 
       /* CONTACT */
 
       .contact-grid {
-        gap: 35px;
+        gap: 32px;
       }
 
       .contact-card {
-        padding: 28px;
+        padding: 27px;
       }
 
       .contact-value {
-        font-size: 18px;
+        font-size: 17px;
       }
 
 
@@ -1606,8 +1724,6 @@
       <div class="hero-container">
 
 
-        <!-- HERO TEXT -->
-
         <div class="hero-copy reveal">
 
           <div class="eyebrow">
@@ -1667,19 +1783,13 @@
 
 
 
-        <!-- HERO VISUAL -->
-
         <div class="hero-visual reveal">
 
           <div class="hero-main-image">
 
-            <!--
-              GANTI URL INI DENGAN FOTO UTAMA ARISKA
-            -->
-
             <img
-              src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=90"
-              alt="Modest fashion editorial"
+              src="8.jpg"
+              alt="Ariska in a modest feminine outfit"
             />
 
           </div>
@@ -1687,13 +1797,9 @@
 
           <div class="hero-small-image">
 
-            <!--
-              GANTI URL INI DENGAN FOTO KEDUA ARISKA
-            -->
-
             <img
-              src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=700&q=90"
-              alt="Modest fashion styling"
+              src="6.jpg"
+              alt="Ariska wearing a black hijab"
             />
 
           </div>
@@ -1734,9 +1840,11 @@
         </div>
 
         <h2>
+
           Fashion is not about
           <em>changing who you are.</em>
           It's about expressing it.
+
         </h2>
 
       </div>
@@ -1749,7 +1857,10 @@
          ABOUT
     ======================================================== -->
 
-    <section class="section about" id="about">
+    <section
+      class="section about"
+      id="about"
+    >
 
       <div class="section-container">
 
@@ -1771,13 +1882,9 @@
 
           <div class="about-image reveal">
 
-            <!--
-              GANTI DENGAN FOTO ARISKA
-            -->
-
             <img
-              src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=900&q=90"
-              alt="Ariska"
+              src="1.jpg"
+              alt="Ariska in a cafe"
             />
 
           </div>
@@ -1884,9 +1991,11 @@
             </h3>
 
             <p>
+
               Styling ideas that explore silhouettes,
               layering, colors and proportions while keeping
               modesty at the heart of every look.
+
             </p>
 
           </article>
@@ -1903,9 +2012,11 @@
             </h3>
 
             <p>
+
               Soft, feminine and elegant styling with
               details that make an outfit feel personal
               without being complicated.
+
             </p>
 
           </article>
@@ -1922,9 +2033,11 @@
             </h3>
 
             <p>
+
               Wearable outfit inspiration designed for
               real moments, from casual days to more
               polished occasions.
+
             </p>
 
           </article>
@@ -1964,8 +2077,8 @@
           <article class="pillar reveal">
 
             <img
-              src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=1000&q=90"
-              alt="Everyday modest fashion"
+              src="9.jpg"
+              alt="Ariska in a modest indoor look"
             />
 
             <div class="pillar-content">
@@ -1991,8 +2104,8 @@
           <article class="pillar reveal">
 
             <img
-              src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1000&q=90"
-              alt="Feminine modest fashion"
+              src="8.jpg"
+              alt="Ariska in a feminine lavender outfit"
             />
 
             <div class="pillar-content">
@@ -2019,8 +2132,8 @@
           <article class="pillar reveal">
 
             <img
-              src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=1000&q=90"
-              alt="Modern modest fashion"
+              src="4.jpg"
+              alt="Ariska in a black modest outfit"
             />
 
             <div class="pillar-content">
@@ -2047,8 +2160,8 @@
           <article class="pillar reveal">
 
             <img
-              src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=90"
-              alt="Fashion details"
+              src="12.jpg"
+              alt="Ariska in a casual fashion look"
             />
 
             <div class="pillar-content">
@@ -2219,7 +2332,7 @@
 
         <div class="lookbook-top reveal">
 
-          <div class="section-header" style="margin-bottom:0">
+          <div class="section-header">
 
             <div class="section-number">
               05 / VISUAL DIRECTION
@@ -2249,8 +2362,8 @@
           <div class="look reveal">
 
             <img
-              src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&q=90"
-              alt="Neutral modest look"
+              src="14.jpg"
+              alt="Ariska in a soft modest outfit"
             />
 
             <span class="look-label">
@@ -2264,8 +2377,8 @@
           <div class="look reveal">
 
             <img
-              src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=800&q=90"
-              alt="Daily fashion look"
+              src="2.jpg"
+              alt="Ariska in a feminine modest look"
             />
 
             <span class="look-label">
@@ -2279,8 +2392,8 @@
           <div class="look reveal">
 
             <img
-              src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=800&q=90"
-              alt="Feminine fashion look"
+              src="15.jpg"
+              alt="Ariska in a minimal modest setting"
             />
 
             <span class="look-label">
@@ -2519,9 +2632,7 @@
 
   <script>
 
-    /* =========================================================
-       NAVBAR SCROLL
-    ========================================================= */
+    /* NAVBAR */
 
     const navbar =
       document.getElementById("navbar");
@@ -2544,9 +2655,7 @@
     );
 
 
-    /* =========================================================
-       MOBILE MENU
-    ========================================================= */
+    /* MOBILE MENU */
 
     const menuToggle =
       document.getElementById("menuToggle");
@@ -2581,9 +2690,7 @@
       });
 
 
-    /* =========================================================
-       REVEAL ANIMATION
-    ========================================================= */
+    /* REVEAL */
 
     const revealElements =
       document.querySelectorAll(".reveal");
@@ -2615,7 +2722,7 @@
 
         },
         {
-          threshold: 0.12
+          threshold: 0.10
         }
       );
 
@@ -2627,7 +2734,6 @@
 
       }
     );
-
 
   </script>
 
