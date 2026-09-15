@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="Ariska Devina Azharyani, an emerging modest fashion creator exploring feminine styling, syar'i fashion and relatable visual storytelling."
+    content="Ariska Devina Azharyani, emerging modest fashion creator exploring feminine styling, syar'i fashion and relatable visual storytelling."
   />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,19 +31,14 @@
       --brown: #5d4b40;
       --brown-dark: #302621;
       --brown-soft: #806f63;
-
-      --blush: #dfc0bb;
-      --blush-light: #f2e1de;
-
+      --blush: #d9b8b3;
+      --blush-light: #f1dfdc;
       --white: #ffffff;
 
       --border: rgba(48, 38, 33, 0.12);
+      --shadow: 0 22px 60px rgba(48, 38, 33, 0.08);
 
-      --shadow:
-        0 22px 60px rgba(48, 38, 33, 0.10);
-
-      --radius: 26px;
-
+      --radius: 28px;
       --max-width: 1180px;
     }
 
@@ -64,13 +59,11 @@
     }
 
     body {
+      margin: 0;
       background: var(--cream);
       color: var(--brown-dark);
-
       font-family: "DM Sans", sans-serif;
-
       line-height: 1.6;
-
       overflow-x: hidden;
     }
 
@@ -78,7 +71,6 @@
       display: block;
       width: 100%;
       height: 100%;
-      object-fit: cover;
     }
 
     a {
@@ -97,15 +89,12 @@
 
     .navbar {
       position: fixed;
-
       top: 0;
       left: 0;
-
       width: 100%;
-
       z-index: 999;
 
-      padding: 19px 5%;
+      padding: 18px 5%;
 
       transition:
         background 0.3s ease,
@@ -116,19 +105,16 @@
     .navbar.scrolled {
       padding: 13px 5%;
 
-      background:
-        rgba(248, 245, 239, 0.90);
+      background: rgba(248, 245, 239, 0.91);
 
       backdrop-filter: blur(18px);
 
       box-shadow:
-        0 1px 0 var(--border);
+        0 1px 0 rgba(48, 38, 33, 0.08);
     }
 
     .nav-container {
-      width: 100%;
       max-width: var(--max-width);
-
       margin: auto;
 
       display: flex;
@@ -138,12 +124,9 @@
 
     .logo {
       font-family: "Playfair Display", serif;
-
       font-size: 27px;
-
       font-weight: 600;
-
-      letter-spacing: -1px;
+      letter-spacing: -1.2px;
     }
 
     .logo span {
@@ -153,11 +136,9 @@
     .nav-menu {
       display: flex;
       align-items: center;
-
-      gap: 32px;
+      gap: 31px;
 
       font-size: 13px;
-
       font-weight: 600;
 
       color: var(--brown);
@@ -202,7 +183,6 @@
 
     .nav-cta:hover {
       background: var(--brown-dark);
-
       color: var(--white);
 
       transform: translateY(-2px);
@@ -211,14 +191,16 @@
     .menu-toggle {
       display: none;
 
-      width: 40px;
-      height: 40px;
+      width: 42px;
+      height: 42px;
 
       border: 1px solid var(--border);
 
       border-radius: 50%;
 
       background: transparent;
+
+      color: var(--brown-dark);
 
       cursor: pointer;
 
@@ -234,7 +216,9 @@
       min-height: 100vh;
 
       padding:
-        115px 5% 65px;
+        105px
+        5%
+        55px;
 
       display: flex;
       align-items: center;
@@ -242,7 +226,6 @@
 
     .hero-container {
       width: 100%;
-
       max-width: var(--max-width);
 
       margin: auto;
@@ -250,32 +233,28 @@
       display: grid;
 
       grid-template-columns:
-        0.92fr
-        1.08fr;
+        0.88fr
+        1.12fr;
 
-      gap: 55px;
+      gap: 65px;
 
       align-items: center;
     }
 
+
+    /* HERO COPY */
+
     .hero-copy {
       position: relative;
-
       z-index: 2;
-
-      padding-bottom: 5px;
     }
 
     .eyebrow {
       display: inline-flex;
-
       align-items: center;
+      gap: 9px;
 
-      gap: 8px;
-
-      padding: 8px 13px;
-
-      margin-bottom: 22px;
+      padding: 8px 14px;
 
       background: var(--blush-light);
 
@@ -283,18 +262,19 @@
 
       color: var(--brown);
 
-      font-size: 9px;
-
+      font-size: 10px;
       font-weight: 700;
 
       letter-spacing: 1.4px;
 
       text-transform: uppercase;
+
+      margin-bottom: 23px;
     }
 
     .eyebrow-dot {
-      width: 6px;
-      height: 6px;
+      width: 7px;
+      height: 7px;
 
       border-radius: 50%;
 
@@ -302,23 +282,21 @@
     }
 
     .hero-title {
-      max-width: 550px;
-
-      margin-bottom: 24px;
-
       font-family: "Playfair Display", serif;
 
       font-size: clamp(
-        54px,
-        5.5vw,
-        76px
+        58px,
+        5.6vw,
+        78px
       );
 
       line-height: 0.91;
 
-      letter-spacing: -3px;
+      letter-spacing: -3.5px;
 
       font-weight: 500;
+
+      margin-bottom: 25px;
     }
 
     .hero-title .italic {
@@ -328,41 +306,39 @@
     }
 
     .hero-description {
-      max-width: 450px;
-
-      margin-bottom: 26px;
+      max-width: 455px;
 
       color: var(--brown-soft);
 
-      font-size: 13px;
+      font-size: 14px;
 
       line-height: 1.8;
+
+      margin-bottom: 27px;
     }
 
     .hero-buttons {
       display: flex;
-
-      flex-wrap: wrap;
-
       align-items: center;
 
       gap: 10px;
+
+      flex-wrap: wrap;
     }
 
     .button {
-      min-height: 45px;
-
-      padding: 0 20px;
-
       display: inline-flex;
 
       align-items: center;
       justify-content: center;
 
+      min-height: 45px;
+
+      padding: 0 20px;
+
       border-radius: 100px;
 
       font-size: 11px;
-
       font-weight: 700;
 
       transition:
@@ -386,7 +362,12 @@
     .button-outline {
       border: 1px solid var(--border);
 
-      background: rgba(255,255,255,0.35);
+      background: rgba(
+        255,
+        255,
+        255,
+        0.35
+      );
     }
 
     .button-outline:hover {
@@ -403,7 +384,9 @@
     .hero-visual {
       position: relative;
 
-      height: 560px;
+      width: 100%;
+
+      height: 575px;
 
       min-width: 0;
     }
@@ -412,19 +395,19 @@
       position: absolute;
 
       top: 0;
-      right: 4%;
+      right: 1%;
 
-      width: 66%;
+      width: 67%;
 
-      height: 510px;
+      height: 535px;
 
       overflow: hidden;
 
       border-radius:
-        155px
-        155px
-        26px
-        26px;
+        165px
+        165px
+        27px
+        27px;
 
       background: var(--cream-dark);
 
@@ -432,7 +415,14 @@
     }
 
     .hero-main-image img {
-      object-position: center 35%;
+      object-fit: cover;
+
+      /*
+        3.jpg adalah foto full-body.
+        Sedikit dinaikkan supaya wajah/outfit
+        tetap berada di area visual utama.
+      */
+      object-position: center 30%;
     }
 
     .hero-small-image {
@@ -442,17 +432,19 @@
 
       bottom: 0;
 
-      width: 39%;
+      width: 37%;
 
       height: 220px;
 
-      padding: 7px;
-
       overflow: hidden;
+
+      border:
+        7px solid
+        var(--cream);
 
       border-radius: 25px;
 
-      background: var(--cream);
+      background: var(--cream-dark);
 
       box-shadow: var(--shadow);
 
@@ -460,10 +452,15 @@
     }
 
     .hero-small-image img {
-      border-radius: 18px;
+      object-fit: cover;
 
-      object-position: center 30%;
+      object-position: center 28%;
     }
+
+
+    /* =========================================================
+       STYLE CARD
+    ========================================================= */
 
     .style-card {
       position: absolute;
@@ -472,7 +469,7 @@
 
       bottom: 5px;
 
-      width: 190px;
+      width: 180px;
 
       padding: 16px 18px;
 
@@ -490,15 +487,14 @@
 
       margin-bottom: 5px;
 
-      color: var(--brown-soft);
-
       font-size: 8px;
-
       font-weight: 700;
 
       letter-spacing: 1.4px;
 
       text-transform: uppercase;
+
+      color: var(--brown-soft);
     }
 
     .style-card-title {
@@ -512,7 +508,7 @@
     }
 
     .style-card-line {
-      width: 30px;
+      width: 29px;
 
       height: 1px;
 
@@ -527,7 +523,7 @@
     ========================================================= */
 
     .statement {
-      padding: 90px 5%;
+      padding: 100px 5%;
 
       background: var(--brown-dark);
 
@@ -535,7 +531,7 @@
     }
 
     .statement-inner {
-      max-width: 880px;
+      max-width: 900px;
 
       margin: auto;
 
@@ -543,13 +539,12 @@
     }
 
     .small-label {
-      margin-bottom: 20px;
+      margin-bottom: 23px;
 
-      font-size: 8px;
-
+      font-size: 9px;
       font-weight: 700;
 
-      letter-spacing: 2px;
+      letter-spacing: 2.1px;
 
       text-transform: uppercase;
 
@@ -560,12 +555,12 @@
       font-family: "Playfair Display", serif;
 
       font-size: clamp(
-        37px,
+        38px,
         4.8vw,
-        58px
+        61px
       );
 
-      line-height: 1.08;
+      line-height: 1.1;
 
       font-weight: 500;
     }
@@ -580,7 +575,7 @@
     ========================================================= */
 
     .section {
-      padding: 92px 5%;
+      padding: 105px 5%;
     }
 
     .section-container {
@@ -590,16 +585,15 @@
     }
 
     .section-header {
-      margin-bottom: 38px;
+      margin-bottom: 45px;
     }
 
     .section-number {
-      margin-bottom: 10px;
+      margin-bottom: 12px;
 
       color: var(--brown-soft);
 
-      font-size: 8px;
-
+      font-size: 9px;
       font-weight: 700;
 
       letter-spacing: 2px;
@@ -609,12 +603,12 @@
       font-family: "Playfair Display", serif;
 
       font-size: clamp(
-        40px,
+        42px,
         4.8vw,
-        58px
+        60px
       );
 
-      line-height: 0.98;
+      line-height: 1;
 
       font-weight: 600;
 
@@ -631,17 +625,17 @@
     }
 
     .about .section-header {
-      margin-bottom: 32px;
+      margin-bottom: 42px;
     }
 
     .about-grid {
       display: grid;
 
       grid-template-columns:
-        0.72fr
-        1.28fr;
+        0.82fr
+        1.18fr;
 
-      gap: 72px;
+      gap: 75px;
 
       align-items: center;
     }
@@ -649,52 +643,51 @@
     .about-image {
       width: 100%;
 
-      height: 510px;
+      height: 500px;
 
       overflow: hidden;
 
       border-radius: 28px;
 
       background: var(--cream-dark);
-
-      box-shadow:
-        0 15px 50px rgba(48, 38, 33, 0.07);
     }
 
     .about-image img {
-      object-position: center 35%;
+      object-fit: cover;
+
+      object-position: center 30%;
     }
 
     .about-content {
-      max-width: 600px;
+      max-width: 610px;
     }
 
     .about-lead {
-      margin-bottom: 22px;
-
       font-family: "Playfair Display", serif;
 
-      font-size: 28px;
+      font-size: 29px;
 
-      line-height: 1.27;
+      line-height: 1.28;
+
+      margin-bottom: 23px;
     }
 
     .about-content p {
-      margin-bottom: 16px;
-
       color: var(--brown-soft);
 
-      font-size: 13px;
+      font-size: 14px;
 
-      line-height: 1.85;
+      line-height: 1.8;
+
+      margin-bottom: 17px;
     }
 
     .signature {
-      margin-top: 22px;
+      margin-top: 25px;
 
       font-family: "Playfair Display", serif;
 
-      font-size: 24px;
+      font-size: 25px;
 
       font-style: italic;
     }
@@ -709,15 +702,15 @@
     }
 
     .direction-intro {
-      max-width: 620px;
-
-      margin-bottom: 34px;
+      max-width: 650px;
 
       color: var(--brown-soft);
 
-      font-size: 13px;
+      font-size: 14px;
 
       line-height: 1.8;
+
+      margin-bottom: 40px;
     }
 
     .direction-grid {
@@ -726,21 +719,27 @@
       grid-template-columns:
         repeat(3, 1fr);
 
-      gap: 15px;
+      gap: 16px;
     }
 
     .direction-card {
-      min-height: 235px;
+      min-height: 250px;
 
-      padding: 27px;
+      padding: 29px;
 
       border:
-        1px solid var(--border);
+        1px solid
+        var(--border);
 
       border-radius: var(--radius);
 
       background:
-        rgba(255,255,255,0.42);
+        rgba(
+          255,
+          255,
+          255,
+          0.42
+        );
 
       transition:
         transform 0.3s ease,
@@ -757,15 +756,15 @@
     }
 
     .direction-icon {
-      width: 41px;
-      height: 41px;
-
       display: flex;
 
       align-items: center;
       justify-content: center;
 
-      margin-bottom: 20px;
+      width: 42px;
+      height: 42px;
+
+      margin-bottom: 23px;
 
       border-radius: 50%;
 
@@ -775,11 +774,11 @@
     }
 
     .direction-card h3 {
-      margin-bottom: 8px;
+      margin-bottom: 9px;
 
       font-family: "Playfair Display", serif;
 
-      font-size: 23px;
+      font-size: 24px;
 
       line-height: 1.2;
     }
@@ -787,7 +786,7 @@
     .direction-card p {
       color: var(--brown-soft);
 
-      font-size: 12px;
+      font-size: 13px;
 
       line-height: 1.7;
     }
@@ -803,13 +802,13 @@
       grid-template-columns:
         repeat(2, 1fr);
 
-      gap: 15px;
+      gap: 17px;
     }
 
     .pillar {
       position: relative;
 
-      height: 370px;
+      height: 380px;
 
       overflow: hidden;
 
@@ -819,8 +818,10 @@
     }
 
     .pillar img {
+      object-fit: cover;
+
       transition:
-        transform 0.6s ease;
+        transform 0.65s ease;
     }
 
     .pillar:hover img {
@@ -837,17 +838,27 @@
       background:
         linear-gradient(
           to top,
-          rgba(35,27,23,0.80),
-          rgba(35,27,23,0.02) 65%
+          rgba(
+            35,
+            27,
+            23,
+            0.8
+          ),
+          rgba(
+            35,
+            27,
+            23,
+            0.04
+          ) 67%
         );
     }
 
     .pillar-content {
       position: absolute;
 
-      left: 25px;
-      right: 25px;
-      bottom: 23px;
+      left: 27px;
+      right: 27px;
+      bottom: 25px;
 
       z-index: 2;
 
@@ -855,31 +866,31 @@
     }
 
     .pillar-number {
-      margin-bottom: 5px;
+      margin-bottom: 6px;
 
-      font-size: 8px;
+      font-size: 9px;
 
       font-weight: 700;
 
       letter-spacing: 2px;
 
-      opacity: 0.72;
+      opacity: 0.7;
     }
 
     .pillar-title {
-      margin-bottom: 4px;
+      margin-bottom: 5px;
 
       font-family: "Playfair Display", serif;
 
-      font-size: 28px;
+      font-size: 29px;
 
       line-height: 1.1;
     }
 
     .pillar-description {
-      font-size: 11px;
+      font-size: 12px;
 
-      opacity: 0.84;
+      opacity: 0.83;
     }
 
 
@@ -895,8 +906,8 @@
       display: grid;
 
       grid-template-columns:
-        0.82fr
-        1.18fr;
+        0.8fr
+        1.2fr;
 
       gap: 75px;
 
@@ -908,13 +919,15 @@
 
       color: var(--brown-soft);
 
-      font-size: 13px;
+      font-size: 14px;
 
       line-height: 1.8;
     }
 
     .services-list {
-      border-top: 1px solid var(--border);
+      border-top:
+        1px solid
+        var(--border);
     }
 
     .service-row {
@@ -926,9 +939,11 @@
 
       gap: 20px;
 
-      padding: 18px 0;
+      padding: 19px 0;
 
-      border-bottom: 1px solid var(--border);
+      border-bottom:
+        1px solid
+        var(--border);
     }
 
     .service-row span:first-child {
@@ -940,11 +955,13 @@
     .service-row span:last-child {
       color: var(--brown-soft);
 
-      font-size: 9px;
+      font-size: 10px;
 
       text-transform: uppercase;
 
       letter-spacing: 1px;
+
+      text-align: right;
     }
 
 
@@ -959,25 +976,21 @@
     .lookbook-top {
       display: flex;
 
-      align-items: end;
+      align-items: flex-end;
 
       justify-content: space-between;
 
       gap: 35px;
 
-      margin-bottom: 35px;
-    }
-
-    .lookbook-top .section-header {
-      margin-bottom: 0;
+      margin-bottom: 40px;
     }
 
     .lookbook-description {
-      max-width: 390px;
+      max-width: 400px;
 
       color: var(--brown-soft);
 
-      font-size: 12px;
+      font-size: 13px;
 
       line-height: 1.8;
     }
@@ -988,7 +1001,7 @@
       grid-template-columns:
         repeat(3, 1fr);
 
-      gap: 14px;
+      gap: 15px;
 
       align-items: start;
     }
@@ -996,24 +1009,26 @@
     .look {
       position: relative;
 
-      height: 470px;
+      height: 475px;
 
       overflow: hidden;
 
-      border-radius: 25px;
+      border-radius: 24px;
 
       background: var(--cream-dark);
     }
 
     .look:nth-child(2) {
-      margin-top: 35px;
+      margin-top: 38px;
     }
 
     .look:nth-child(3) {
-      margin-top: 70px;
+      margin-top: 76px;
     }
 
     .look img {
+      object-fit: cover;
+
       transition:
         transform 0.6s ease;
     }
@@ -1025,21 +1040,26 @@
     .look-label {
       position: absolute;
 
-      top: 15px;
-      left: 15px;
+      top: 16px;
+      left: 16px;
 
-      padding: 7px 10px;
+      padding: 7px 11px;
 
       border-radius: 100px;
 
       background:
-        rgba(255,255,255,0.92);
+        rgba(
+          255,
+          255,
+          255,
+          0.91
+        );
 
       font-size: 8px;
 
       font-weight: 700;
 
-      letter-spacing: 1px;
+      letter-spacing: 1.2px;
 
       text-transform: uppercase;
     }
@@ -1050,7 +1070,7 @@
     ========================================================= */
 
     .collaboration {
-      padding: 100px 5%;
+      padding: 110px 5%;
 
       background: var(--blush-light);
 
@@ -1064,19 +1084,19 @@
     }
 
     .collab-title {
-      margin-bottom: 20px;
-
       font-family: "Playfair Display", serif;
 
       font-size: clamp(
-        42px,
-        5vw,
-        68px
+        43px,
+        5.2vw,
+        69px
       );
 
       line-height: 1.02;
 
       font-weight: 500;
+
+      margin-bottom: 21px;
     }
 
     .collab-title em {
@@ -1084,14 +1104,15 @@
     }
 
     .collab-description {
-      max-width: 570px;
+      max-width: 590px;
 
       margin:
-        0 auto 27px;
+        0 auto
+        28px;
 
       color: var(--brown-soft);
 
-      font-size: 13px;
+      font-size: 14px;
 
       line-height: 1.8;
     }
@@ -1103,24 +1124,34 @@
 
       flex-wrap: wrap;
 
-      gap: 7px;
+      gap: 8px;
 
-      margin-bottom: 30px;
+      margin-bottom: 32px;
     }
 
     .collab-tag {
-      padding: 8px 12px;
+      padding: 8px 13px;
 
       border:
         1px solid
-        rgba(93,75,64,0.15);
+        rgba(
+          93,
+          75,
+          64,
+          0.16
+        );
 
       border-radius: 100px;
 
       background:
-        rgba(255,255,255,0.40);
+        rgba(
+          255,
+          255,
+          255,
+          0.38
+        );
 
-      font-size: 9px;
+      font-size: 10px;
 
       font-weight: 600;
     }
@@ -1138,8 +1169,8 @@
       display: grid;
 
       grid-template-columns:
-        0.82fr
-        1.18fr;
+        0.85fr
+        1.15fr;
 
       gap: 75px;
 
@@ -1151,26 +1182,27 @@
 
       color: var(--brown-soft);
 
-      font-size: 13px;
+      font-size: 14px;
 
       line-height: 1.8;
     }
 
     .contact-card {
-      padding: 32px 35px;
+      padding: 33px 36px;
 
       background: var(--white);
 
-      border-radius: 27px;
+      border-radius: 28px;
 
       box-shadow: var(--shadow);
     }
 
     .contact-item {
-      padding: 17px 0;
+      padding: 18px 0;
 
       border-bottom:
-        1px solid var(--border);
+        1px solid
+        var(--border);
     }
 
     .contact-item:first-child {
@@ -1239,11 +1271,11 @@
     .footer-logo {
       font-family: "Playfair Display", serif;
 
-      font-size: 23px;
+      font-size: 24px;
     }
 
     .footer-copy {
-      font-size: 9px;
+      font-size: 10px;
 
       opacity: 0.5;
 
@@ -1258,7 +1290,7 @@
     .reveal {
       opacity: 0;
 
-      transform: translateY(20px);
+      transform: translateY(22px);
 
       transition:
         opacity 0.7s ease,
@@ -1279,13 +1311,13 @@
     @media (max-width: 950px) {
 
       .hero {
-        padding-top: 110px;
+        padding-top: 100px;
       }
 
       .hero-container {
         grid-template-columns: 1fr;
 
-        gap: 42px;
+        gap: 45px;
       }
 
       .hero-copy {
@@ -1293,7 +1325,11 @@
       }
 
       .hero-visual {
-        height: 520px;
+        height: 535px;
+
+        max-width: 700px;
+
+        margin: auto;
       }
 
       .about-grid,
@@ -1301,7 +1337,7 @@
       .contact-grid {
         grid-template-columns: 1fr;
 
-        gap: 42px;
+        gap: 43px;
       }
 
       .about-image {
@@ -1312,6 +1348,7 @@
         grid-template-columns:
           repeat(2, 1fr);
       }
+
     }
 
 
@@ -1327,6 +1364,10 @@
 
       .navbar.scrolled {
         padding: 11px 5%;
+      }
+
+      .logo {
+        font-size: 25px;
       }
 
       .nav-menu {
@@ -1345,12 +1386,17 @@
 
         align-items: flex-start;
 
-        gap: 18px;
+        gap: 19px;
 
         border-radius: 20px;
 
         background:
-          rgba(255,255,255,0.97);
+          rgba(
+            255,
+            255,
+            255,
+            0.96
+          );
 
         backdrop-filter: blur(20px);
 
@@ -1373,7 +1419,6 @@
         display: flex;
 
         align-items: center;
-
         justify-content: center;
       }
 
@@ -1384,33 +1429,35 @@
         min-height: auto;
 
         padding:
-          100px
+          96px
           5%
           55px;
       }
 
       .hero-container {
-        gap: 36px;
+        gap: 38px;
       }
 
       .eyebrow {
         margin-bottom: 18px;
 
-        font-size: 8px;
+        font-size: 9px;
+
+        letter-spacing: 1.2px;
       }
 
       .hero-title {
-        font-size: 51px;
+        font-size: 53px;
 
-        line-height: 0.93;
+        line-height: 0.94;
 
-        letter-spacing: -2px;
+        letter-spacing: -2.5px;
 
-        margin-bottom: 21px;
+        margin-bottom: 22px;
       }
 
       .hero-description {
-        font-size: 12px;
+        font-size: 13px;
 
         line-height: 1.75;
 
@@ -1418,48 +1465,55 @@
       }
 
       .button {
-        min-height: 43px;
+        min-height: 44px;
 
         padding: 0 17px;
 
         font-size: 10px;
       }
 
-
-      /* HERO IMAGE */
-
       .hero-visual {
         height: 430px;
+
+        width: 100%;
       }
 
       .hero-main-image {
-        width: 74%;
+        top: 0;
+
+        right: 0;
+
+        width: 76%;
 
         height: 395px;
-
-        right: 1%;
 
         border-radius:
           105px
           105px
-          22px
-          22px;
+          21px
+          21px;
+      }
+
+      .hero-main-image img {
+        object-position: center 28%;
       }
 
       .hero-small-image {
         left: 0;
 
+        bottom: 0;
+
         width: 43%;
 
         height: 165px;
 
-        padding: 5px;
+        border-width: 5px;
 
-        border-radius: 19px;
+        border-radius: 18px;
       }
 
       .hero-small-image img {
-        border-radius: 14px;
+        object-position: center 28%;
       }
 
       .style-card {
@@ -1467,34 +1521,42 @@
 
         bottom: 0;
 
-        width: 145px;
+        width: 143px;
 
         padding: 12px 13px;
 
         border-radius: 15px;
       }
 
-      .style-card-title {
-        font-size: 13px;
-      }
-
       .style-card-label {
         font-size: 7px;
       }
 
+      .style-card-title {
+        font-size: 13px;
+      }
 
-      /* SECTION */
+      .style-card-line {
+        margin-top: 8px;
+      }
+
+
+      /* GENERAL */
 
       .section {
-        padding: 72px 5%;
+        padding: 78px 5%;
       }
 
       .section-header {
-        margin-bottom: 31px;
+        margin-bottom: 32px;
+      }
+
+      .section-number {
+        font-size: 8px;
       }
 
       .section-title {
-        font-size: 41px;
+        font-size: 42px;
 
         letter-spacing: -1px;
       }
@@ -1503,38 +1565,40 @@
       /* STATEMENT */
 
       .statement {
-        padding: 70px 5%;
+        padding: 72px 5%;
       }
 
       .statement h2 {
-        font-size: 35px;
+        font-size: 36px;
       }
 
 
       /* ABOUT */
 
-      .about .section-header {
-        margin-bottom: 25px;
-      }
-
       .about-grid {
-        gap: 32px;
+        gap: 35px;
       }
 
       .about-image {
-        height: 420px;
+        height: 425px;
 
         max-width: none;
 
         border-radius: 23px;
       }
 
+      .about-image img {
+        object-position: center 28%;
+      }
+
       .about-lead {
-        font-size: 25px;
+        font-size: 26px;
       }
 
       .about-content p {
-        font-size: 12px;
+        font-size: 13px;
+
+        line-height: 1.78;
       }
 
 
@@ -1549,7 +1613,11 @@
       .direction-card {
         min-height: auto;
 
-        padding: 24px;
+        padding: 25px;
+      }
+
+      .direction-card h3 {
+        font-size: 23px;
       }
 
 
@@ -1558,20 +1626,24 @@
       .pillars-grid {
         grid-template-columns: 1fr;
 
-        gap: 12px;
+        gap: 13px;
       }
 
       .pillar {
-        height: 350px;
+        height: 345px;
 
-        border-radius: 23px;
+        border-radius: 22px;
+      }
+
+      .pillar-title {
+        font-size: 27px;
       }
 
 
       /* SERVICES */
 
       .services-layout {
-        gap: 32px;
+        gap: 35px;
       }
 
       .service-row {
@@ -1592,13 +1664,13 @@
       .lookbook-top {
         display: block;
 
-        margin-bottom: 28px;
+        margin-bottom: 30px;
       }
 
       .lookbook-description {
-        margin-top: 16px;
+        margin-top: 17px;
 
-        font-size: 12px;
+        font-size: 13px;
       }
 
       .lookbook-grid {
@@ -1610,16 +1682,18 @@
       .look,
       .look:nth-child(2),
       .look:nth-child(3) {
-        height: 455px;
+        height: 440px;
 
         margin-top: 0;
+
+        border-radius: 21px;
       }
 
 
       /* COLLAB */
 
       .collaboration {
-        padding: 75px 5%;
+        padding: 78px 5%;
       }
 
       .collab-title {
@@ -1627,14 +1701,22 @@
       }
 
       .collab-description {
-        font-size: 12px;
+        font-size: 13px;
+      }
+
+      .collab-tags {
+        gap: 7px;
+      }
+
+      .collab-tag {
+        font-size: 9px;
       }
 
 
       /* CONTACT */
 
       .contact-grid {
-        gap: 32px;
+        gap: 33px;
       }
 
       .contact-card {
@@ -1656,6 +1738,39 @@
 
       .footer-copy {
         text-align: left;
+      }
+
+    }
+
+
+    /* =========================================================
+       VERY SMALL MOBILE
+    ========================================================= */
+
+    @media (max-width: 390px) {
+
+      .hero-title {
+        font-size: 47px;
+      }
+
+      .hero-visual {
+        height: 390px;
+      }
+
+      .hero-main-image {
+        height: 355px;
+      }
+
+      .hero-small-image {
+        height: 145px;
+      }
+
+      .style-card {
+        width: 132px;
+      }
+
+      .section-title {
+        font-size: 38px;
       }
 
     }
@@ -1783,23 +1898,30 @@
 
 
 
+        <!-- HERO VISUAL -->
+
         <div class="hero-visual reveal">
+
+
+          <!-- FOTO 3.JPG -->
 
           <div class="hero-main-image">
 
             <img
-              src="8.jpg"
-              alt="Ariska in a modest feminine outfit"
+              src="3.jpg"
+              alt="Ariska in a modest fashion look"
             />
 
           </div>
 
 
+          <!-- FOTO 1.JPG -->
+
           <div class="hero-small-image">
 
             <img
-              src="6.jpg"
-              alt="Ariska wearing a black hijab"
+              src="1.jpg"
+              alt="Ariska in a feminine modest look"
             />
 
           </div>
@@ -1843,6 +1965,7 @@
 
           Fashion is not about
           <em>changing who you are.</em>
+
           It's about expressing it.
 
         </h2>
@@ -1864,6 +1987,7 @@
 
       <div class="section-container">
 
+
         <div class="section-header reveal">
 
           <div class="section-number">
@@ -1880,11 +2004,13 @@
         <div class="about-grid">
 
 
+          <!-- FOTO 8.JPG -->
+
           <div class="about-image reveal">
 
             <img
-              src="1.jpg"
-              alt="Ariska in a cafe"
+              src="8.jpg"
+              alt="Ariska in a modest fashion look"
             />
 
           </div>
@@ -1955,6 +2081,7 @@
 
       <div class="section-container">
 
+
         <div class="section-header reveal">
 
           <div class="section-number">
@@ -2001,6 +2128,7 @@
           </article>
 
 
+
           <article class="direction-card reveal">
 
             <div class="direction-icon">
@@ -2020,6 +2148,7 @@
             </p>
 
           </article>
+
 
 
           <article class="direction-card reveal">
@@ -2058,6 +2187,7 @@
 
       <div class="section-container">
 
+
         <div class="section-header reveal">
 
           <div class="section-number">
@@ -2074,11 +2204,13 @@
         <div class="pillars-grid">
 
 
+          <!-- 9.JPG -->
+
           <article class="pillar reveal">
 
             <img
               src="9.jpg"
-              alt="Ariska in a modest indoor look"
+              alt="Everyday modest fashion"
             />
 
             <div class="pillar-content">
@@ -2101,11 +2233,13 @@
 
 
 
+          <!-- 14.JPG -->
+
           <article class="pillar reveal">
 
             <img
-              src="8.jpg"
-              alt="Ariska in a feminine lavender outfit"
+              src="14.jpg"
+              alt="Soft feminine modest fashion"
             />
 
             <div class="pillar-content">
@@ -2129,11 +2263,13 @@
 
 
 
+          <!-- 12.JPG -->
+
           <article class="pillar reveal">
 
             <img
-              src="4.jpg"
-              alt="Ariska in a black modest outfit"
+              src="12.jpg"
+              alt="Modern modest fashion"
             />
 
             <div class="pillar-content">
@@ -2157,11 +2293,13 @@
 
 
 
+          <!-- 15.JPG -->
+
           <article class="pillar reveal">
 
             <img
-              src="12.jpg"
-              alt="Ariska in a casual fashion look"
+              src="15.jpg"
+              alt="Fashion details"
             />
 
             <div class="pillar-content">
@@ -2192,7 +2330,7 @@
 
 
     <!-- =======================================================
-         SERVICES
+         CONTENT
     ======================================================== -->
 
     <section class="section services">
@@ -2332,7 +2470,10 @@
 
         <div class="lookbook-top reveal">
 
-          <div class="section-header">
+          <div
+            class="section-header"
+            style="margin-bottom:0"
+          >
 
             <div class="section-number">
               05 / VISUAL DIRECTION
@@ -2359,11 +2500,13 @@
         <div class="lookbook-grid">
 
 
+          <!-- 2.JPG -->
+
           <div class="look reveal">
 
             <img
-              src="14.jpg"
-              alt="Ariska in a soft modest outfit"
+              src="2.jpg"
+              alt="Soft neutral modest look"
             />
 
             <span class="look-label">
@@ -2374,11 +2517,13 @@
 
 
 
+          <!-- 7.JPG -->
+
           <div class="look reveal">
 
             <img
-              src="2.jpg"
-              alt="Ariska in a feminine modest look"
+              src="7.jpg"
+              alt="Daily modest fashion look"
             />
 
             <span class="look-label">
@@ -2389,11 +2534,13 @@
 
 
 
+          <!-- 10.JPG -->
+
           <div class="look reveal">
 
             <img
-              src="15.jpg"
-              alt="Ariska in a minimal modest setting"
+              src="10.jpg"
+              alt="Feminine modest fashion look"
             />
 
             <span class="look-label">
@@ -2417,6 +2564,7 @@
     <section class="collaboration">
 
       <div class="collab-inner reveal">
+
 
         <div class="small-label">
           Open for collaboration
@@ -2497,6 +2645,7 @@
 
       <div class="section-container">
 
+
         <div class="contact-grid">
 
 
@@ -2540,6 +2689,7 @@
                 class="contact-value"
                 href="https://instagram.com/"
                 target="_blank"
+                rel="noopener"
               >
                 @yourinstagram
               </a>
@@ -2632,7 +2782,9 @@
 
   <script>
 
-    /* NAVBAR */
+    /* =========================================================
+       NAVBAR
+    ========================================================= */
 
     const navbar =
       document.getElementById("navbar");
@@ -2641,7 +2793,7 @@
       "scroll",
       function () {
 
-        if (window.scrollY > 30) {
+        if (window.scrollY > 25) {
 
           navbar.classList.add("scrolled");
 
@@ -2655,7 +2807,9 @@
     );
 
 
-    /* MOBILE MENU */
+    /* =========================================================
+       MOBILE MENU
+    ========================================================= */
 
     const menuToggle =
       document.getElementById("menuToggle");
@@ -2690,7 +2844,9 @@
       });
 
 
-    /* REVEAL */
+    /* =========================================================
+       REVEAL ANIMATION
+    ========================================================= */
 
     const revealElements =
       document.querySelectorAll(".reveal");
