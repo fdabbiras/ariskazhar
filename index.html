@@ -4,35 +4,48 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Ariska — Emerging Modest Fashion Creator</title>
+  <title>Ariska | Emerging Modest Fashion Creator</title>
 
   <meta
     name="description"
-    content="Ariska is an emerging modest fashion creator creating thoughtful, feminine and relatable fashion content."
+    content="Ariska Devina Azharyani, emerging modest fashion creator creating feminine, thoughtful and relatable fashion content."
   />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@400;500;600;700&display=swap"
     rel="stylesheet"
   />
 
   <style>
+
+    /* =========================================================
+       ROOT
+    ========================================================= */
+
     :root {
       --cream: #f8f5ef;
-      --cream-2: #f0ebe2;
-      --brown: #59483d;
-      --brown-dark: #342a25;
-      --brown-light: #806e61;
-      --pink: #e7c9c7;
-      --pink-soft: #f3dfdc;
+      --cream-dark: #eee8de;
+      --brown: #5d4b40;
+      --brown-dark: #302621;
+      --brown-soft: #806f63;
+      --blush: #ead1ce;
+      --blush-light: #f3e3e0;
       --white: #ffffff;
-      --border: rgba(89, 72, 61, 0.14);
-      --shadow: 0 20px 60px rgba(67, 49, 40, 0.08);
+
+      --border: rgba(48, 38, 33, 0.12);
+      --shadow: 0 24px 70px rgba(48, 38, 33, 0.09);
+
       --radius: 28px;
+      --max-width: 1240px;
     }
+
+
+    /* =========================================================
+       RESET
+    ========================================================= */
 
     * {
       margin: 0;
@@ -45,51 +58,60 @@
     }
 
     body {
-      font-family: "DM Sans", sans-serif;
+      margin: 0;
       background: var(--cream);
       color: var(--brown-dark);
+      font-family: "DM Sans", sans-serif;
       line-height: 1.6;
       overflow-x: hidden;
     }
 
     img {
-      width: 100%;
       display: block;
+      width: 100%;
       object-fit: cover;
     }
 
     a {
-      text-decoration: none;
       color: inherit;
+      text-decoration: none;
     }
 
     button {
       font-family: inherit;
     }
 
-    /* =========================
-       NAVBAR
-    ========================= */
 
-    nav {
+    /* =========================================================
+       NAVBAR
+    ========================================================= */
+
+    .navbar {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      z-index: 1000;
-      padding: 18px 5%;
-      transition: 0.3s ease;
+      z-index: 999;
+
+      padding: 22px 5%;
+
+      transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease,
+        padding 0.3s ease;
     }
 
-    nav.scrolled {
-      background: rgba(248, 245, 239, 0.9);
+    .navbar.scrolled {
+      padding: 15px 5%;
+      background: rgba(248, 245, 239, 0.88);
       backdrop-filter: blur(18px);
       box-shadow: 0 1px 0 var(--border);
     }
 
-    .nav-inner {
-      max-width: 1250px;
+    .nav-container {
+      max-width: var(--max-width);
       margin: auto;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -99,516 +121,855 @@
       font-family: "Playfair Display", serif;
       font-size: 27px;
       font-weight: 600;
-      letter-spacing: -0.5px;
+      letter-spacing: -1px;
     }
 
     .logo span {
-      font-style: italic;
+      color: var(--brown-soft);
     }
 
-    .nav-links {
+    .nav-menu {
       display: flex;
       align-items: center;
       gap: 34px;
+
       font-size: 13px;
       font-weight: 600;
       color: var(--brown);
     }
 
-    .nav-links a {
+    .nav-menu a {
       position: relative;
     }
 
-    .nav-links a::after {
+    .nav-menu a:not(.nav-cta)::after {
       content: "";
       position: absolute;
-      bottom: -6px;
+
       left: 0;
+      bottom: -7px;
+
       width: 0;
       height: 1px;
+
       background: var(--brown);
-      transition: 0.3s ease;
+
+      transition: width 0.3s ease;
     }
 
-    .nav-links a:hover::after {
+    .nav-menu a:not(.nav-cta):hover::after {
       width: 100%;
     }
 
-    .nav-button {
-      padding: 11px 19px;
+    .nav-cta {
+      padding: 11px 20px;
+
       border: 1px solid var(--brown);
       border-radius: 100px;
-      transition: 0.3s ease;
+
+      transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
     }
 
-    .nav-button:hover {
-      background: var(--brown);
+    .nav-cta:hover {
+      background: var(--brown-dark);
       color: var(--white);
+      transform: translateY(-2px);
     }
 
-    /* =========================
+    .menu-toggle {
+      display: none;
+
+      width: 42px;
+      height: 42px;
+
+      border: 1px solid var(--border);
+      border-radius: 50%;
+
+      background: transparent;
+      color: var(--brown-dark);
+
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+
+    /* =========================================================
        HERO
-    ========================= */
+    ========================================================= */
 
     .hero {
       min-height: 100vh;
-      padding: 145px 5% 70px;
+
+      padding:
+        110px
+        5%
+        45px;
+
       display: flex;
       align-items: center;
     }
 
-    .hero-inner {
+    .hero-container {
       width: 100%;
-      max-width: 1250px;
+      max-width: var(--max-width);
       margin: auto;
+
       display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 75px;
+      grid-template-columns: 0.88fr 1.12fr;
+
+      gap: 55px;
       align-items: center;
+    }
+
+
+    /* HERO COPY */
+
+    .hero-copy {
+      position: relative;
+      z-index: 2;
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 9px;
+
       padding: 8px 14px;
+
+      background: var(--blush-light);
       border-radius: 100px;
-      background: var(--pink-soft);
+
       color: var(--brown);
-      font-size: 11px;
+
+      font-size: 10px;
       font-weight: 700;
-      letter-spacing: 1.2px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      margin-bottom: 25px;
+
+      margin-bottom: 24px;
     }
 
     .eyebrow-dot {
       width: 7px;
       height: 7px;
+
       border-radius: 50%;
-      background: #9c706c;
+      background: #9b726d;
     }
 
-    .hero h1 {
+    .hero-title {
       font-family: "Playfair Display", serif;
-      font-size: clamp(55px, 7vw, 95px);
-      line-height: 0.96;
+
+      font-size: clamp(
+        55px,
+        5.5vw,
+        80px
+      );
+
+      line-height: 0.93;
+
       letter-spacing: -3px;
-      font-weight: 600;
-      margin-bottom: 28px;
+
+      font-weight: 500;
+
+      margin-bottom: 27px;
     }
 
-    .hero h1 em {
-      font-weight: 500;
-      color: var(--brown-light);
+    .hero-title .italic {
+      font-style: italic;
+      color: var(--brown-soft);
     }
 
     .hero-description {
-      max-width: 480px;
-      color: var(--brown-light);
-      font-size: 16px;
+      max-width: 465px;
+
+      color: var(--brown-soft);
+
+      font-size: 14px;
       line-height: 1.8;
-      margin-bottom: 34px;
+
+      margin-bottom: 29px;
     }
 
     .hero-buttons {
       display: flex;
-      gap: 13px;
+      align-items: center;
+      gap: 11px;
+
       flex-wrap: wrap;
     }
 
-    .btn {
+    .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 14px 22px;
+
+      min-height: 46px;
+
+      padding: 0 21px;
+
       border-radius: 100px;
-      font-size: 13px;
+
+      font-size: 12px;
       font-weight: 700;
-      transition: 0.3s ease;
-      cursor: pointer;
+
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
     }
 
-    .btn-primary {
+    .button-primary {
       background: var(--brown-dark);
       color: var(--white);
     }
 
-    .btn-primary:hover {
+    .button-primary:hover {
       transform: translateY(-3px);
       box-shadow: var(--shadow);
     }
 
-    .btn-secondary {
+    .button-outline {
       border: 1px solid var(--border);
-      background: rgba(255,255,255,0.4);
+      background: rgba(255,255,255,0.3);
     }
 
-    .btn-secondary:hover {
+    .button-outline:hover {
       background: var(--white);
       transform: translateY(-3px);
     }
 
+
+    /* HERO VISUAL */
+
     .hero-visual {
       position: relative;
-      min-height: 650px;
+
+      height: 610px;
+
+      min-width: 0;
     }
 
-    .hero-image-main {
+    .hero-main-image {
       position: absolute;
-      right: 0;
+
       top: 0;
-      width: 72%;
-      height: 590px;
-      border-radius: 180px 180px 28px 28px;
+      right: 0;
+
+      width: 69%;
+      height: 555px;
+
       overflow: hidden;
+
+      border-radius:
+        170px
+        170px
+        28px
+        28px;
+
+      background: var(--cream-dark);
+
       box-shadow: var(--shadow);
     }
 
-    .hero-image-main img {
+    .hero-main-image img {
       height: 100%;
       object-position: center;
     }
 
-    .hero-image-small {
+    .hero-small-image {
       position: absolute;
-      left: 0;
-      bottom: 20px;
-      width: 42%;
-      height: 285px;
-      border-radius: 28px;
+
+      left: 4%;
+      bottom: 0;
+
+      width: 38%;
+      height: 235px;
+
       overflow: hidden;
-      border: 10px solid var(--cream);
+
+      border: 8px solid var(--cream);
+      border-radius: 27px;
+
+      background: var(--cream-dark);
+
       box-shadow: var(--shadow);
+
       z-index: 2;
     }
 
-    .hero-image-small img {
+    .hero-small-image img {
       height: 100%;
     }
 
-    .floating-note {
+
+    /* FLOATING CARD */
+
+    .style-card {
       position: absolute;
-      right: 3%;
-      bottom: -5px;
-      padding: 18px 20px;
+
+      right: 0;
+      bottom: 7px;
+
+      width: 190px;
+
+      padding: 17px 19px;
+
       background: var(--white);
-      border-radius: 18px;
+
+      border-radius: 19px;
+
       box-shadow: var(--shadow);
+
       z-index: 3;
-      max-width: 190px;
     }
 
-    .floating-note small {
+    .style-card-label {
       display: block;
-      font-size: 10px;
+
+      margin-bottom: 5px;
+
+      font-size: 8px;
+      font-weight: 700;
+
+      letter-spacing: 1.4px;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--brown-light);
-      margin-bottom: 4px;
+
+      color: var(--brown-soft);
     }
 
-    .floating-note strong {
+    .style-card-title {
       font-family: "Playfair Display", serif;
-      font-size: 18px;
+
+      font-size: 17px;
+      line-height: 1.2;
+
       font-weight: 600;
     }
 
-    /* =========================
-       INTRO
-    ========================= */
+    .style-card-line {
+      width: 30px;
+      height: 1px;
 
-    .intro {
+      margin-top: 11px;
+
+      background: var(--blush);
+    }
+
+
+    /* =========================================================
+       INTRO STATEMENT
+    ========================================================= */
+
+    .statement {
       padding: 100px 5%;
+
       background: var(--brown-dark);
       color: var(--cream);
     }
 
-    .intro-inner {
-      max-width: 1000px;
+    .statement-inner {
+      max-width: 950px;
       margin: auto;
+
       text-align: center;
     }
 
-    .section-label {
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 10px;
+    .small-label {
+      margin-bottom: 24px;
+
+      font-size: 9px;
       font-weight: 700;
-      opacity: 0.65;
-      margin-bottom: 25px;
+
+      letter-spacing: 2.2px;
+      text-transform: uppercase;
+
+      opacity: 0.55;
     }
 
-    .intro h2 {
+    .statement h2 {
       font-family: "Playfair Display", serif;
-      font-size: clamp(38px, 5vw, 65px);
+
+      font-size: clamp(
+        38px,
+        5vw,
+        63px
+      );
+
       line-height: 1.1;
+
       font-weight: 500;
     }
 
-    .intro h2 em {
-      color: var(--pink);
+    .statement h2 em {
+      color: var(--blush);
     }
 
-    /* =========================
-       ABOUT
-    ========================= */
 
-    section {
-      padding: 115px 5%;
+    /* =========================================================
+       GENERAL SECTION
+    ========================================================= */
+
+    .section {
+      padding: 110px 5%;
     }
 
-    .container {
-      max-width: 1250px;
+    .section-container {
+      max-width: var(--max-width);
       margin: auto;
     }
 
-    .section-heading {
-      margin-bottom: 55px;
+    .section-header {
+      margin-bottom: 50px;
     }
 
-    .section-heading .number {
-      font-size: 11px;
-      letter-spacing: 2px;
-      color: var(--brown-light);
-      font-weight: 700;
+    .section-number {
       margin-bottom: 13px;
+
+      color: var(--brown-soft);
+
+      font-size: 9px;
+      font-weight: 700;
+
+      letter-spacing: 2px;
     }
 
-    .section-heading h2 {
+    .section-title {
       font-family: "Playfair Display", serif;
-      font-size: clamp(40px, 5vw, 64px);
+
+      font-size: clamp(
+        42px,
+        5vw,
+        62px
+      );
+
       line-height: 1;
+
       font-weight: 600;
+
       letter-spacing: -1px;
+    }
+
+
+    /* =========================================================
+       ABOUT
+    ========================================================= */
+
+    .about {
+      background: var(--cream);
     }
 
     .about-grid {
       display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
-      gap: 90px;
+
+      grid-template-columns:
+        0.82fr
+        1.18fr;
+
+      gap: 85px;
+
       align-items: center;
     }
 
-    .about-photo {
-      height: 570px;
-      border-radius: 30px;
+    .about-image {
+      height: 535px;
+
       overflow: hidden;
+
+      border-radius: 30px;
+
+      background: var(--cream-dark);
     }
 
-    .about-photo img {
+    .about-image img {
       height: 100%;
     }
 
-    .about-copy h3 {
+    .about-content {
+      max-width: 610px;
+    }
+
+    .about-lead {
       font-family: "Playfair Display", serif;
-      font-size: 33px;
-      line-height: 1.25;
+
+      font-size: 29px;
+      line-height: 1.3;
+
       margin-bottom: 25px;
     }
 
-    .about-copy p {
-      color: var(--brown-light);
-      margin-bottom: 20px;
-      max-width: 600px;
+    .about-content p {
+      color: var(--brown-soft);
+
+      font-size: 14px;
+      line-height: 1.85;
+
+      margin-bottom: 18px;
     }
 
-    .about-signature {
+    .signature {
+      margin-top: 28px;
+
       font-family: "Playfair Display", serif;
-      font-style: italic;
+
       font-size: 25px;
-      margin-top: 32px;
+      font-style: italic;
     }
 
-    /* =========================
-       CREATOR DIRECTION
-    ========================= */
+
+    /* =========================================================
+       CREATIVE DIRECTION
+    ========================================================= */
 
     .direction {
-      background: var(--cream-2);
+      background: var(--cream-dark);
     }
 
     .direction-intro {
       max-width: 650px;
-      color: var(--brown-light);
-      margin-bottom: 50px;
+
+      color: var(--brown-soft);
+
+      font-size: 14px;
+      line-height: 1.8;
+
+      margin-bottom: 42px;
     }
 
     .direction-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 17px;
     }
 
     .direction-card {
-      padding: 35px 30px;
-      background: rgba(255,255,255,0.55);
-      border: 1px solid var(--border);
+      min-height: 255px;
+
+      padding: 30px;
+
+      border:
+        1px solid
+        var(--border);
+
       border-radius: var(--radius);
-      min-height: 250px;
-      transition: 0.3s ease;
+
+      background: rgba(
+        255,
+        255,
+        255,
+        0.42
+      );
+
+      transition:
+        transform 0.35s ease,
+        background 0.35s ease,
+        box-shadow 0.35s ease;
     }
 
     .direction-card:hover {
       transform: translateY(-7px);
+
       background: var(--white);
+
       box-shadow: var(--shadow);
     }
 
     .direction-icon {
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      background: var(--pink-soft);
       display: flex;
       align-items: center;
       justify-content: center;
+
+      width: 43px;
+      height: 43px;
+
       margin-bottom: 25px;
-      font-size: 18px;
+
+      border-radius: 50%;
+
+      background: var(--blush-light);
+
+      font-size: 17px;
     }
 
     .direction-card h3 {
+      margin-bottom: 10px;
+
       font-family: "Playfair Display", serif;
+
       font-size: 25px;
-      margin-bottom: 12px;
+      line-height: 1.2;
     }
 
     .direction-card p {
-      font-size: 14px;
-      color: var(--brown-light);
+      color: var(--brown-soft);
+
+      font-size: 13px;
+      line-height: 1.75;
     }
 
-    /* =========================
+
+    /* =========================================================
        CONTENT PILLARS
-    ========================= */
+    ========================================================= */
 
     .pillars-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 18px;
     }
 
     .pillar {
       position: relative;
-      min-height: 350px;
-      border-radius: 28px;
+
+      height: 390px;
+
       overflow: hidden;
+
+      border-radius: 29px;
+
       background: var(--brown);
     }
 
     .pillar img {
       height: 100%;
-      transition: 0.5s ease;
+
+      transition:
+        transform 0.7s ease;
     }
 
     .pillar:hover img {
-      transform: scale(1.04);
+      transform: scale(1.045);
     }
 
-    .pillar-overlay {
+    .pillar::after {
+      content: "";
+
       position: absolute;
+
       inset: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 30px;
-      background: linear-gradient(
-        transparent 35%,
-        rgba(30, 23, 20, 0.72)
-      );
-      color: white;
+
+      background:
+        linear-gradient(
+          to top,
+          rgba(35, 27, 23, 0.78),
+          rgba(35, 27, 23, 0.05) 65%
+        );
+    }
+
+    .pillar-content {
+      position: absolute;
+
+      left: 28px;
+      right: 28px;
+      bottom: 26px;
+
+      z-index: 2;
+
+      color: var(--white);
     }
 
     .pillar-number {
-      font-size: 10px;
+      margin-bottom: 7px;
+
+      font-size: 9px;
+      font-weight: 700;
+
       letter-spacing: 2px;
-      margin-bottom: 8px;
+
       opacity: 0.7;
     }
 
-    .pillar h3 {
-      font-family: "Playfair Display", serif;
-      font-size: 31px;
+    .pillar-title {
       margin-bottom: 5px;
+
+      font-family: "Playfair Display", serif;
+
+      font-size: 30px;
+      line-height: 1.1;
     }
 
-    .pillar p {
-      font-size: 13px;
-      opacity: 0.85;
+    .pillar-description {
+      font-size: 12px;
+      opacity: 0.83;
     }
 
-    /* =========================
-       SAMPLE LOOKBOOK
-    ========================= */
+
+    /* =========================================================
+       WHAT I CAN CREATE
+    ========================================================= */
+
+    .services {
+      background: var(--cream-dark);
+    }
+
+    .services-layout {
+      display: grid;
+
+      grid-template-columns:
+        0.8fr
+        1.2fr;
+
+      gap: 80px;
+
+      align-items: start;
+    }
+
+    .services-copy p {
+      max-width: 430px;
+
+      color: var(--brown-soft);
+
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .services-list {
+      border-top: 1px solid var(--border);
+    }
+
+    .service-row {
+      display: flex;
+
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+
+      padding: 20px 0;
+
+      border-bottom: 1px solid var(--border);
+    }
+
+    .service-row span:first-child {
+      font-family: "Playfair Display", serif;
+
+      font-size: 22px;
+    }
+
+    .service-row span:last-child {
+      color: var(--brown-soft);
+
+      font-size: 11px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1px;
+    }
+
+
+    /* =========================================================
+       LOOKBOOK
+    ========================================================= */
 
     .lookbook {
-      background: var(--cream-2);
+      background: var(--cream);
     }
 
-    .lookbook-header {
+    .lookbook-top {
       display: flex;
-      justify-content: space-between;
+
       align-items: end;
-      gap: 30px;
+      justify-content: space-between;
+
+      gap: 35px;
+
       margin-bottom: 45px;
     }
 
-    .lookbook-header p {
-      max-width: 420px;
-      color: var(--brown-light);
-      font-size: 14px;
+    .lookbook-description {
+      max-width: 410px;
+
+      color: var(--brown-soft);
+
+      font-size: 13px;
+      line-height: 1.8;
     }
 
     .lookbook-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
       gap: 15px;
     }
 
     .look {
-      height: 500px;
-      border-radius: 25px;
-      overflow: hidden;
       position: relative;
+
+      height: 490px;
+
+      overflow: hidden;
+
+      border-radius: 25px;
+
+      background: var(--cream-dark);
     }
 
     .look:nth-child(2) {
-      margin-top: 50px;
+      margin-top: 45px;
     }
 
     .look:nth-child(3) {
-      margin-top: 100px;
+      margin-top: 90px;
     }
 
     .look img {
       height: 100%;
-      transition: 0.5s ease;
+
+      transition:
+        transform 0.6s ease;
     }
 
     .look:hover img {
-      transform: scale(1.04);
+      transform: scale(1.045);
     }
 
-    .look-tag {
+    .look-label {
       position: absolute;
-      top: 18px;
-      left: 18px;
-      padding: 7px 12px;
+
+      top: 17px;
+      left: 17px;
+
+      padding: 7px 11px;
+
       border-radius: 100px;
-      background: rgba(255,255,255,0.9);
-      font-size: 10px;
+
+      background: rgba(
+        255,
+        255,
+        255,
+        0.9
+      );
+
+      font-size: 8px;
       font-weight: 700;
+
+      letter-spacing: 1.2px;
+
       text-transform: uppercase;
-      letter-spacing: 1px;
     }
 
-    /* =========================
-       BRAND COLLAB
-    ========================= */
 
-    .collab {
+    /* =========================================================
+       BRAND COLLAB
+    ========================================================= */
+
+    .collaboration {
+      padding: 115px 5%;
+
+      background: var(--blush-light);
+
       text-align: center;
-      background: var(--pink-soft);
     }
 
     .collab-inner {
@@ -616,73 +977,117 @@
       margin: auto;
     }
 
-    .collab h2 {
+    .collab-title {
       font-family: "Playfair Display", serif;
-      font-size: clamp(43px, 6vw, 75px);
+
+      font-size: clamp(
+        43px,
+        5.5vw,
+        72px
+      );
+
       line-height: 1.02;
-      margin-bottom: 25px;
+
+      font-weight: 500;
+
+      margin-bottom: 23px;
     }
 
-    .collab h2 em {
-      color: var(--brown-light);
+    .collab-title em {
+      color: var(--brown-soft);
     }
 
-    .collab p {
-      max-width: 590px;
-      margin: 0 auto 35px;
-      color: var(--brown-light);
+    .collab-description {
+      max-width: 600px;
+
+      margin:
+        0 auto
+        30px;
+
+      color: var(--brown-soft);
+
+      font-size: 14px;
+      line-height: 1.8;
     }
 
-    .collab-services {
+    .collab-tags {
       display: flex;
+
       justify-content: center;
-      gap: 10px;
+
       flex-wrap: wrap;
-      margin-bottom: 40px;
+
+      gap: 8px;
+
+      margin-bottom: 35px;
     }
 
-    .service {
-      padding: 10px 15px;
-      border: 1px solid rgba(89,72,61,0.18);
+    .collab-tag {
+      padding: 9px 14px;
+
+      border:
+        1px solid
+        rgba(93, 75, 64, 0.16);
+
       border-radius: 100px;
-      font-size: 11px;
+
+      background: rgba(
+        255,
+        255,
+        255,
+        0.38
+      );
+
+      font-size: 10px;
       font-weight: 600;
-      background: rgba(255,255,255,0.35);
     }
 
-    /* =========================
+
+    /* =========================================================
        CONTACT
-    ========================= */
+    ========================================================= */
+
+    .contact {
+      background: var(--cream);
+    }
 
     .contact-grid {
       display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
-      gap: 80px;
+
+      grid-template-columns:
+        0.85fr
+        1.15fr;
+
+      gap: 85px;
+
       align-items: start;
     }
 
-    .contact-copy h2 {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(43px, 5vw, 67px);
-      line-height: 1;
-      margin-bottom: 25px;
-    }
-
     .contact-copy p {
-      color: var(--brown-light);
       max-width: 430px;
+
+      color: var(--brown-soft);
+
+      font-size: 14px;
+      line-height: 1.8;
     }
 
     .contact-card {
+      padding: 35px 38px;
+
       background: var(--white);
-      border-radius: 30px;
-      padding: 40px;
+
+      border-radius: 29px;
+
       box-shadow: var(--shadow);
     }
 
     .contact-item {
-      padding: 22px 0;
-      border-bottom: 1px solid var(--border);
+      padding: 19px 0;
+
+      border-bottom:
+        1px solid
+        var(--border);
     }
 
     .contact-item:first-child {
@@ -690,362 +1095,622 @@
     }
 
     .contact-item:last-child {
-      border-bottom: none;
       padding-bottom: 0;
+      border-bottom: none;
     }
 
-    .contact-item small {
+    .contact-label {
       display: block;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      font-size: 9px;
-      color: var(--brown-light);
+
       margin-bottom: 5px;
+
+      color: var(--brown-soft);
+
+      font-size: 8px;
+      font-weight: 700;
+
+      letter-spacing: 1.5px;
+
+      text-transform: uppercase;
     }
 
-    .contact-item a,
-    .contact-item span {
+    .contact-value {
       font-family: "Playfair Display", serif;
-      font-size: 21px;
+
+      font-size: 20px;
     }
 
-    /* =========================
-       FOOTER
-    ========================= */
+    .contact-value:hover {
+      color: var(--brown-soft);
+    }
 
-    footer {
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    .footer {
       padding: 35px 5%;
+
       background: var(--brown-dark);
+
       color: var(--cream);
     }
 
-    .footer-inner {
-      max-width: 1250px;
+    .footer-container {
+      max-width: var(--max-width);
       margin: auto;
+
       display: flex;
-      justify-content: space-between;
-      gap: 20px;
+
       align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
     }
 
     .footer-logo {
       font-family: "Playfair Display", serif;
+
       font-size: 24px;
     }
 
-    .footer-text {
-      font-size: 11px;
-      opacity: 0.55;
+    .footer-copy {
+      font-size: 10px;
+
+      opacity: 0.5;
+
+      text-align: right;
     }
 
-    /* =========================
-       MOBILE MENU
-    ========================= */
 
-    .menu-toggle {
-      display: none;
-      border: none;
-      background: none;
-      font-size: 24px;
-      color: var(--brown-dark);
-      cursor: pointer;
+    /* =========================================================
+       ANIMATIONS
+    ========================================================= */
+
+    .reveal {
+      opacity: 0;
+
+      transform: translateY(25px);
+
+      transition:
+        opacity 0.75s ease,
+        transform 0.75s ease;
     }
 
-    /* =========================
-       RESPONSIVE
-    ========================= */
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-    @media (max-width: 900px) {
 
-      .nav-links {
-        gap: 18px;
-      }
+    /* =========================================================
+       TABLET
+    ========================================================= */
 
-      .hero-inner {
-        grid-template-columns: 1fr;
-        gap: 55px;
-      }
+    @media (max-width: 950px) {
 
       .hero {
-        padding-top: 125px;
+        padding-top: 105px;
       }
 
-      .hero-visual {
-        min-height: 560px;
-      }
-
-      .hero-image-main {
-        width: 75%;
-        height: 520px;
-      }
-
-      .hero-image-small {
-        height: 245px;
-      }
-
-      .about-grid,
-      .contact-grid {
+      .hero-container {
         grid-template-columns: 1fr;
+
         gap: 45px;
       }
 
-      .about-photo {
-        height: 520px;
-      }
-
-      .direction-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-grid {
-        gap: 40px;
-      }
-    }
-
-    @media (max-width: 650px) {
-
-      nav {
-        padding: 15px 5%;
-      }
-
-      .logo {
-        font-size: 24px;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 68px;
-        left: 5%;
-        right: 5%;
-        padding: 22px;
-        background: rgba(255,255,255,0.96);
-        backdrop-filter: blur(20px);
-        border-radius: 20px;
-        flex-direction: column;
-        align-items: flex-start;
-        box-shadow: var(--shadow);
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      .nav-button {
-        border: none;
-        padding: 0;
-      }
-
-      .hero {
-        min-height: auto;
-        padding-top: 115px;
-        padding-bottom: 70px;
-      }
-
-      .hero h1 {
-        font-size: 57px;
-        letter-spacing: -2px;
-      }
-
-      .hero-description {
-        font-size: 14px;
+      .hero-copy {
+        max-width: 650px;
       }
 
       .hero-visual {
-        min-height: 450px;
+        height: 540px;
       }
 
-      .hero-image-main {
-        width: 78%;
+      .about-grid,
+      .services-layout,
+      .contact-grid {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+      }
+
+      .about-image {
+        max-width: 600px;
+      }
+
+      .direction-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+    }
+
+
+    /* =========================================================
+       MOBILE
+    ========================================================= */
+
+    @media (max-width: 650px) {
+
+      .navbar {
+        padding: 15px 5%;
+      }
+
+      .navbar.scrolled {
+        padding: 12px 5%;
+      }
+
+      .nav-menu {
+        display: none;
+
+        position: absolute;
+
+        top: 70px;
+        left: 5%;
+        right: 5%;
+
+        padding: 24px;
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 20px;
+
+        border-radius: 22px;
+
+        background: rgba(
+          255,
+          255,
+          255,
+          0.96
+        );
+
+        backdrop-filter: blur(20px);
+
+        box-shadow: var(--shadow);
+      }
+
+      .nav-menu.active {
+        display: flex;
+      }
+
+      .nav-cta {
+        padding: 0;
+
+        border: none;
+
+        background: transparent;
+      }
+
+      .menu-toggle {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+      }
+
+
+      /* HERO */
+
+      .hero {
+        min-height: auto;
+
+        padding:
+          105px
+          5%
+          60px;
+      }
+
+      .hero-container {
+        gap: 42px;
+      }
+
+      .eyebrow {
+        margin-bottom: 20px;
+      }
+
+      .hero-title {
+        font-size: 55px;
+
+        letter-spacing: -2px;
+
+        line-height: 0.94;
+
+        margin-bottom: 23px;
+      }
+
+      .hero-description {
+        font-size: 13px;
+
+        line-height: 1.75;
+
+        margin-bottom: 25px;
+      }
+
+      .hero-visual {
+        height: 450px;
+      }
+
+      .hero-main-image {
+        width: 76%;
         height: 410px;
-        border-radius: 120px 120px 22px 22px;
+
+        border-radius:
+          115px
+          115px
+          22px
+          22px;
       }
 
-      .hero-image-small {
-        width: 45%;
-        height: 190px;
-        border-width: 7px;
-        bottom: 0;
+      .hero-small-image {
+        width: 43%;
+        height: 180px;
+
+        left: 2%;
+
+        border-width: 6px;
+
+        border-radius: 20px;
       }
 
-      .floating-note {
+      .style-card {
         right: 0;
-        padding: 13px 15px;
-        max-width: 145px;
+        bottom: 1px;
+
+        width: 145px;
+
+        padding: 13px 14px;
+
+        border-radius: 16px;
       }
 
-      .floating-note strong {
-        font-size: 15px;
+      .style-card-title {
+        font-size: 14px;
       }
 
-      section {
+      .style-card-line {
+        margin-top: 8px;
+      }
+
+
+      /* GENERAL */
+
+      .section {
         padding: 80px 5%;
       }
 
-      .intro {
-        padding: 75px 5%;
-      }
-
-      .intro h2 {
-        font-size: 39px;
-      }
-
-      .section-heading {
+      .section-header {
         margin-bottom: 35px;
       }
 
-      .section-heading h2 {
-        font-size: 43px;
+      .section-title {
+        font-size: 44px;
       }
 
-      .about-photo {
-        height: 430px;
+
+      /* STATEMENT */
+
+      .statement {
+        padding: 75px 5%;
       }
 
-      .about-copy h3 {
-        font-size: 28px;
+      .statement h2 {
+        font-size: 38px;
       }
+
+
+      /* ABOUT */
+
+      .about-grid {
+        gap: 38px;
+      }
+
+      .about-image {
+        height: 420px;
+      }
+
+      .about-lead {
+        font-size: 27px;
+      }
+
+      .about-content p {
+        font-size: 13px;
+      }
+
+
+      /* DIRECTION */
+
+      .direction-grid {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+      }
+
+      .direction-card {
+        min-height: auto;
+
+        padding: 26px;
+      }
+
+
+      /* PILLARS */
 
       .pillars-grid {
         grid-template-columns: 1fr;
+
+        gap: 14px;
       }
 
       .pillar {
-        min-height: 330px;
+        height: 340px;
       }
 
-      .lookbook-header {
+      .pillar-title {
+        font-size: 28px;
+      }
+
+
+      /* SERVICES */
+
+      .services-layout {
+        gap: 38px;
+      }
+
+      .service-row {
+        padding: 17px 0;
+      }
+
+      .service-row span:first-child {
+        font-size: 19px;
+      }
+
+      .service-row span:last-child {
+        font-size: 9px;
+      }
+
+
+      /* LOOKBOOK */
+
+      .lookbook-top {
         display: block;
+
+        margin-bottom: 32px;
       }
 
-      .lookbook-header p {
+      .lookbook-description {
         margin-top: 18px;
       }
 
       .lookbook-grid {
         grid-template-columns: 1fr;
-        gap: 15px;
+
+        gap: 13px;
       }
 
       .look,
       .look:nth-child(2),
       .look:nth-child(3) {
-        height: 480px;
+        height: 460px;
+
         margin-top: 0;
+      }
+
+
+      /* COLLAB */
+
+      .collaboration {
+        padding: 80px 5%;
+      }
+
+      .collab-title {
+        font-size: 45px;
+      }
+
+      .collab-description {
+        font-size: 13px;
+      }
+
+
+      /* CONTACT */
+
+      .contact-grid {
+        gap: 35px;
       }
 
       .contact-card {
         padding: 28px;
       }
 
-      .contact-item a,
-      .contact-item span {
+      .contact-value {
         font-size: 18px;
       }
 
-      .footer-inner {
+
+      /* FOOTER */
+
+      .footer-container {
         flex-direction: column;
+
         align-items: flex-start;
       }
+
+      .footer-copy {
+        text-align: left;
+      }
+
     }
+
   </style>
 </head>
 
+
 <body>
 
-  <!-- =========================
-       NAVBAR
-  ========================= -->
 
-  <nav id="navbar">
-    <div class="nav-inner">
+  <!-- =========================================================
+       NAVIGATION
+  ========================================================= -->
+
+  <header class="navbar" id="navbar">
+
+    <div class="nav-container">
 
       <a href="#home" class="logo">
         ariska<span>.</span>
       </a>
 
-      <button class="menu-toggle" id="menuToggle">
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open menu"
+      >
         ☰
       </button>
 
-      <div class="nav-links" id="navLinks">
-        <a href="#about">About</a>
-        <a href="#direction">Direction</a>
-        <a href="#lookbook">Lookbook</a>
-        <a href="#contact" class="nav-button">Let's Work</a>
-      </div>
+      <nav class="nav-menu" id="navMenu">
+
+        <a href="#about">
+          About
+        </a>
+
+        <a href="#direction">
+          Direction
+        </a>
+
+        <a href="#lookbook">
+          Lookbook
+        </a>
+
+        <a href="#contact" class="nav-cta">
+          Let's Work
+        </a>
+
+      </nav>
 
     </div>
-  </nav>
+
+  </header>
 
 
-  <!-- =========================
+
+  <!-- =========================================================
        HERO
-  ========================= -->
+  ========================================================= -->
 
   <main id="home">
 
     <section class="hero">
 
-      <div class="hero-inner">
+      <div class="hero-container">
 
-        <div class="hero-copy">
+
+        <!-- HERO TEXT -->
+
+        <div class="hero-copy reveal">
 
           <div class="eyebrow">
+
             <span class="eyebrow-dot"></span>
-            Emerging Creator
+
+            Emerging Modest Fashion Creator
+
           </div>
 
-          <h1>
+
+          <h1 class="hero-title">
+
             modest<br>
-            <em>looks,</em><br>
-            made personal.
+
+            <span class="italic">
+              looks,
+            </span>
+
+            <br>
+
+            made<br>
+
+            personal.
+
           </h1>
 
+
           <p class="hero-description">
-            Hi, I'm Ariska. An emerging modest fashion creator
-            exploring style through feminine, effortless and
-            relatable content.
+
+            Hi, I'm Ariska. I'm building my creative journey
+            through modest fashion, feminine styling and
+            relatable visual storytelling.
+
           </p>
 
+
           <div class="hero-buttons">
-            <a href="#lookbook" class="btn btn-primary">
+
+            <a
+              href="#lookbook"
+              class="button button-primary"
+            >
               Explore My Style
             </a>
 
-            <a href="#contact" class="btn btn-secondary">
+            <a
+              href="#contact"
+              class="button button-outline"
+            >
               Work With Me
             </a>
+
           </div>
 
         </div>
 
 
-        <div class="hero-visual">
 
-          <div class="hero-image-main">
-            <!-- GANTI FOTO -->
+        <!-- HERO VISUAL -->
+
+        <div class="hero-visual reveal">
+
+          <div class="hero-main-image">
+
+            <!--
+              GANTI URL INI DENGAN FOTO UTAMA ARISKA
+            -->
+
             <img
-              src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=1000&q=85"
-              alt="Ariska modest fashion"
+              src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=90"
+              alt="Modest fashion editorial"
             />
+
           </div>
 
-          <div class="hero-image-small">
-            <!-- GANTI FOTO -->
+
+          <div class="hero-small-image">
+
+            <!--
+              GANTI URL INI DENGAN FOTO KEDUA ARISKA
+            -->
+
             <img
-              src="https://images.unsplash.com/photo-1581044777550-4cfa60707c03?auto=format&fit=crop&w=700&q=85"
-              alt="Modest fashion detail"
+              src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=700&q=90"
+              alt="Modest fashion styling"
             />
+
           </div>
 
-          <div class="floating-note">
-            <small>Style direction</small>
-            <strong>Modest · Feminine · Modern</strong>
+
+          <div class="style-card">
+
+            <span class="style-card-label">
+              Style direction
+            </span>
+
+            <div class="style-card-title">
+              Modest · Feminine · Modern
+            </div>
+
+            <div class="style-card-line"></div>
+
           </div>
 
         </div>
@@ -1055,21 +1720,23 @@
     </section>
 
 
-    <!-- =========================
-         INTRO
-    ========================= -->
 
-    <section class="intro">
+    <!-- =======================================================
+         STATEMENT
+    ======================================================== -->
 
-      <div class="intro-inner">
+    <section class="statement">
 
-        <div class="section-label">
-          A little introduction
+      <div class="statement-inner reveal">
+
+        <div class="small-label">
+          The philosophy
         </div>
 
         <h2>
-          “Fashion should feel like
-          <em>you.</em>”
+          Fashion is not about
+          <em>changing who you are.</em>
+          It's about expressing it.
         </h2>
 
       </div>
@@ -1077,61 +1744,87 @@
     </section>
 
 
-    <!-- =========================
+
+    <!-- =======================================================
          ABOUT
-    ========================= -->
+    ======================================================== -->
 
-    <section id="about">
+    <section class="section about" id="about">
 
-      <div class="container">
+      <div class="section-container">
 
-        <div class="section-heading">
-          <div class="number">01 — ABOUT</div>
-          <h2>Meet Ariska.</h2>
+        <div class="section-header reveal">
+
+          <div class="section-number">
+            01 / ABOUT
+          </div>
+
+          <h2 class="section-title">
+            Meet Ariska.
+          </h2>
+
         </div>
+
 
         <div class="about-grid">
 
-          <div class="about-photo">
 
-            <!-- GANTI FOTO -->
+          <div class="about-image reveal">
+
+            <!--
+              GANTI DENGAN FOTO ARISKA
+            -->
+
             <img
-              src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=85"
+              src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=900&q=90"
               alt="Ariska"
             />
 
           </div>
 
-          <div class="about-copy">
 
-            <h3>
+          <div class="about-content reveal">
+
+            <h3 class="about-lead">
+
               Building a space where
               modest fashion feels
-              effortless.
+              effortless and personal.
+
             </h3>
 
+
             <p>
+
               Ariska is an emerging modest fashion creator
-              who is currently building her creative journey
-              through fashion, styling and visual storytelling.
+              who is currently building her presence in the
+              fashion and content space.
+
             </p>
+
 
             <p>
-              Her content focuses on modest looks that feel
-              wearable, feminine and relevant to everyday life.
-              From simple styling ideas to curated outfit
-              inspiration, every piece is created with a
-              personal touch.
+
+              Her creative direction centers around modest
+              silhouettes, feminine styling, wearable outfits
+              and visual storytelling that feels natural rather
+              than overly staged.
+
             </p>
+
 
             <p>
-              This portfolio is a growing space for future
-              collaborations, creative projects and brand
-              partnerships.
+
+              As she grows her creator journey, Ariska is
+              looking forward to creating meaningful content
+              with brands that share a similar appreciation for
+              modesty, style and individuality.
+
             </p>
 
-            <div class="about-signature">
-              — Ariska
+
+            <div class="signature">
+              Ariska
             </div>
 
           </div>
@@ -1143,77 +1836,98 @@
     </section>
 
 
-    <!-- =========================
-         DIRECTION
-    ========================= -->
 
-    <section class="direction" id="direction">
+    <!-- =======================================================
+         CREATIVE DIRECTION
+    ======================================================== -->
 
-      <div class="container">
+    <section
+      class="section direction"
+      id="direction"
+    >
 
-        <div class="section-heading">
-          <div class="number">02 — CREATIVE DIRECTION</div>
-          <h2>What I create.</h2>
+      <div class="section-container">
+
+        <div class="section-header reveal">
+
+          <div class="section-number">
+            02 / CREATIVE DIRECTION
+          </div>
+
+          <h2 class="section-title">
+            What I love to create.
+          </h2>
+
         </div>
 
-        <p class="direction-intro">
-          As a new creator, I'm intentionally building a
-          clear visual identity around modest fashion and
-          creating content that feels authentic, aesthetically
-          pleasing and easy to connect with.
+
+        <p class="direction-intro reveal">
+
+          My content direction is built around making modest
+          fashion feel approachable, beautiful and relevant
+          to everyday life.
+
         </p>
+
 
         <div class="direction-grid">
 
-          <div class="direction-card">
+
+          <article class="direction-card reveal">
 
             <div class="direction-icon">
               ✦
             </div>
 
-            <h3>Modest Styling</h3>
+            <h3>
+              Modest Styling
+            </h3>
 
             <p>
-              Outfit inspiration featuring modest silhouettes,
-              layering, colors and styling ideas that are
-              wearable for everyday moments.
+              Styling ideas that explore silhouettes,
+              layering, colors and proportions while keeping
+              modesty at the heart of every look.
             </p>
 
-          </div>
+          </article>
 
 
-          <div class="direction-card">
+          <article class="direction-card reveal">
 
             <div class="direction-icon">
               ♡
             </div>
 
-            <h3>Fashion Content</h3>
+            <h3>
+              Feminine Fashion
+            </h3>
 
             <p>
-              Fashion-focused short-form content, lookbooks,
-              outfit transitions and visual storytelling
-              designed for social media.
+              Soft, feminine and elegant styling with
+              details that make an outfit feel personal
+              without being complicated.
             </p>
 
-          </div>
+          </article>
 
 
-          <div class="direction-card">
+          <article class="direction-card reveal">
 
             <div class="direction-icon">
               ✧
             </div>
 
-            <h3>Brand Storytelling</h3>
+            <h3>
+              Everyday Looks
+            </h3>
 
             <p>
-              Thoughtful product integration that keeps the
-              brand visible while maintaining a natural and
-              personal creator perspective.
+              Wearable outfit inspiration designed for
+              real moments, from casual days to more
+              polished occasions.
             </p>
 
-          </div>
+          </article>
 
         </div>
 
@@ -1222,114 +1936,262 @@
     </section>
 
 
-    <!-- =========================
+
+    <!-- =======================================================
          CONTENT PILLARS
-    ========================= -->
+    ======================================================== -->
 
-    <section>
+    <section class="section">
 
-      <div class="container">
+      <div class="section-container">
 
-        <div class="section-heading">
-          <div class="number">03 — CONTENT PILLARS</div>
-          <h2>My style, my way.</h2>
+        <div class="section-header reveal">
+
+          <div class="section-number">
+            03 / CONTENT PILLARS
+          </div>
+
+          <h2 class="section-title">
+            My style, my way.
+          </h2>
+
         </div>
+
 
         <div class="pillars-grid">
 
-          <div class="pillar">
+
+          <article class="pillar reveal">
 
             <img
-              src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=1000&q=85"
-              alt="Everyday modest style"
+              src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=1000&q=90"
+              alt="Everyday modest fashion"
             />
 
-            <div class="pillar-overlay">
+            <div class="pillar-content">
 
               <div class="pillar-number">
                 01 / EVERYDAY
               </div>
 
-              <h3>Everyday Modest</h3>
+              <div class="pillar-title">
+                Everyday Modest
+              </div>
 
-              <p>
+              <div class="pillar-description">
                 Simple looks for real everyday moments.
-              </p>
+              </div>
 
             </div>
 
-          </div>
+          </article>
 
 
-          <div class="pillar">
+
+          <article class="pillar reveal">
 
             <img
-              src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1000&q=85"
-              alt="Feminine fashion"
+              src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1000&q=90"
+              alt="Feminine modest fashion"
             />
 
-            <div class="pillar-overlay">
+            <div class="pillar-content">
 
               <div class="pillar-number">
                 02 / FEMININE
               </div>
 
-              <h3>Soft & Feminine</h3>
+              <div class="pillar-title">
+                Soft & Feminine
+              </div>
 
-              <p>
-                Romantic details, soft palettes and
-                elegant silhouettes.
-              </p>
+              <div class="pillar-description">
+                Soft palettes, elegant silhouettes and
+                feminine details.
+              </div>
 
             </div>
 
-          </div>
+          </article>
 
 
-          <div class="pillar">
+
+          <article class="pillar reveal">
 
             <img
-              src="https://images.unsplash.com/photo-1506629905607-d9a6a3c5c1e5?auto=format&fit=crop&w=1000&q=85"
-              alt="Modern modest outfit"
+              src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=1000&q=90"
+              alt="Modern modest fashion"
             />
 
-            <div class="pillar-overlay">
+            <div class="pillar-content">
 
               <div class="pillar-number">
                 03 / MODERN
               </div>
 
-              <h3>Modern Modest</h3>
+              <div class="pillar-title">
+                Modern Modest
+              </div>
 
-              <p>
-                Contemporary styling without compromising
-                modesty.
-              </p>
+              <div class="pillar-description">
+                Contemporary fashion while staying true
+                to modest styling.
+              </div>
 
             </div>
 
-          </div>
+          </article>
 
 
-          <div class="pillar">
+
+          <article class="pillar reveal">
 
             <img
-              src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1000&q=85"
+              src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=90"
               alt="Fashion details"
             />
 
-            <div class="pillar-overlay">
+            <div class="pillar-content">
 
               <div class="pillar-number">
                 04 / DETAILS
               </div>
 
-              <h3>Little Details</h3>
+              <div class="pillar-title">
+                The Little Details
+              </div>
 
-              <p>
-                Accessories, textures, colors and styling
-                details that complete the look.
-              </p>
+              <div class="pillar-description">
+                Accessories, textures and finishing touches
+                that complete the look.
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =======================================================
+         SERVICES
+    ======================================================== -->
+
+    <section class="section services">
+
+      <div class="section-container">
+
+        <div class="services-layout">
+
+
+          <div class="services-copy reveal">
+
+            <div class="section-header">
+
+              <div class="section-number">
+                04 / CONTENT
+              </div>
+
+              <h2 class="section-title">
+                What I can create.
+              </h2>
+
+            </div>
+
+            <p>
+
+              From short-form videos to carefully styled
+              visuals, I'm open to exploring different formats
+              that bring a brand's story naturally into my
+              content.
+
+            </p>
+
+          </div>
+
+
+          <div class="services-list reveal">
+
+
+            <div class="service-row">
+
+              <span>
+                Outfit Reels
+              </span>
+
+              <span>
+                Short Form
+              </span>
+
+            </div>
+
+
+            <div class="service-row">
+
+              <span>
+                Styling Videos
+              </span>
+
+              <span>
+                Fashion
+              </span>
+
+            </div>
+
+
+            <div class="service-row">
+
+              <span>
+                Product Showcase
+              </span>
+
+              <span>
+                Brand Content
+              </span>
+
+            </div>
+
+
+            <div class="service-row">
+
+              <span>
+                Lookbook Content
+              </span>
+
+              <span>
+                Visual
+              </span>
+
+            </div>
+
+
+            <div class="service-row">
+
+              <span>
+                UGC Content
+              </span>
+
+              <span>
+                Social Media
+              </span>
+
+            </div>
+
+
+            <div class="service-row">
+
+              <span>
+                Photo Carousel
+              </span>
+
+              <span>
+                Editorial
+              </span>
 
             </div>
 
@@ -1342,75 +2204,88 @@
     </section>
 
 
-    <!-- =========================
+
+    <!-- =======================================================
          LOOKBOOK
-    ========================= -->
+    ======================================================== -->
 
-    <section class="lookbook" id="lookbook">
+    <section
+      class="section lookbook"
+      id="lookbook"
+    >
 
-      <div class="container">
+      <div class="section-container">
 
-        <div class="lookbook-header">
 
-          <div class="section-heading" style="margin-bottom:0">
+        <div class="lookbook-top reveal">
 
-            <div class="number">
-              04 — SAMPLE LOOKBOOK
+          <div class="section-header" style="margin-bottom:0">
+
+            <div class="section-number">
+              05 / VISUAL DIRECTION
             </div>
 
-            <h2>Current mood.</h2>
+            <h2 class="section-title">
+              Current mood.
+            </h2>
 
           </div>
 
-          <p>
-            A glimpse into the visual direction I'm building.
-            This space can grow together with future content
-            and collaborations.
+
+          <p class="lookbook-description">
+
+            A visual glimpse into the aesthetic direction
+            I'm currently building around modest fashion.
+
           </p>
 
         </div>
 
 
+
         <div class="lookbook-grid">
 
-          <div class="look">
+
+          <div class="look reveal">
 
             <img
-              src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&q=85"
-              alt="Look 01"
+              src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&q=90"
+              alt="Neutral modest look"
             />
 
-            <div class="look-tag">
-              Soft neutral
-            </div>
+            <span class="look-label">
+              Soft Neutral
+            </span>
 
           </div>
 
 
-          <div class="look">
+
+          <div class="look reveal">
 
             <img
-              src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=800&q=85"
-              alt="Look 02"
+              src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=800&q=90"
+              alt="Daily fashion look"
             />
 
-            <div class="look-tag">
-              Daily modest
-            </div>
+            <span class="look-label">
+              Daily Edit
+            </span>
 
           </div>
 
 
-          <div class="look">
+
+          <div class="look reveal">
 
             <img
-              src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=800&q=85"
-              alt="Look 03"
+              src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=800&q=90"
+              alt="Feminine fashion look"
             />
 
-            <div class="look-tag">
-              Feminine edit
-            </div>
+            <span class="look-label">
+              Feminine Edit
+            </span>
 
           </div>
 
@@ -1421,59 +2296,74 @@
     </section>
 
 
-    <!-- =========================
+
+    <!-- =======================================================
          COLLABORATION
-    ========================= -->
+    ======================================================== -->
 
-    <section class="collab">
+    <section class="collaboration">
 
-      <div class="collab-inner">
+      <div class="collab-inner reveal">
 
-        <div class="section-label">
-          Open for collaborations
+        <div class="small-label">
+          Open for collaboration
         </div>
 
-        <h2>
+
+        <h2 class="collab-title">
+
           Let's create something
           <em>beautiful.</em>
+
         </h2>
 
-        <p>
-          I'm currently open to working with modest fashion,
-          apparel, hijab, accessories, beauty and lifestyle
-          brands that align with my creative direction.
+
+        <p class="collab-description">
+
+          I'm currently open to collaborating with brands
+          whose products naturally fit into my modest fashion
+          and lifestyle direction.
+
         </p>
 
 
-        <div class="collab-services">
+        <div class="collab-tags">
 
-          <span class="service">
-            Fashion Content
+          <span class="collab-tag">
+            Modest Fashion
           </span>
 
-          <span class="service">
-            Outfit Styling
+          <span class="collab-tag">
+            Syar'i Fashion
           </span>
 
-          <span class="service">
-            Product Feature
+          <span class="collab-tag">
+            Hijab
           </span>
 
-          <span class="service">
-            UGC Content
+          <span class="collab-tag">
+            Apparel
           </span>
 
-          <span class="service">
-            Lookbook
+          <span class="collab-tag">
+            Accessories
           </span>
 
-          <span class="service">
-            Social Media Content
+          <span class="collab-tag">
+            Beauty
+          </span>
+
+          <span class="collab-tag">
+            Lifestyle
           </span>
 
         </div>
 
-        <a href="#contact" class="btn btn-primary">
+
+        <a
+          href="#contact"
+          class="button button-primary"
+        >
           Start a Conversation
         </a>
 
@@ -1482,40 +2372,59 @@
     </section>
 
 
-    <!-- =========================
+
+    <!-- =======================================================
          CONTACT
-    ========================= -->
+    ======================================================== -->
 
-    <section id="contact">
+    <section
+      class="section contact"
+      id="contact"
+    >
 
-      <div class="container">
+      <div class="section-container">
 
         <div class="contact-grid">
 
-          <div class="contact-copy">
 
-            <div class="section-heading">
-              <div class="number">05 — CONTACT</div>
-              <h2>Let's work<br>together.</h2>
+          <div class="contact-copy reveal">
+
+            <div class="section-header">
+
+              <div class="section-number">
+                06 / CONTACT
+              </div>
+
+              <h2 class="section-title">
+                Let's work<br>
+                together.
+              </h2>
+
             </div>
 
+
             <p>
-              Have a campaign, product or creative idea in mind?
-              I'd love to hear about it.
+
+              Have a product, campaign or creative idea
+              in mind? I'd love to hear what you're building.
+
             </p>
 
           </div>
 
 
-          <div class="contact-card">
+
+          <div class="contact-card reveal">
+
 
             <div class="contact-item">
 
-              <small>
+              <span class="contact-label">
                 Instagram
-              </small>
+              </span>
 
               <a
+                class="contact-value"
                 href="https://instagram.com/"
                 target="_blank"
               >
@@ -1525,43 +2434,50 @@
             </div>
 
 
+
             <div class="contact-item">
 
-              <small>
+              <span class="contact-label">
                 Email
-              </small>
+              </span>
 
-              <a href="mailto:creatorhouseid@gmail.com">
+              <a
+                class="contact-value"
+                href="mailto:creatorhouseid@gmail.com"
+              >
                 creatorhouseid@gmail.com
               </a>
 
             </div>
 
 
+
             <div class="contact-item">
 
-              <small>
+              <span class="contact-label">
                 Based in
-              </small>
+              </span>
 
-              <span>
+              <span class="contact-value">
                 Indonesia
               </span>
 
             </div>
 
 
+
             <div class="contact-item">
 
-              <small>
-                Collaboration
-              </small>
+              <span class="contact-label">
+                Available for
+              </span>
 
-              <span>
+              <span class="contact-value">
                 Fashion · Modest · Lifestyle
               </span>
 
             </div>
+
 
           </div>
 
@@ -1574,19 +2490,20 @@
   </main>
 
 
-  <!-- =========================
+
+  <!-- =========================================================
        FOOTER
-  ========================= -->
+  ========================================================= -->
 
-  <footer>
+  <footer class="footer">
 
-    <div class="footer-inner">
+    <div class="footer-container">
 
       <div class="footer-logo">
         ariska.
       </div>
 
-      <div class="footer-text">
+      <div class="footer-copy">
         Emerging modest fashion creator · Indonesia
       </div>
 
@@ -1595,79 +2512,122 @@
   </footer>
 
 
-  <!-- =========================
+
+  <!-- =========================================================
        JAVASCRIPT
-  ========================= -->
+  ========================================================= -->
 
   <script>
 
-    const navbar = document.getElementById("navbar");
+    /* =========================================================
+       NAVBAR SCROLL
+    ========================================================= */
 
-    window.addEventListener("scroll", () => {
+    const navbar =
+      document.getElementById("navbar");
 
-      if (window.scrollY > 30) {
-        navbar.classList.add("scrolled");
-      } else {
-        navbar.classList.remove("scrolled");
+    window.addEventListener(
+      "scroll",
+      function () {
+
+        if (window.scrollY > 30) {
+
+          navbar.classList.add("scrolled");
+
+        } else {
+
+          navbar.classList.remove("scrolled");
+
+        }
+
       }
-
-    });
-
-
-    const menuToggle = document.getElementById("menuToggle");
-    const navLinks = document.getElementById("navLinks");
-
-    menuToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-    });
+    );
 
 
-    document.querySelectorAll(".nav-links a").forEach(link => {
+    /* =========================================================
+       MOBILE MENU
+    ========================================================= */
 
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("active");
-      });
+    const menuToggle =
+      document.getElementById("menuToggle");
 
-    });
+    const navMenu =
+      document.getElementById("navMenu");
 
 
-    // Simple reveal animation
+    menuToggle.addEventListener(
+      "click",
+      function () {
 
-    const observer = new IntersectionObserver(
-      entries => {
+        navMenu.classList.toggle("active");
 
-        entries.forEach(entry => {
-
-          if (entry.isIntersecting) {
-
-            entry.target.style.opacity = "1";
-            entry.target.style.transform = "translateY(0)";
-
-          }
-
-        });
-
-      },
-      {
-        threshold: 0.12
       }
     );
 
 
     document
-      .querySelectorAll(
-        ".direction-card, .pillar, .look, .contact-card"
-      )
-      .forEach(el => {
+      .querySelectorAll(".nav-menu a")
+      .forEach(function (link) {
 
-        el.style.opacity = "0";
-        el.style.transform = "translateY(25px)";
-        el.style.transition =
-          "opacity 0.7s ease, transform 0.7s ease";
+        link.addEventListener(
+          "click",
+          function () {
 
-        observer.observe(el);
+            navMenu.classList.remove("active");
+
+          }
+        );
 
       });
+
+
+    /* =========================================================
+       REVEAL ANIMATION
+    ========================================================= */
+
+    const revealElements =
+      document.querySelectorAll(".reveal");
+
+
+    const observer =
+      new IntersectionObserver(
+        function (entries) {
+
+          entries.forEach(
+            function (entry) {
+
+              if (
+                entry.isIntersecting
+              ) {
+
+                entry.target.classList.add(
+                  "visible"
+                );
+
+                observer.unobserve(
+                  entry.target
+                );
+
+              }
+
+            }
+          );
+
+        },
+        {
+          threshold: 0.12
+        }
+      );
+
+
+    revealElements.forEach(
+      function (element) {
+
+        observer.observe(element);
+
+      }
+    );
+
 
   </script>
 
