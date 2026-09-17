@@ -1,2921 +1,3139 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-  <title>Ariska | Emerging Modest Fashion Creator</title>
+<title>Ariska Devina Azharyani | Modest Fashion Creator</title>
 
-  <meta
+<meta
     name="description"
-    content="Ariska Devina Azharyani, emerging modest fashion creator creating feminine, thoughtful and relatable fashion content."
-  />
+    content="Ariska Devina Azharyani — Modest Fashion Creator based in Jakarta, Indonesia."
+>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap"
+<link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap"
     rel="stylesheet"
-  />
+>
 
-  <style>
+<style>
 
-    /* =========================================================
-       ROOT
-    ========================================================= */
+:root {
+    --cream: #f5f1e8;
+    --cream-light: #fbf9f4;
 
-    :root {
-      --cream: #f8f5ef;
-      --cream-dark: #eee8de;
-      --brown: #5d4b40;
-      --brown-dark: #302621;
-      --brown-soft: #806f63;
-      --blush: #ead1ce;
-      --blush-light: #f3e3e0;
-      --white: #ffffff;
+    --brown: #352c27;
+    --brown-soft: #756a62;
 
-      --border: rgba(48, 38, 33, 0.12);
-      --shadow: 0 24px 70px rgba(48, 38, 33, 0.09);
+    --coral: #c98d83;
+    --coral-soft: #e8c6c0;
 
-      --radius: 28px;
-      --max-width: 1240px;
+    --sage: #89937d;
+    --sage-soft: #dce1d5;
+
+    --yellow: #e7d69e;
+
+    --white: #fffdf8;
+
+    --serif: "DM Serif Display", Georgia, serif;
+    --sans: "DM Sans", Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #d9d4cb;
+    color: var(--brown);
+    font-family: var(--sans);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.site {
+    width: min(1380px, calc(100% - 28px));
+    margin: 14px auto;
+    overflow: hidden;
+    background: var(--cream-light);
+    border-radius: 22px;
+    box-shadow: 0 25px 70px rgba(48, 39, 34, .12);
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+    height: 64px;
+    padding: 0 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(251, 249, 244, .97);
+
+    border-bottom: 1px solid rgba(53, 44, 39, .08);
+
+    position: relative;
+    z-index: 20;
+}
+
+.logo {
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -.7px;
+}
+
+.logo-dot {
+    width: 7px;
+    height: 7px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: var(--coral);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 24px;
+}
+
+.nav-links a {
+    font-size: 9px;
+    font-weight: 500;
+    color: var(--brown-soft);
+    white-space: nowrap;
+}
+
+.nav-links a:hover {
+    color: var(--brown);
+}
+
+.nav-button {
+    padding: 9px 15px;
+
+    border-radius: 999px;
+
+    background: var(--brown);
+
+    color: var(--cream-light) !important;
+
+    font-size: 8px !important;
+
+    text-transform: uppercase;
+
+    letter-spacing: .8px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    height: calc(100svh - 64px);
+    min-height: 590px;
+    max-height: 850px;
+
+    padding: 12px;
+}
+
+.hero-grid {
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+
+    grid-template-columns: 1.15fr .85fr;
+
+    gap: 12px;
+}
+
+
+/* MAIN HERO */
+
+.hero-photo {
+    min-width: 0;
+    min-height: 0;
+
+    height: 100%;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 17px;
+
+    background: var(--sage-soft);
+}
+
+.hero-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+}
+
+.hero-photo::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(25,20,17,.02) 40%,
+            rgba(25,20,17,.48) 100%
+        );
+}
+
+.hero-photo-label {
+    position: absolute;
+
+    z-index: 2;
+
+    left: 18px;
+    bottom: 17px;
+
+    max-width: calc(100% - 36px);
+
+    padding: 8px 12px;
+
+    border-radius: 999px;
+
+    background: rgba(255,253,248,.88);
+
+    backdrop-filter: blur(10px);
+
+    font-size: 7px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.2px;
+}
+
+
+/* HERO RIGHT */
+
+.hero-right {
+    min-width: 0;
+    min-height: 0;
+
+    height: 100%;
+
+    display: grid;
+
+    grid-template-rows: 1.38fr .62fr;
+
+    gap: 12px;
+}
+
+
+/* HERO INTRO */
+
+.hero-intro {
+    min-width: 0;
+    min-height: 0;
+
+    padding: clamp(24px, 3vw, 42px);
+
+    border-radius: 17px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    background: var(--coral-soft);
+}
+
+.hero-intro::after {
+    content: "A";
+
+    position: absolute;
+
+    z-index: 0;
+
+    right: -8px;
+    bottom: -65px;
+
+    font-family: var(--serif);
+
+    font-size: clamp(180px, 20vw, 300px);
+
+    line-height: 1;
+
+    color: rgba(255,255,255,.23);
+
+    pointer-events: none;
+}
+
+.hero-eyebrow {
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 7px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.8px;
+
+    color: var(--brown-soft);
+}
+
+.hero-title {
+    position: relative;
+
+    z-index: 2;
+
+    min-width: 0;
+}
+
+.hero-title h1 {
+    margin: 0;
+
+    font-family: var(--serif);
+
+    font-weight: 400;
+
+    font-size: clamp(60px, 7vw, 105px);
+
+    line-height: .73;
+
+    letter-spacing: -3px;
+
+    overflow-wrap: break-word;
+}
+
+.hero-title h1 em {
+    font-style: italic;
+
+    color: var(--coral);
+}
+
+.hero-title p {
+    max-width: 370px;
+
+    margin: 22px 0 0;
+
+    font-size: 9px;
+
+    line-height: 1.75;
+
+    color: var(--brown-soft);
+}
+
+.hero-meta {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+.hero-meta span {
+    min-width: 0;
+
+    font-size: 7px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.1px;
+
+    color: var(--brown-soft);
+}
+
+
+/* HERO SMALL CARD */
+
+.hero-card {
+    min-width: 0;
+    min-height: 0;
+
+    overflow: hidden;
+
+    display: grid;
+
+    grid-template-columns: 43% 57%;
+
+    border-radius: 17px;
+
+    background: var(--sage-soft);
+}
+
+.hero-card-image {
+    min-width: 0;
+    min-height: 0;
+
+    overflow: hidden;
+}
+
+.hero-card-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.hero-card-content {
+    min-width: 0;
+
+    padding: 18px 22px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.hero-card-number {
+    font-size: 7px;
+
+    color: var(--sage);
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.3px;
+}
+
+.hero-card-content h2 {
+    margin: 8px 0 0;
+
+    font-family: var(--serif);
+
+    font-size: clamp(27px, 3vw, 42px);
+
+    font-weight: 400;
+
+    line-height: .86;
+}
+
+.hero-card-content p {
+    max-width: 210px;
+
+    margin: 10px 0 0;
+
+    font-size: 7.5px;
+
+    line-height: 1.65;
+
+    color: var(--brown-soft);
+}
+
+
+/* =========================================================
+   TICKER
+========================================================= */
+
+.ticker {
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    background: var(--brown);
+
+    white-space: nowrap;
+}
+
+.ticker-track {
+    display: flex;
+
+    align-items: center;
+
+    flex-shrink: 0;
+
+    gap: 28px;
+
+    animation: marquee 25s linear infinite;
+}
+
+.ticker span {
+    font-family: var(--serif);
+
+    font-size: 17px;
+
+    font-style: italic;
+
+    color: var(--cream);
+}
+
+.ticker b {
+    font-size: 7px;
+
+    font-weight: 400;
+
+    color: var(--coral-soft);
+}
+
+@keyframes marquee {
+
+    from {
+        transform: translateX(0);
     }
 
-
-    /* =========================================================
-       RESET
-    ========================================================= */
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    to {
+        transform: translateX(-50%);
     }
 
-    html {
-      scroll-behavior: smooth;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about {
+    padding: 110px 75px;
+
+    display: grid;
+
+    grid-template-columns: .65fr 1.35fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+.about-side {
+    min-width: 0;
+}
+
+.about-side-image {
+    width: 100%;
+
+    height: 380px;
+
+    margin-top: 30px;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+}
+
+.about-side-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.section-label {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    font-size: 7px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.8px;
+
+    color: var(--coral);
+}
+
+.section-label::before {
+    content: "";
+
+    width: 22px;
+
+    height: 1px;
+
+    flex-shrink: 0;
+
+    background: var(--coral);
+}
+
+.about-side p {
+    max-width: 230px;
+
+    margin: 23px 0 0;
+
+    font-size: 8.5px;
+
+    line-height: 1.8;
+
+    color: var(--brown-soft);
+}
+
+.about-main {
+    min-width: 0;
+}
+
+.about-main h2 {
+    margin: 0;
+
+    font-family: var(--serif);
+
+    font-size: clamp(58px, 6.5vw, 92px);
+
+    font-weight: 400;
+
+    line-height: .79;
+
+    letter-spacing: -2px;
+}
+
+.about-main h2 em {
+    font-style: italic;
+
+    color: var(--coral);
+}
+
+.about-main > p {
+    max-width: 650px;
+
+    margin: 30px 0 0;
+
+    font-size: 11px;
+
+    line-height: 1.9;
+
+    color: var(--brown-soft);
+}
+
+
+/* =========================================================
+   STYLE
+========================================================= */
+
+.style-section {
+    padding: 0 14px 105px;
+}
+
+.style-heading {
+    padding: 0 30px 30px;
+
+    display: flex;
+
+    align-items: end;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.style-heading h2 {
+    margin: 13px 0 0;
+
+    font-family: var(--serif);
+
+    font-size: clamp(55px, 6vw, 86px);
+
+    font-weight: 400;
+
+    line-height: .78;
+}
+
+.style-heading h2 em {
+    font-style: italic;
+
+    color: var(--sage);
+}
+
+.style-heading p {
+    max-width: 270px;
+
+    margin: 0;
+
+    font-size: 8px;
+
+    line-height: 1.8;
+
+    text-align: right;
+
+    color: var(--brown-soft);
+}
+
+.style-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 10px;
+}
+
+.style-item {
+    min-width: 0;
+
+    overflow: hidden;
+
+    border-radius: 17px;
+
+    background: var(--cream);
+
+    border: 1px solid rgba(53,44,39,.07);
+
+    transition: transform .35s ease;
+}
+
+.style-item:hover {
+    transform: translateY(-5px);
+}
+
+.style-image {
+    height: 380px;
+
+    overflow: hidden;
+}
+
+.style-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform .7s ease;
+}
+
+.style-item:hover .style-image img {
+    transform: scale(1.04);
+}
+
+.style-info {
+    padding: 17px 18px 20px;
+}
+
+.style-number {
+    font-size: 7px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.2px;
+
+    color: var(--coral);
+}
+
+.style-info h3 {
+    margin: 7px 0 0;
+
+    font-family: var(--serif);
+
+    font-size: 25px;
+
+    font-weight: 400;
+}
+
+.style-info p {
+    margin: 4px 0 0;
+
+    font-size: 7.2px;
+
+    line-height: 1.65;
+
+    color: var(--brown-soft);
+}
+
+
+/* =========================================================
+   FEATURE
+========================================================= */
+
+.feature {
+    margin: 0 14px;
+
+    padding: 12px;
+
+    display: grid;
+
+    grid-template-columns: .85fr 1.15fr;
+
+    gap: 12px;
+
+    border-radius: 21px;
+
+    background: var(--sage-soft);
+}
+
+.feature-copy {
+    min-width: 0;
+
+    padding: 50px 35px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.feature-copy h2 {
+    margin: 18px 0 0;
+
+    font-family: var(--serif);
+
+    font-size: clamp(58px, 6vw, 86px);
+
+    font-weight: 400;
+
+    line-height: .75;
+}
+
+.feature-copy h2 em {
+    font-style: italic;
+
+    color: var(--coral);
+}
+
+.feature-copy p {
+    max-width: 370px;
+
+    margin: 25px 0 0;
+
+    font-size: 9px;
+
+    line-height: 1.85;
+
+    color: var(--brown-soft);
+}
+
+.feature-link {
+    width: fit-content;
+
+    margin-top: 24px;
+
+    padding: 11px 17px;
+
+    border-radius: 999px;
+
+    background: var(--brown);
+
+    color: var(--cream);
+
+    font-size: 7px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+.feature-image {
+    min-width: 0;
+
+    min-height: 560px;
+
+    overflow: hidden;
+
+    border-radius: 14px;
+}
+
+.feature-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   APPROACH
+========================================================= */
+
+.approach {
+    padding: 110px 70px;
+}
+
+.approach-header {
+    margin-bottom: 45px;
+
+    display: flex;
+
+    align-items: end;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.approach-header h2 {
+    margin: 13px 0 0;
+
+    font-family: var(--serif);
+
+    font-size: clamp(55px, 6vw, 84px);
+
+    font-weight: 400;
+
+    line-height: .78;
+}
+
+.approach-header h2 em {
+    color: var(--coral);
+
+    font-style: italic;
+}
+
+.approach-header p {
+    max-width: 250px;
+
+    margin: 0;
+
+    font-size: 8px;
+
+    line-height: 1.8;
+
+    text-align: right;
+
+    color: var(--brown-soft);
+}
+
+.approach-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 10px;
+}
+
+.approach-card {
+    min-width: 0;
+
+    min-height: 205px;
+
+    padding: 22px;
+
+    border-radius: 16px;
+
+    background: var(--cream);
+
+    border: 1px solid #e5ded4;
+}
+
+.approach-card:nth-child(2) {
+    background: var(--coral-soft);
+}
+
+.approach-card:nth-child(3) {
+    background: var(--sage-soft);
+}
+
+.approach-card:nth-child(4) {
+    background: var(--yellow);
+}
+
+.approach-number {
+    font-size: 7px;
+
+    opacity: .55;
+}
+
+.approach-card h3 {
+    margin: 50px 0 0;
+
+    font-family: var(--serif);
+
+    font-size: 28px;
+
+    font-weight: 400;
+
+    line-height: .9;
+}
+
+.approach-card p {
+    margin: 9px 0 0;
+
+    font-size: 7.5px;
+
+    line-height: 1.65;
+
+    color: var(--brown-soft);
+}
+
+
+/* =========================================================
+   LOOKBOOK
+========================================================= */
+
+.journal {
+    padding: 0 14px 110px;
+}
+
+.journal-header {
+    padding: 0 30px 30px;
+
+    display: flex;
+
+    align-items: end;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.journal-header h2 {
+    margin: 13px 0 0;
+
+    font-family: var(--serif);
+
+    font-size: clamp(55px, 6vw, 86px);
+
+    font-weight: 400;
+
+    line-height: .78;
+}
+
+.journal-header h2 em {
+    color: var(--sage);
+
+    font-style: italic;
+}
+
+.journal-header p {
+    max-width: 260px;
+
+    margin: 0;
+
+    font-size: 8px;
+
+    line-height: 1.8;
+
+    text-align: right;
+
+    color: var(--brown-soft);
+}
+
+.journal-grid {
+    height: 560px;
+
+    display: grid;
+
+    grid-template-columns: 1.25fr .75fr .85fr;
+
+    gap: 10px;
+}
+
+.journal-item {
+    min-width: 0;
+
+    min-height: 0;
+
+    overflow: hidden;
+
+    border-radius: 17px;
+}
+
+.journal-item img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform .7s ease;
+}
+
+.journal-item:hover img {
+    transform: scale(1.04);
+}
+
+.journal-item:nth-child(1) {
+    border-radius: 17px 90px 17px 17px;
+}
+
+.journal-item:nth-child(2) {
+    border-radius: 90px 17px 17px 17px;
+}
+
+.journal-item:nth-child(3) {
+    border-radius: 17px 17px 90px 17px;
+}
+
+
+/* =========================================================
+   BEAUTY
+========================================================= */
+
+.beauty {
+    padding: 105px 75px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+.beauty-image {
+    height: 540px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+}
+
+.beauty-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.beauty-copy {
+    min-width: 0;
+}
+
+.beauty-copy h2 {
+    margin: 18px 0 0;
+
+    font-family: var(--serif);
+
+    font-size: clamp(60px, 7vw, 100px);
+
+    font-weight: 400;
+
+    line-height: .72;
+}
+
+.beauty-copy h2 em {
+    color: var(--coral);
+
+    font-style: italic;
+}
+
+.beauty-copy p {
+    max-width: 450px;
+
+    margin: 28px 0 0;
+
+    font-size: 10px;
+
+    line-height: 1.9;
+
+    color: var(--brown-soft);
+}
+
+.tags {
+    margin-top: 24px;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+}
+
+.tags span {
+    padding: 7px 11px;
+
+    border: 1px solid #ddd4c9;
+
+    border-radius: 999px;
+
+    font-size: 7px;
+
+    text-transform: uppercase;
+
+    letter-spacing: .7px;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact {
+    margin: 0 14px 14px;
+
+    padding: 95px 30px;
+
+    overflow: hidden;
+
+    position: relative;
+
+    text-align: center;
+
+    border-radius: 21px;
+
+    background: var(--coral);
+
+    color: var(--cream-light);
+}
+
+.contact::before {
+    content: "";
+
+    position: absolute;
+
+    width: 320px;
+    height: 320px;
+
+    left: -140px;
+    top: -160px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.1);
+}
+
+.contact::after {
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    right: -100px;
+    bottom: -130px;
+
+    border-radius: 50%;
+
+    background: rgba(53,44,39,.08);
+}
+
+.contact-content {
+    position: relative;
+
+    z-index: 2;
+}
+
+.contact-label {
+    font-size: 7px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.8px;
+
+    opacity: .75;
+}
+
+.contact h2 {
+    margin: 22px 0 0;
+
+    font-family: var(--serif);
+
+    font-size: clamp(62px, 7vw, 105px);
+
+    font-weight: 400;
+
+    line-height: .72;
+}
+
+.contact h2 em {
+    color: var(--brown);
+
+    font-style: italic;
+}
+
+.contact p {
+    max-width: 460px;
+
+    margin: 27px auto 0;
+
+    font-size: 9px;
+
+    line-height: 1.8;
+
+    color: rgba(255,253,248,.8);
+}
+
+.contact-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 42px;
+
+    margin-top: 27px;
+
+    padding: 12px 20px;
+
+    border-radius: 999px;
+
+    background: var(--cream-light);
+
+    color: var(--brown);
+
+    font-size: 7px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    transition: .25s ease;
+}
+
+.contact-button:hover {
+    background: var(--brown);
+
+    color: var(--cream-light);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+    min-height: 68px;
+
+    padding: 0 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.footer-name {
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: -.5px;
+}
+
+.footer-center {
+    font-size: 7px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.2px;
+
+    text-align: center;
+
+    color: var(--brown-soft);
+}
+
+.footer-year {
+    font-size: 7px;
+
+    color: var(--brown-soft);
+}
+
+
+/* =========================================================
+   SHORT LAPTOP
+========================================================= */
+
+@media (max-height: 760px) and (min-width: 951px) {
+
+    .site {
+        margin-top: 7px;
+        margin-bottom: 7px;
     }
-
-    body {
-      margin: 0;
-      background: var(--cream);
-      color: var(--brown-dark);
-      font-family: "DM Sans", sans-serif;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    body.lightbox-open {
-      overflow: hidden;
-    }
-
-    img {
-      display: block;
-      width: 100%;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button {
-      font-family: inherit;
-    }
-
-
-    /* =========================================================
-       NAVBAR
-    ========================================================= */
 
     .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 999;
-
-      padding: 22px 5%;
-
-      transition:
-        background 0.3s ease,
-        box-shadow 0.3s ease,
-        padding 0.3s ease;
+        height: 58px;
     }
 
-    .navbar.scrolled {
-      padding: 15px 5%;
-      background: rgba(248, 245, 239, 0.88);
-      backdrop-filter: blur(18px);
-      box-shadow: 0 1px 0 var(--border);
+    .hero {
+        height: calc(100svh - 58px);
+
+        min-height: 535px;
+
+        padding: 9px;
     }
 
-    .nav-container {
-      max-width: var(--max-width);
-      margin: auto;
+    .hero-grid {
+        gap: 9px;
+    }
 
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    .hero-right {
+        gap: 9px;
+    }
+
+    .hero-intro {
+        padding: 25px;
+    }
+
+    .hero-title h1 {
+        font-size: clamp(57px, 6.5vw, 86px);
+    }
+
+    .hero-title p {
+        margin-top: 16px;
+    }
+
+    .hero-card-content {
+        padding: 14px 17px;
+    }
+
+    .hero-card-content h2 {
+        font-size: 27px;
+    }
+
+    .hero-card-content p {
+        margin-top: 7px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) and (min-width: 651px) {
+
+    .site {
+        width: calc(100% - 18px);
+
+        margin: 9px auto;
+
+        border-radius: 18px;
+    }
+
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .nav-links {
+        gap: 14px;
+    }
+
+    .hero {
+        height: auto;
+
+        min-height: 0;
+
+        padding: 10px;
+    }
+
+    .hero-grid {
+        height: 650px;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 10px;
+    }
+
+    .hero-right {
+        gap: 10px;
+    }
+
+    .hero-intro {
+        padding: 25px;
+    }
+
+    .hero-title h1 {
+        font-size: clamp(55px, 8vw, 76px);
+    }
+
+    .hero-title p {
+        font-size: 8px;
+    }
+
+    .hero-card-content {
+        padding: 16px;
+    }
+
+    .hero-card-content h2 {
+        font-size: 27px;
+    }
+
+    .about {
+        padding: 85px 45px;
+
+        gap: 50px;
+    }
+
+    .style-heading,
+    .journal-header {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .style-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .feature {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-image {
+        min-height: 450px;
+    }
+
+    .approach {
+        padding: 85px 45px;
+    }
+
+    .approach-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .journal-grid {
+        height: 500px;
+
+        grid-template-columns: 1.2fr .8fr;
+    }
+
+    .journal-item:nth-child(3) {
+        display: none;
+    }
+
+    .beauty {
+        padding: 85px 45px;
+
+        gap: 45px;
+    }
+
+    .beauty-image {
+        height: 470px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    body {
+        background: var(--cream-light);
+    }
+
+    .site {
+        width: 100%;
+
+        margin: 0;
+
+        border-radius: 0;
+
+        box-shadow: none;
+    }
+
+
+    /* NAV */
+
+    .navbar {
+        height: 58px;
+
+        padding: 0 15px 0 17px;
     }
 
     .logo {
-      font-family: "Playfair Display", serif;
-      font-size: 27px;
-      font-weight: 600;
-      letter-spacing: -1px;
+        font-size: 15px;
     }
 
-    .logo span {
-      color: var(--brown-soft);
+    .nav-links {
+        gap: 7px;
     }
 
-    .nav-menu {
-      display: flex;
-      align-items: center;
-      gap: 34px;
-
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--brown);
-    }
-
-    .nav-menu a {
-      position: relative;
-    }
-
-    .nav-menu a:not(.nav-cta)::after {
-      content: "";
-
-      position: absolute;
-      left: 0;
-      bottom: -7px;
-
-      width: 0;
-      height: 1px;
-
-      background: var(--brown);
-
-      transition: width 0.3s ease;
-    }
-
-    .nav-menu a:not(.nav-cta):hover::after {
-      width: 100%;
-    }
-
-    .nav-cta {
-      padding: 11px 20px;
-
-      border: 1px solid var(--brown);
-      border-radius: 100px;
-
-      transition:
-        background 0.3s ease,
-        color 0.3s ease,
-        transform 0.3s ease;
-    }
-
-    .nav-cta:hover {
-      background: var(--brown-dark);
-      color: var(--white);
-      transform: translateY(-2px);
-    }
-
-    .menu-toggle {
-      display: none;
-
-      width: 42px;
-      height: 42px;
-
-      border: 1px solid var(--border);
-      border-radius: 50%;
-
-      background: transparent;
-      color: var(--brown-dark);
-
-      cursor: pointer;
-      font-size: 18px;
-    }
-
-
-    /* =========================================================
-       HERO
-    ========================================================= */
-
-    .hero {
-      min-height: 100vh;
-
-      padding: 110px 5% 45px;
-
-      display: flex;
-      align-items: center;
-    }
-
-    .hero-container {
-      width: 100%;
-      max-width: var(--max-width);
-      margin: auto;
-
-      display: grid;
-      grid-template-columns: 0.88fr 1.12fr;
-
-      gap: 55px;
-      align-items: center;
-    }
-
-    .hero-copy {
-      position: relative;
-      z-index: 2;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-
-      padding: 8px 14px;
-
-      background: var(--blush-light);
-      border-radius: 100px;
-
-      color: var(--brown);
-
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-
-      margin-bottom: 24px;
-    }
-
-    .eyebrow-dot {
-      width: 7px;
-      height: 7px;
-
-      border-radius: 50%;
-      background: #9b726d;
-    }
-
-    .hero-title {
-      font-family: "Playfair Display", serif;
-
-      font-size: clamp(55px, 5.5vw, 80px);
-
-      line-height: 0.93;
-
-      letter-spacing: -3px;
-
-      font-weight: 500;
-
-      margin-bottom: 27px;
-    }
-
-    .hero-title .italic {
-      font-style: italic;
-      color: var(--brown-soft);
-    }
-
-    .hero-description {
-      max-width: 465px;
-
-      color: var(--brown-soft);
-
-      font-size: 14px;
-      line-height: 1.8;
-
-      margin-bottom: 29px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      align-items: center;
-      gap: 11px;
-
-      flex-wrap: wrap;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-
-      min-height: 46px;
-
-      padding: 0 21px;
-
-      border-radius: 100px;
-
-      font-size: 12px;
-      font-weight: 700;
-
-      transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        background 0.3s ease;
-    }
-
-    .button-primary {
-      background: var(--brown-dark);
-      color: var(--white);
-    }
-
-    .button-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow);
-    }
-
-    .button-outline {
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.3);
-    }
-
-    .button-outline:hover {
-      background: var(--white);
-      transform: translateY(-3px);
-    }
-
-
-    /* =========================================================
-       HERO VISUAL
-    ========================================================= */
-
-    .hero-visual {
-      position: relative;
-      height: 610px;
-      min-width: 0;
-    }
-
-    .hero-main-image {
-      position: absolute;
-
-      top: 0;
-      right: 0;
-
-      width: 69%;
-      height: 555px;
-
-      overflow: hidden;
-
-      border-radius: 170px 170px 28px 28px;
-
-      background: var(--cream-dark);
-
-      box-shadow: var(--shadow);
-    }
-
-    .hero-main-image img {
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      cursor: zoom-in;
-
-      transition: transform 0.5s ease;
-    }
-
-    .hero-main-image:hover img {
-      transform: scale(1.025);
-    }
-
-    .hero-small-image {
-      position: absolute;
-
-      left: 4%;
-      bottom: 0;
-
-      width: 38%;
-      height: 235px;
-
-      overflow: hidden;
-
-      border: 8px solid var(--cream);
-      border-radius: 27px;
-
-      background: var(--cream-dark);
-
-      box-shadow: var(--shadow);
-
-      z-index: 2;
-    }
-
-    .hero-small-image img {
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      cursor: zoom-in;
-
-      transition: transform 0.5s ease;
-    }
-
-    .hero-small-image:hover img {
-      transform: scale(1.035);
-    }
-
-
-    /* =========================================================
-       FLOATING CARD
-    ========================================================= */
-
-    .style-card {
-      position: absolute;
-
-      right: 0;
-      bottom: 7px;
-
-      width: 190px;
-
-      padding: 17px 19px;
-
-      background: var(--white);
-
-      border-radius: 19px;
-
-      box-shadow: var(--shadow);
-
-      z-index: 3;
-    }
-
-    .style-card-label {
-      display: block;
-
-      margin-bottom: 5px;
-
-      font-size: 8px;
-      font-weight: 700;
-
-      letter-spacing: 1.4px;
-      text-transform: uppercase;
-
-      color: var(--brown-soft);
-    }
-
-    .style-card-title {
-      font-family: "Playfair Display", serif;
-
-      font-size: 17px;
-      line-height: 1.2;
-
-      font-weight: 600;
-    }
-
-    .style-card-line {
-      width: 30px;
-      height: 1px;
-
-      margin-top: 11px;
-
-      background: var(--blush);
-    }
-
-
-    /* =========================================================
-       STATEMENT
-    ========================================================= */
-
-    .statement {
-      padding: 100px 5%;
-
-      background: var(--brown-dark);
-      color: var(--cream);
-    }
-
-    .statement-inner {
-      max-width: 950px;
-      margin: auto;
-
-      text-align: center;
-    }
-
-    .small-label {
-      margin-bottom: 24px;
-
-      font-size: 9px;
-      font-weight: 700;
-
-      letter-spacing: 2.2px;
-      text-transform: uppercase;
-
-      opacity: 0.55;
-    }
-
-    .statement h2 {
-      font-family: "Playfair Display", serif;
-
-      font-size: clamp(38px, 5vw, 63px);
-
-      line-height: 1.1;
-
-      font-weight: 500;
-    }
-
-    .statement h2 em {
-      color: var(--blush);
-    }
-
-
-    /* =========================================================
-       GENERAL SECTION
-    ========================================================= */
-
-    .section {
-      padding: 110px 5%;
-    }
-
-    .section-container {
-      max-width: var(--max-width);
-      margin: auto;
-    }
-
-    .section-header {
-      margin-bottom: 50px;
-    }
-
-    .section-number {
-      margin-bottom: 13px;
-
-      color: var(--brown-soft);
-
-      font-size: 9px;
-      font-weight: 700;
-
-      letter-spacing: 2px;
-    }
-
-    .section-title {
-      font-family: "Playfair Display", serif;
-
-      font-size: clamp(42px, 5vw, 62px);
-
-      line-height: 1;
-
-      font-weight: 600;
-
-      letter-spacing: -1px;
-    }
-
-
-    /* =========================================================
-       ABOUT
-    ========================================================= */
-
-    .about {
-      background: var(--cream);
-    }
-
-    .about-grid {
-      display: grid;
-
-      grid-template-columns: 0.82fr 1.18fr;
-
-      gap: 85px;
-
-      align-items: center;
-    }
-
-    .about-image {
-      height: 535px;
-
-      overflow: hidden;
-
-      border-radius: 30px;
-
-      background: var(--cream-dark);
-
-      cursor: zoom-in;
-    }
-
-    .about-image img {
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-
-      transition: transform 0.5s ease;
-    }
-
-    .about-image:hover img {
-      transform: scale(1.025);
-    }
-
-    .about-content {
-      max-width: 610px;
-    }
-
-    .about-lead {
-      font-family: "Playfair Display", serif;
-
-      font-size: 29px;
-      line-height: 1.3;
-
-      margin-bottom: 25px;
-    }
-
-    .about-content p {
-      color: var(--brown-soft);
-
-      font-size: 14px;
-      line-height: 1.85;
-
-      margin-bottom: 18px;
-    }
-
-    .signature {
-      margin-top: 28px;
-
-      font-family: "Playfair Display", serif;
-
-      font-size: 25px;
-      font-style: italic;
-    }
-
-
-    /* =========================================================
-       CREATIVE DIRECTION
-    ========================================================= */
-
-    .direction {
-      background: var(--cream-dark);
-    }
-
-    .direction-intro {
-      max-width: 650px;
-
-      color: var(--brown-soft);
-
-      font-size: 14px;
-      line-height: 1.8;
-
-      margin-bottom: 42px;
-    }
-
-    .direction-grid {
-      display: grid;
-
-      grid-template-columns: repeat(3, 1fr);
-
-      gap: 17px;
-    }
-
-    .direction-card {
-      min-height: 255px;
-
-      padding: 30px;
-
-      border: 1px solid var(--border);
-
-      border-radius: var(--radius);
-
-      background: rgba(255,255,255,0.42);
-
-      transition:
-        transform 0.35s ease,
-        background 0.35s ease,
-        box-shadow 0.35s ease;
-    }
-
-    .direction-card:hover {
-      transform: translateY(-7px);
-
-      background: var(--white);
-
-      box-shadow: var(--shadow);
-    }
-
-    .direction-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      width: 43px;
-      height: 43px;
-
-      margin-bottom: 25px;
-
-      border-radius: 50%;
-
-      background: var(--blush-light);
-
-      font-size: 17px;
-    }
-
-    .direction-card h3 {
-      margin-bottom: 10px;
-
-      font-family: "Playfair Display", serif;
-
-      font-size: 25px;
-      line-height: 1.2;
-    }
-
-    .direction-card p {
-      color: var(--brown-soft);
-
-      font-size: 13px;
-      line-height: 1.75;
-    }
-
-
-    /* =========================================================
-       CONTENT PILLARS
-    ========================================================= */
-
-    .pillars-grid {
-      display: grid;
-
-      grid-template-columns: repeat(2, 1fr);
-
-      gap: 18px;
-    }
-
-    .pillar {
-      position: relative;
-
-      height: 390px;
-
-      overflow: hidden;
-
-      border-radius: 29px;
-
-      background: var(--brown);
-
-      cursor: zoom-in;
-    }
-
-    .pillar img {
-      height: 100%;
-
-      object-fit: cover;
-      object-position: center;
-
-      transition: transform 0.7s ease;
-    }
-
-    .pillar:hover img {
-      transform: scale(1.045);
-    }
-
-    .pillar::after {
-      content: "";
-
-      position: absolute;
-
-      inset: 0;
-
-      background:
-        linear-gradient(
-          to top,
-          rgba(35,27,23,0.78),
-          rgba(35,27,23,0.05) 65%
-        );
-
-      pointer-events: none;
-    }
-
-    .pillar-content {
-      position: absolute;
-
-      left: 28px;
-      right: 28px;
-      bottom: 26px;
-
-      z-index: 2;
-
-      color: var(--white);
-
-      pointer-events: none;
-    }
-
-    .pillar-number {
-      margin-bottom: 7px;
-
-      font-size: 9px;
-      font-weight: 700;
-
-      letter-spacing: 2px;
-
-      opacity: 0.7;
-    }
-
-    .pillar-title {
-      margin-bottom: 5px;
-
-      font-family: "Playfair Display", serif;
-
-      font-size: 30px;
-      line-height: 1.1;
-    }
-
-    .pillar-description {
-      font-size: 12px;
-      opacity: 0.83;
-    }
-
-
-    /* =========================================================
-       SERVICES
-    ========================================================= */
-
-    .services {
-      background: var(--cream-dark);
-    }
-
-    .services-layout {
-      display: grid;
-
-      grid-template-columns: 0.8fr 1.2fr;
-
-      gap: 80px;
-
-      align-items: start;
-    }
-
-    .services-copy p {
-      max-width: 430px;
-
-      color: var(--brown-soft);
-
-      font-size: 14px;
-      line-height: 1.8;
-    }
-
-    .services-list {
-      border-top: 1px solid var(--border);
-    }
-
-    .service-row {
-      display: flex;
-
-      align-items: center;
-      justify-content: space-between;
-
-      gap: 20px;
-
-      padding: 20px 0;
-
-      border-bottom: 1px solid var(--border);
-    }
-
-    .service-row span:first-child {
-      font-family: "Playfair Display", serif;
-
-      font-size: 22px;
-    }
-
-    .service-row span:last-child {
-      color: var(--brown-soft);
-
-      font-size: 11px;
-
-      text-transform: uppercase;
-
-      letter-spacing: 1px;
-    }
-
-
-    /* =========================================================
-       LOOKBOOK
-    ========================================================= */
-
-    .lookbook {
-      background: var(--cream);
-    }
-
-    .lookbook-top {
-      display: flex;
-
-      align-items: end;
-      justify-content: space-between;
-
-      gap: 35px;
-
-      margin-bottom: 45px;
-    }
-
-    .lookbook-description {
-      max-width: 410px;
-
-      color: var(--brown-soft);
-
-      font-size: 13px;
-      line-height: 1.8;
-    }
-
-    .lookbook-grid {
-      display: grid;
-
-      grid-template-columns: repeat(3, 1fr);
-
-      gap: 15px;
-    }
-
-    .look {
-      position: relative;
-
-      height: 490px;
-
-      overflow: hidden;
-
-      border-radius: 25px;
-
-      background: var(--cream-dark);
-
-      cursor: zoom-in;
-    }
-
-    .look:nth-child(2) {
-      margin-top: 45px;
-    }
-
-    .look:nth-child(3) {
-      margin-top: 90px;
-    }
-
-    .look img {
-      height: 100%;
-
-      object-fit: cover;
-      object-position: center;
-
-      transition: transform 0.6s ease;
-    }
-
-    .look:hover img {
-      transform: scale(1.045);
-    }
-
-    .look-label {
-      position: absolute;
-
-      top: 17px;
-      left: 17px;
-
-      padding: 7px 11px;
-
-      border-radius: 100px;
-
-      background: rgba(255,255,255,0.9);
-
-      font-size: 8px;
-      font-weight: 700;
-
-      letter-spacing: 1.2px;
-
-      text-transform: uppercase;
-
-      pointer-events: none;
-    }
-
-
-    /* =========================================================
-       COLLABORATION
-    ========================================================= */
-
-    .collaboration {
-      padding: 115px 5%;
-
-      background: var(--blush-light);
-
-      text-align: center;
-    }
-
-    .collab-inner {
-      max-width: 850px;
-      margin: auto;
-    }
-
-    .collab-title {
-      font-family: "Playfair Display", serif;
-
-      font-size: clamp(43px, 5.5vw, 72px);
-
-      line-height: 1.02;
-
-      font-weight: 500;
-
-      margin-bottom: 23px;
-    }
-
-    .collab-title em {
-      color: var(--brown-soft);
-    }
-
-    .collab-description {
-      max-width: 600px;
-
-      margin: 0 auto 30px;
-
-      color: var(--brown-soft);
-
-      font-size: 14px;
-      line-height: 1.8;
-    }
-
-    .collab-tags {
-      display: flex;
-
-      justify-content: center;
-
-      flex-wrap: wrap;
-
-      gap: 8px;
-
-      margin-bottom: 35px;
-    }
-
-    .collab-tag {
-      padding: 9px 14px;
-
-      border: 1px solid rgba(93,75,64,0.16);
-
-      border-radius: 100px;
-
-      background: rgba(255,255,255,0.38);
-
-      font-size: 10px;
-      font-weight: 600;
-    }
-
-
-    /* =========================================================
-       CONTACT
-    ========================================================= */
-
-    .contact {
-      background: var(--cream);
-    }
-
-    .contact-grid {
-      display: grid;
-
-      grid-template-columns: 0.85fr 1.15fr;
-
-      gap: 85px;
-
-      align-items: start;
-    }
-
-    .contact-copy p {
-      max-width: 430px;
-
-      color: var(--brown-soft);
-
-      font-size: 14px;
-      line-height: 1.8;
-    }
-
-    .contact-card {
-      padding: 35px 38px;
-
-      background: var(--white);
-
-      border-radius: 29px;
-
-      box-shadow: var(--shadow);
-    }
-
-    .contact-item {
-      padding: 19px 0;
-
-      border-bottom: 1px solid var(--border);
-    }
-
-    .contact-item:first-child {
-      padding-top: 0;
-    }
-
-    .contact-item:last-child {
-      padding-bottom: 0;
-      border-bottom: none;
-    }
-
-    .contact-label {
-      display: block;
-
-      margin-bottom: 5px;
-
-      color: var(--brown-soft);
-
-      font-size: 8px;
-      font-weight: 700;
-
-      letter-spacing: 1.5px;
-
-      text-transform: uppercase;
-    }
-
-    .contact-value {
-      font-family: "Playfair Display", serif;
-
-      font-size: 20px;
-    }
-
-    .contact-value:hover {
-      color: var(--brown-soft);
-    }
-
-
-    /* =========================================================
-       FOOTER
-    ========================================================= */
-
-    .footer {
-      padding: 35px 5%;
-
-      background: var(--brown-dark);
-
-      color: var(--cream);
-    }
-
-    .footer-container {
-      max-width: var(--max-width);
-      margin: auto;
-
-      display: flex;
-
-      align-items: center;
-      justify-content: space-between;
-
-      gap: 20px;
-    }
-
-    .footer-logo {
-      font-family: "Playfair Display", serif;
-
-      font-size: 24px;
-    }
-
-    .footer-copy {
-      font-size: 10px;
-
-      opacity: 0.5;
-
-      text-align: right;
-    }
-
-
-    /* =========================================================
-       REVEAL ANIMATION
-    ========================================================= */
-
-    .reveal {
-      opacity: 0;
-
-      transform: translateY(25px);
-
-      transition:
-        opacity 0.75s ease,
-        transform 0.75s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-
-    /* =========================================================
-       IMAGE LIGHTBOX
-    ========================================================= */
-
-    .image-lightbox {
-      position: fixed;
-
-      inset: 0;
-
-      z-index: 10000;
-
-      display: flex;
-
-      align-items: center;
-      justify-content: center;
-
-      padding: 30px;
-
-      background: rgba(25,20,17,0.90);
-
-      backdrop-filter: blur(14px);
-
-      opacity: 0;
-      visibility: hidden;
-
-      pointer-events: none;
-
-      transition:
-        opacity 0.3s ease,
-        visibility 0.3s ease;
-    }
-
-    .image-lightbox.active {
-      opacity: 1;
-      visibility: visible;
-      pointer-events: auto;
-    }
-
-    .lightbox-content {
-      position: relative;
-
-      width: auto;
-      max-width: 92vw;
-      max-height: 92vh;
-
-      display: flex;
-
-      align-items: center;
-      justify-content: center;
-
-      transform: scale(0.94);
-
-      transition:
-        transform 0.35s ease;
-    }
-
-    .image-lightbox.active .lightbox-content {
-      transform: scale(1);
-    }
-
-    .lightbox-image {
-      display: block;
-
-      width: auto;
-      height: auto;
-
-      max-width: 92vw;
-      max-height: 88vh;
-
-      object-fit: contain;
-
-      border-radius: 14px;
-
-      box-shadow:
-        0 30px 100px rgba(0,0,0,0.4);
-    }
-
-    .lightbox-close {
-      position: absolute;
-
-      top: -18px;
-      right: -18px;
-
-      width: 46px;
-      height: 46px;
-
-      display: flex;
-
-      align-items: center;
-      justify-content: center;
-
-      border: 1px solid rgba(255,255,255,0.35);
-
-      border-radius: 50%;
-
-      background: rgba(255,255,255,0.96);
-
-      color: var(--brown-dark);
-
-      font-size: 27px;
-      font-weight: 400;
-
-      line-height: 1;
-
-      cursor: pointer;
-
-      box-shadow:
-        0 10px 30px rgba(0,0,0,0.2);
-
-      transition:
-        transform 0.25s ease,
-        background 0.25s ease;
-    }
-
-    .lightbox-close:hover {
-      transform: rotate(90deg) scale(1.05);
-      background: var(--white);
-    }
-
-
-    /* =========================================================
-       TABLET
-    ========================================================= */
-
-    @media (max-width: 950px) {
-
-      .hero {
-        padding-top: 105px;
-      }
-
-      .hero-container {
-        grid-template-columns: 1fr;
-        gap: 45px;
-      }
-
-      .hero-copy {
-        max-width: 650px;
-      }
-
-      .hero-visual {
-        height: 540px;
-      }
-
-      .about-grid,
-      .services-layout,
-      .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 45px;
-      }
-
-      .about-image {
-        max-width: 600px;
-      }
-
-      .direction-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-    }
-
-
-    /* =========================================================
-       MOBILE
-    ========================================================= */
-
-    @media (max-width: 650px) {
-
-      .navbar {
-        padding: 15px 5%;
-      }
-
-      .navbar.scrolled {
-        padding: 12px 5%;
-      }
-
-      .nav-menu {
+    .nav-links a:not(.nav-button) {
         display: none;
+    }
 
-        position: absolute;
-
-        top: 70px;
-        left: 5%;
-        right: 5%;
-
-        padding: 24px;
-
-        flex-direction: column;
-        align-items: flex-start;
-
-        gap: 20px;
-
-        border-radius: 22px;
-
-        background: rgba(255,255,255,0.96);
-
-        backdrop-filter: blur(20px);
-
-        box-shadow: var(--shadow);
-      }
-
-      .nav-menu.active {
-        display: flex;
-      }
-
-      .nav-cta {
-        padding: 0;
-
-        border: none;
-
-        background: transparent;
-      }
-
-      .menu-toggle {
+    .nav-button {
         display: flex;
 
         align-items: center;
+
         justify-content: center;
-      }
 
+        min-height: 34px;
 
-      /* HERO */
+        padding: 8px 13px;
 
-      .hero {
-        min-height: auto;
-
-        padding:
-          105px
-          5%
-          60px;
-      }
-
-      .hero-container {
-        gap: 42px;
-      }
-
-      .eyebrow {
-        margin-bottom: 20px;
-      }
-
-      .hero-title {
-        font-size: 55px;
-
-        letter-spacing: -2px;
-
-        line-height: 0.94;
-
-        margin-bottom: 23px;
-      }
-
-      .hero-description {
-        font-size: 13px;
-
-        line-height: 1.75;
-
-        margin-bottom: 25px;
-      }
-
-      .hero-visual {
-        height: 450px;
-      }
-
-      .hero-main-image {
-        width: 76%;
-        height: 410px;
-
-        border-radius:
-          115px
-          115px
-          22px
-          22px;
-      }
-
-      .hero-small-image {
-        width: 43%;
-        height: 180px;
-
-        left: 2%;
-
-        border-width: 6px;
-
-        border-radius: 20px;
-      }
-
-      .style-card {
-        right: 0;
-        bottom: 1px;
-
-        width: 145px;
-
-        padding: 13px 14px;
-
-        border-radius: 16px;
-      }
-
-      .style-card-title {
-        font-size: 14px;
-      }
-
-      .style-card-line {
-        margin-top: 8px;
-      }
-
-
-      /* GENERAL */
-
-      .section {
-        padding: 80px 5%;
-      }
-
-      .section-header {
-        margin-bottom: 35px;
-      }
-
-      .section-title {
-        font-size: 44px;
-      }
-
-
-      /* STATEMENT */
-
-      .statement {
-        padding: 75px 5%;
-      }
-
-      .statement h2 {
-        font-size: 38px;
-      }
-
-
-      /* ABOUT */
-
-      .about-grid {
-        gap: 38px;
-      }
-
-      .about-image {
-        height: 420px;
-      }
-
-      .about-lead {
-        font-size: 27px;
-      }
-
-      .about-content p {
-        font-size: 13px;
-      }
-
-
-      /* DIRECTION */
-
-      .direction-grid {
-        grid-template-columns: 1fr;
-        gap: 12px;
-      }
-
-      .direction-card {
-        min-height: auto;
-        padding: 26px;
-      }
-
-
-      /* PILLARS */
-
-      .pillars-grid {
-        grid-template-columns: 1fr;
-        gap: 14px;
-      }
-
-      .pillar {
-        height: 340px;
-      }
-
-      .pillar-title {
-        font-size: 28px;
-      }
-
-
-      /* SERVICES */
-
-      .services-layout {
-        gap: 38px;
-      }
-
-      .service-row {
-        padding: 17px 0;
-      }
-
-      .service-row span:first-child {
-        font-size: 19px;
-      }
-
-      .service-row span:last-child {
-        font-size: 9px;
-      }
-
-
-      /* LOOKBOOK */
-
-      .lookbook-top {
-        display: block;
-        margin-bottom: 32px;
-      }
-
-      .lookbook-description {
-        margin-top: 18px;
-      }
-
-      .lookbook-grid {
-        grid-template-columns: 1fr;
-        gap: 13px;
-      }
-
-      .look,
-      .look:nth-child(2),
-      .look:nth-child(3) {
-        height: 460px;
-        margin-top: 0;
-      }
-
-
-      /* COLLAB */
-
-      .collaboration {
-        padding: 80px 5%;
-      }
-
-      .collab-title {
-        font-size: 45px;
-      }
-
-      .collab-description {
-        font-size: 13px;
-      }
-
-
-      /* CONTACT */
-
-      .contact-grid {
-        gap: 35px;
-      }
-
-      .contact-card {
-        padding: 28px;
-      }
-
-      .contact-value {
-        font-size: 18px;
-      }
-
-
-      /* FOOTER */
-
-      .footer-container {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .footer-copy {
-        text-align: left;
-      }
-
-
-      /* LIGHTBOX MOBILE */
-
-      .image-lightbox {
-        padding: 18px;
-      }
-
-      .lightbox-content {
-        max-width: 94vw;
-        max-height: 90vh;
-      }
-
-      .lightbox-image {
-        max-width: 94vw;
-        max-height: 82vh;
-
-        border-radius: 10px;
-      }
-
-      .lightbox-close {
-        top: -14px;
-        right: -8px;
-
-        width: 40px;
-        height: 40px;
-
-        font-size: 22px;
-      }
-
+        font-size: 7px !important;
     }
 
-  </style>
+
+    /* HERO */
+
+    .hero {
+        height: auto;
+
+        min-height: 0;
+
+        max-height: none;
+
+        padding: 8px;
+    }
+
+    .hero-grid {
+        height: auto;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+    .hero-photo {
+        width: 100%;
+
+        height: min(118vw, 540px);
+
+        min-height: 420px;
+
+        max-height: 540px;
+
+        flex: none;
+
+        border-radius: 15px;
+    }
+
+    .hero-photo img {
+        object-position: center 25%;
+    }
+
+    .hero-photo-label {
+        left: 14px;
+
+        bottom: 14px;
+    }
+
+    .hero-right {
+        width: 100%;
+
+        height: auto;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+    .hero-intro {
+        width: 100%;
+
+        min-height: 0;
+
+        height: auto;
+
+        padding: 30px 22px;
+
+        border-radius: 15px;
+
+        gap: 45px;
+    }
+
+    .hero-intro::after {
+        right: -12px;
+
+        bottom: -50px;
+
+        font-size: 190px;
+    }
+
+    .hero-eyebrow {
+        font-size: 6.5px;
+
+        letter-spacing: 1.5px;
+    }
+
+    .hero-title h1 {
+        font-size: clamp(55px, 17vw, 76px);
+
+        line-height: .75;
+
+        letter-spacing: -2px;
+    }
+
+    .hero-title p {
+        max-width: 310px;
+
+        margin-top: 20px;
+
+        font-size: 9px;
+
+        line-height: 1.75;
+    }
+
+    .hero-meta {
+        gap: 10px;
+    }
+
+    .hero-meta span {
+        font-size: 6.5px;
+
+        letter-spacing: .8px;
+    }
+
+    .hero-card {
+        width: 100%;
+
+        min-height: 235px;
+
+        height: 235px;
+
+        grid-template-columns: 42% 58%;
+
+        border-radius: 15px;
+    }
+
+    .hero-card-content {
+        padding: 20px 17px;
+    }
+
+    .hero-card-number {
+        font-size: 6px;
+    }
+
+    .hero-card-content h2 {
+        font-size: clamp(27px, 8vw, 34px);
+
+        line-height: .86;
+    }
+
+    .hero-card-content p {
+        max-width: 180px;
+
+        margin-top: 10px;
+
+        font-size: 7px;
+
+        line-height: 1.65;
+    }
+
+
+    /* TICKER */
+
+    .ticker {
+        height: 42px;
+    }
+
+    .ticker-track {
+        gap: 21px;
+    }
+
+    .ticker span {
+        font-size: 15px;
+    }
+
+
+    /* ABOUT */
+
+    .about {
+        padding: 78px 22px;
+
+        display: block;
+    }
+
+    .about-side p {
+        max-width: 290px;
+
+        margin: 20px 0 0;
+
+        font-size: 8px;
+    }
+
+    .about-side-image {
+        height: 330px;
+
+        margin-top: 25px;
+
+        border-radius: 15px;
+    }
+
+    .about-main {
+        margin-top: 40px;
+    }
+
+    .about-main h2 {
+        font-size: clamp(52px, 16vw, 67px);
+
+        line-height: .8;
+
+        letter-spacing: -1.5px;
+    }
+
+    .about-main > p {
+        margin-top: 27px;
+
+        font-size: 9px;
+
+        line-height: 1.85;
+    }
+
+
+    /* STYLE */
+
+    .style-section {
+        padding: 0 8px 78px;
+    }
+
+    .style-heading {
+        padding: 0 14px 25px;
+
+        display: block;
+    }
+
+    .style-heading h2 {
+        font-size: clamp(52px, 16vw, 67px);
+
+        line-height: .8;
+    }
+
+    .style-heading p {
+        max-width: 310px;
+
+        margin-top: 20px;
+
+        font-size: 8px;
+
+        line-height: 1.8;
+
+        text-align: left;
+    }
+
+    .style-grid {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 9px;
+    }
+
+    .style-item {
+        width: 100%;
+
+        border-radius: 15px;
+    }
+
+    .style-image {
+        width: 100%;
+
+        height: min(110vw, 430px);
+    }
+
+    .style-info {
+        padding: 17px 18px 20px;
+    }
+
+    .style-info h3 {
+        font-size: 27px;
+    }
+
+
+    /* FEATURE */
+
+    .feature {
+        margin: 0 8px;
+
+        padding: 8px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 8px;
+
+        border-radius: 18px;
+    }
+
+    .feature-copy {
+        padding: 45px 20px 38px;
+    }
+
+    .feature-copy h2 {
+        font-size: clamp(54px, 16vw, 68px);
+
+        line-height: .77;
+    }
+
+    .feature-copy p {
+        max-width: 310px;
+
+        margin-top: 22px;
+
+        font-size: 8.5px;
+
+        line-height: 1.8;
+    }
+
+    .feature-link {
+        min-height: 38px;
+
+        margin-top: 21px;
+
+        padding: 10px 15px;
+
+        font-size: 6.5px;
+    }
+
+    .feature-image {
+        width: 100%;
+
+        height: min(115vw, 450px);
+
+        min-height: 360px;
+
+        border-radius: 13px;
+    }
+
+
+    /* APPROACH */
+
+    .approach {
+        padding: 80px 22px;
+    }
+
+    .approach-header {
+        margin-bottom: 35px;
+
+        display: block;
+    }
+
+    .approach-header h2 {
+        font-size: clamp(52px, 16vw, 67px);
+
+        line-height: .8;
+    }
+
+    .approach-header p {
+        max-width: 300px;
+
+        margin-top: 20px;
+
+        font-size: 8px;
+
+        line-height: 1.8;
+
+        text-align: left;
+    }
+
+    .approach-grid {
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 8px;
+    }
+
+    .approach-card {
+        width: 100%;
+
+        min-height: 180px;
+
+        padding: 21px;
+
+        border-radius: 15px;
+    }
+
+    .approach-card h3 {
+        margin-top: 37px;
+
+        font-size: 27px;
+    }
+
+
+    /* LOOKBOOK */
+
+    .journal {
+        padding: 0 8px 80px;
+    }
+
+    .journal-header {
+        padding: 0 14px 25px;
+
+        display: block;
+    }
+
+    .journal-header h2 {
+        font-size: clamp(52px, 16vw, 67px);
+
+        line-height: .8;
+    }
+
+    .journal-header p {
+        max-width: 300px;
+
+        margin-top: 20px;
+
+        font-size: 8px;
+
+        line-height: 1.8;
+
+        text-align: left;
+    }
+
+    .journal-grid {
+        width: 100%;
+
+        height: auto;
+
+        min-height: 0;
+
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        grid-template-rows: 310px 220px;
+
+        gap: 8px;
+    }
+
+    .journal-item {
+        width: 100%;
+
+        min-height: 0;
+
+        border-radius: 14px !important;
+    }
+
+    .journal-item:nth-child(1) {
+        grid-row: 1 / 3;
+    }
+
+    .journal-item:nth-child(2) {
+        grid-row: 1;
+    }
+
+    .journal-item:nth-child(3) {
+        grid-row: 2;
+    }
+
+
+    /* BEAUTY */
+
+    .beauty {
+        padding: 78px 22px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 45px;
+    }
+
+    .beauty-image {
+        width: 100%;
+
+        height: min(115vw, 440px);
+
+        min-height: 340px;
+
+        border-radius: 17px;
+
+        order: 1;
+    }
+
+    .beauty-copy {
+        width: 100%;
+
+        order: 2;
+    }
+
+    .beauty-copy h2 {
+        font-size: clamp(57px, 17vw, 72px);
+
+        line-height: .75;
+    }
+
+    .beauty-copy p {
+        max-width: 310px;
+
+        margin-top: 25px;
+
+        font-size: 9px;
+
+        line-height: 1.85;
+    }
+
+
+    /* CONTACT */
+
+    .contact {
+        margin: 0 8px 8px;
+
+        padding: 78px 18px;
+
+        border-radius: 18px;
+    }
+
+    .contact h2 {
+        font-size: clamp(57px, 17vw, 72px);
+
+        line-height: .75;
+
+        letter-spacing: -1px;
+    }
+
+    .contact p {
+        max-width: 300px;
+
+        margin-top: 25px;
+
+        font-size: 8.5px;
+
+        line-height: 1.8;
+    }
+
+
+    /* FOOTER */
+
+    .footer {
+        min-height: 90px;
+
+        padding: 22px 17px;
+
+        display: grid;
+
+        grid-template-columns: 1fr auto;
+
+        grid-template-rows: auto auto;
+
+        gap: 8px 15px;
+    }
+
+    .footer-name {
+        font-size: 13px;
+    }
+
+    .footer-year {
+        text-align: right;
+    }
+
+    .footer-center {
+        grid-column: 1 / -1;
+
+        text-align: left;
+
+        font-size: 6.5px;
+
+        line-height: 1.5;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONE
+========================================================= */
+
+@media (max-width: 390px) {
+
+    .hero-photo {
+        height: 122vw;
+
+        min-height: 390px;
+    }
+
+    .hero-intro {
+        padding: 27px 20px;
+
+        gap: 40px;
+    }
+
+    .hero-title h1 {
+        font-size: 57px;
+    }
+
+    .hero-card {
+        height: 220px;
+
+        min-height: 220px;
+    }
+
+    .hero-card-content {
+        padding: 17px 14px;
+    }
+
+    .hero-card-content h2 {
+        font-size: 26px;
+    }
+
+    .about {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .about-main h2,
+    .style-heading h2,
+    .approach-header h2,
+    .journal-header h2 {
+        font-size: 53px;
+    }
+
+    .feature-copy h2 {
+        font-size: 55px;
+    }
+
+    .beauty-copy h2 {
+        font-size: 58px;
+    }
+
+    .contact h2 {
+        font-size: 58px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONE
+========================================================= */
+
+@media (max-width: 340px) {
+
+    .navbar {
+        padding-left: 13px;
+        padding-right: 13px;
+    }
+
+    .nav-button {
+        padding-left: 11px;
+        padding-right: 11px;
+    }
+
+    .hero {
+        padding: 6px;
+    }
+
+    .hero-photo {
+        min-height: 350px;
+    }
+
+    .hero-title h1 {
+        font-size: 51px;
+    }
+
+    .hero-title p {
+        font-size: 8px;
+    }
+
+    .hero-card {
+        grid-template-columns: 40% 60%;
+
+        height: 205px;
+
+        min-height: 205px;
+    }
+
+    .hero-card-content h2 {
+        font-size: 23px;
+    }
+
+    .hero-card-content p {
+        font-size: 6.5px;
+    }
+
+    .about-main h2,
+    .style-heading h2,
+    .approach-header h2,
+    .journal-header h2 {
+        font-size: 48px;
+    }
+
+    .feature-copy h2 {
+        font-size: 50px;
+    }
+
+    .beauty-copy h2 {
+        font-size: 53px;
+    }
+
+    .contact h2 {
+        font-size: 53px;
+    }
+
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .ticker-track {
+        animation: none;
+    }
+
+}
+
+</style>
 </head>
 
 
 <body>
 
+<div class="site">
 
-  <!-- =========================================================
-       NAVIGATION
-  ========================================================= -->
 
-  <header class="navbar" id="navbar">
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
 
-    <div class="nav-container">
+<header class="navbar">
 
-      <a href="#home" class="logo">
-        ariska<span>.</span>
-      </a>
+    <a href="#home" class="logo">
 
-      <button
-        class="menu-toggle"
-        id="menuToggle"
-        aria-label="Open menu"
-      >
-        ☰
-      </button>
+        <span class="logo-dot"></span>
 
-      <nav class="nav-menu" id="navMenu">
+        Ariska
+
+    </a>
+
+
+    <nav class="nav-links">
 
         <a href="#about">
-          About
+            About
         </a>
 
-        <a href="#direction">
-          Direction
+        <a href="#style">
+            Style
         </a>
 
-        <a href="#lookbook">
-          Lookbook
+        <a href="#campaigns">
+            Work
         </a>
 
-        <a href="#contact" class="nav-cta">
-          Let's Work
+        <a href="#beauty">
+            Beauty
         </a>
 
-      </nav>
+        <a
+            href="#contact"
+            class="nav-button"
+        >
+            Let's Work
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="home">
+
+    <div class="hero-grid">
+
+
+        <!-- HERO UTAMA = 3.jpg -->
+
+        <div class="hero-photo">
+
+            <img
+                src="3.jpg"
+                alt="Ariska Devina Azharyani"
+            >
+
+            <div class="hero-photo-label">
+                Jakarta · Indonesia
+            </div>
+
+        </div>
+
+
+
+        <div class="hero-right">
+
+
+            <!-- INTRO -->
+
+            <div class="hero-intro">
+
+                <div class="hero-eyebrow">
+                    Modest Fashion Creator · 2026
+                </div>
+
+
+                <div class="hero-title">
+
+                    <h1>
+                        Dressed<br>
+                        with <em>intention.</em>
+                    </h1>
+
+
+                    <p>
+                        Creating modern modest fashion
+                        stories through thoughtful styling,
+                        refined visuals and a personal
+                        point of view.
+                    </p>
+
+                </div>
+
+
+                <div class="hero-meta">
+
+                    <span>
+                        Ariska Devina Azharyani
+                    </span>
+
+                    <span>
+                        Jakarta / ID
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- HERO KECIL = 1.jpg -->
+
+            <div class="hero-card">
+
+                <div class="hero-card-image">
+
+                    <img
+                        src="1.jpg"
+                        alt="Ariska fashion styling"
+                    >
+
+                </div>
+
+
+                <div class="hero-card-content">
+
+                    <div class="hero-card-number">
+                        01 / Signature Style
+                    </div>
+
+                    <h2>
+                        Modest,<br>
+                        made personal.
+                    </h2>
+
+                    <p>
+                        Elegant silhouettes,
+                        thoughtful layers and
+                        everyday looks with character.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
 
     </div>
 
-  </header>
+</section>
 
 
 
-  <!-- =========================================================
-       HERO
-  ========================================================= -->
+<!-- =====================================================
+     TICKER
+===================================================== -->
 
-  <main id="home">
+<div class="ticker">
 
-    <section class="hero">
+    <div class="ticker-track">
 
-      <div class="hero-container">
+        <span>modest fashion</span>
+        <b>✦</b>
+
+        <span>personal style</span>
+        <b>✦</b>
+
+        <span>editorial</span>
+        <b>✦</b>
+
+        <span>beauty</span>
+        <b>✦</b>
+
+        <span>lifestyle</span>
+        <b>✦</b>
+
+        <span>creative campaigns</span>
+        <b>✦</b>
+
+        <span>modest fashion</span>
+        <b>✦</b>
+
+        <span>personal style</span>
+        <b>✦</b>
+
+        <span>editorial</span>
+        <b>✦</b>
+
+        <span>beauty</span>
+        <b>✦</b>
+
+        <span>lifestyle</span>
+        <b>✦</b>
+
+        <span>creative campaigns</span>
+        <b>✦</b>
+
+    </div>
+
+</div>
 
 
-        <div class="hero-copy reveal">
 
-          <div class="eyebrow">
+<!-- =====================================================
+     ABOUT
+===================================================== -->
 
-            <span class="eyebrow-dot"></span>
-
-            Emerging Modest Fashion Creator
-
-          </div>
+<section class="about" id="about">
 
 
-          <h1 class="hero-title">
+    <div class="about-side">
 
-            modest<br>
-
-            <span class="italic">
-              looks,
-            </span>
-
-            <br>
-
-            made<br>
-
-            personal.
-
-          </h1>
-
-
-          <p class="hero-description">
-
-            Hi, I'm Ariska. I'm building my creative journey
-            through modest fashion, feminine styling and
-            relatable visual storytelling.
-
-          </p>
-
-
-          <div class="hero-buttons">
-
-            <a
-              href="#lookbook"
-              class="button button-primary"
-            >
-              Explore My Style
-            </a>
-
-            <a
-              href="#contact"
-              class="button button-outline"
-            >
-              Work With Me
-            </a>
-
-          </div>
-
+        <div class="section-label">
+            About Ariska
         </div>
 
+        <p>
+            A Jakarta-based modest fashion
+            creator exploring personal style
+            through a modern visual lens.
+        </p>
 
 
-        <!-- HERO VISUAL -->
+        <!-- ABOUT = 8.jpg -->
 
-        <div class="hero-visual reveal">
-
-          <div class="hero-main-image">
+        <div class="about-side-image">
 
             <img
-              src="3.jpg"
-              alt="Ariska modest fashion"
-            />
-
-          </div>
-
-
-          <div class="hero-small-image">
-
-            <img
-              src="1.jpg"
-              alt="Ariska modest fashion styling"
-            />
-
-          </div>
-
-
-          <div class="style-card">
-
-            <span class="style-card-label">
-              Style direction
-            </span>
-
-            <div class="style-card-title">
-              Modest · Feminine · Modern
-            </div>
-
-            <div class="style-card-line"></div>
-
-          </div>
+                src="8.jpg"
+                alt="Ariska Devina Azharyani"
+            >
 
         </div>
 
-      </div>
-
-    </section>
+    </div>
 
 
-
-    <!-- =======================================================
-         STATEMENT
-    ======================================================== -->
-
-    <section class="statement">
-
-      <div class="statement-inner reveal">
-
-        <div class="small-label">
-          The philosophy
-        </div>
+    <div class="about-main">
 
         <h2>
-          Fashion is not about
-          <em>changing who you are.</em>
-          It's about expressing it.
+            Fashion should<br>
+            feel like <em>you.</em>
         </h2>
 
-      </div>
 
-    </section>
+        <p>
+            Ariska Devina Azharyani creates
+            fashion content rooted in modesty,
+            individuality and everyday elegance.
 
-
-
-    <!-- =======================================================
-         ABOUT
-    ======================================================== -->
-
-    <section class="section about" id="about">
-
-      <div class="section-container">
-
-        <div class="section-header reveal">
-
-          <div class="section-number">
-            01 / ABOUT
-          </div>
-
-          <h2 class="section-title">
-            Meet Ariska.
-          </h2>
-
-        </div>
-
-
-        <div class="about-grid">
-
-
-          <div class="about-image reveal">
-
-            <img
-              src="8.jpg"
-              alt="Ariska"
-            />
-
-          </div>
-
-
-          <div class="about-content reveal">
-
-            <h3 class="about-lead">
-
-              Building a space where
-              modest fashion feels
-              effortless and personal.
-
-            </h3>
-
-
-            <p>
-
-              Ariska is an emerging modest fashion creator
-              who is currently building her presence in the
-              fashion and content space.
-
-            </p>
-
-
-            <p>
-
-              Her creative direction centers around modest
-              silhouettes, feminine styling, wearable outfits
-              and visual storytelling that feels natural rather
-              than overly staged.
-
-            </p>
-
-
-            <p>
-
-              As she grows her creator journey, Ariska is
-              looking forward to creating meaningful content
-              with brands that share a similar appreciation for
-              modesty, style and individuality.
-
-            </p>
-
-
-            <div class="signature">
-              Ariska
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =======================================================
-         CREATIVE DIRECTION
-    ======================================================== -->
-
-    <section
-      class="section direction"
-      id="direction"
-    >
-
-      <div class="section-container">
-
-        <div class="section-header reveal">
-
-          <div class="section-number">
-            02 / CREATIVE DIRECTION
-          </div>
-
-          <h2 class="section-title">
-            What I love to create.
-          </h2>
-
-        </div>
-
-
-        <p class="direction-intro reveal">
-
-          My content direction is built around making modest
-          fashion feel approachable, beautiful and relevant
-          to everyday life.
-
+            Her visual style combines refined
+            silhouettes, thoughtful details and
+            approachable storytelling to create
+            content that feels current without
+            losing its personal character.
         </p>
 
+    </div>
 
-        <div class="direction-grid">
+</section>
 
 
-          <article class="direction-card reveal">
 
-            <div class="direction-icon">
-              ✢
+<!-- =====================================================
+     STYLE
+===================================================== -->
+
+<section class="style-section" id="style">
+
+    <div class="style-heading">
+
+        <div>
+
+            <div class="section-label">
+                Style Direction
             </div>
 
-            <h3>
-              Modest Styling
-            </h3>
-
-            <p>
-              Styling ideas that explore silhouettes,
-              layering, colors and proportions while keeping
-              modesty at the heart of every look.
-            </p>
-
-          </article>
-
-
-          <article class="direction-card reveal">
-
-            <div class="direction-icon">
-              ✢
-            </div>
-
-            <h3>
-              Feminine Fashion
-            </h3>
-
-            <p>
-              Soft, feminine and elegant styling with
-              details that make an outfit feel personal
-              without being complicated.
-            </p>
-
-          </article>
-
-
-          <article class="direction-card reveal">
-
-            <div class="direction-icon">
-              ✢
-            </div>
-
-            <h3>
-              Everyday Looks
-            </h3>
-
-            <p>
-              Wearable outfit inspiration designed for
-              real moments, from casual days to more
-              polished occasions.
-            </p>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =======================================================
-         CONTENT PILLARS
-    ======================================================== -->
-
-    <section class="section">
-
-      <div class="section-container">
-
-        <div class="section-header reveal">
-
-          <div class="section-number">
-            03 / CONTENT PILLARS
-          </div>
-
-          <h2 class="section-title">
-            My style, my way.
-          </h2>
-
-        </div>
-
-
-        <div class="pillars-grid">
-
-
-          <article class="pillar reveal">
-
-            <img
-              src="9.jpg"
-              alt="Everyday modest fashion"
-            />
-
-            <div class="pillar-content">
-
-              <div class="pillar-number">
-                01 / EVERYDAY
-              </div>
-
-              <div class="pillar-title">
-                Everyday Modest
-              </div>
-
-              <div class="pillar-description">
-                Simple looks for real everyday moments.
-              </div>
-
-            </div>
-
-          </article>
-
-
-
-          <article class="pillar reveal">
-
-            <img
-              src="14.jpg"
-              alt="Feminine modest fashion"
-            />
-
-            <div class="pillar-content">
-
-              <div class="pillar-number">
-                02 / FEMININE
-              </div>
-
-              <div class="pillar-title">
-                Soft & Feminine
-              </div>
-
-              <div class="pillar-description">
-                Soft palettes, elegant silhouettes and
-                feminine details.
-              </div>
-
-            </div>
-
-          </article>
-
-
-
-          <article class="pillar reveal">
-
-            <img
-              src="12.jpg"
-              alt="Modern modest fashion"
-            />
-
-            <div class="pillar-content">
-
-              <div class="pillar-number">
-                03 / MODERN
-              </div>
-
-              <div class="pillar-title">
-                Modern Modest
-              </div>
-
-              <div class="pillar-description">
-                Contemporary fashion while staying true
-                to modest styling.
-              </div>
-
-            </div>
-
-          </article>
-
-
-
-          <article class="pillar reveal">
-
-            <img
-              src="15.jpg"
-              alt="Fashion details"
-            />
-
-            <div class="pillar-content">
-
-              <div class="pillar-number">
-                04 / DETAILS
-              </div>
-
-              <div class="pillar-title">
-                The Little Details
-              </div>
-
-              <div class="pillar-description">
-                Accessories, textures and finishing touches
-                that complete the look.
-              </div>
-
-            </div>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =======================================================
-         SERVICES
-    ======================================================== -->
-
-    <section class="section services">
-
-      <div class="section-container">
-
-        <div class="services-layout">
-
-
-          <div class="services-copy reveal">
-
-            <div class="section-header">
-
-              <div class="section-number">
-                04 / CONTENT
-              </div>
-
-              <h2 class="section-title">
-                What I can create.
-              </h2>
-
-            </div>
-
-            <p>
-
-              From short-form videos to carefully styled
-              visuals, I'm open to exploring different formats
-              that bring a brand's story naturally into my
-              content.
-
-            </p>
-
-          </div>
-
-
-          <div class="services-list reveal">
-
-
-            <div class="service-row">
-
-              <span>
-                Outfit Reels
-              </span>
-
-              <span>
-                Short Form
-              </span>
-
-            </div>
-
-
-            <div class="service-row">
-
-              <span>
-                Styling Videos
-              </span>
-
-              <span>
-                Fashion
-              </span>
-
-            </div>
-
-
-            <div class="service-row">
-
-              <span>
-                Product Showcase
-              </span>
-
-              <span>
-                Brand Content
-              </span>
-
-            </div>
-
-
-            <div class="service-row">
-
-              <span>
-                Lookbook Content
-              </span>
-
-              <span>
-                Visual
-              </span>
-
-            </div>
-
-
-            <div class="service-row">
-
-              <span>
-                UGC Content
-              </span>
-
-              <span>
-                Social Media
-              </span>
-
-            </div>
-
-
-            <div class="service-row">
-
-              <span>
-                Photo Carousel
-              </span>
-
-              <span>
-                Editorial
-              </span>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =======================================================
-         LOOKBOOK
-    ======================================================== -->
-
-    <section
-      class="section lookbook"
-      id="lookbook"
-    >
-
-      <div class="section-container">
-
-
-        <div class="lookbook-top reveal">
-
-          <div
-            class="section-header"
-            style="margin-bottom:0"
-          >
-
-            <div class="section-number">
-              05 / VISUAL DIRECTION
-            </div>
-
-            <h2 class="section-title">
-              Current mood.
+            <h2>
+                Her style,<br>
+                <em>her way.</em>
             </h2>
 
-          </div>
-
-
-          <p class="lookbook-description">
-
-            A visual glimpse into the aesthetic direction
-            I'm currently building around modest fashion.
-
-          </p>
-
         </div>
 
 
+        <p>
+            Modest fashion with room
+            for personality, colour,
+            texture and experimentation.
+        </p>
 
-        <div class="lookbook-grid">
-
-
-          <div class="look reveal">
-
-            <img
-              src="2.jpg"
-              alt="Neutral modest look"
-            />
-
-            <span class="look-label">
-              Soft Neutral
-            </span>
-
-          </div>
+    </div>
 
 
 
-          <div class="look reveal">
-
-            <img
-              src="7.jpg"
-              alt="Daily fashion look"
-            />
-
-            <span class="look-label">
-              Daily Edit
-            </span>
-
-          </div>
+    <div class="style-grid">
 
 
+        <!-- EVERYDAY MODEST = 9.jpg -->
 
-          <div class="look reveal">
+        <article class="style-item">
 
-            <img
-              src="10.jpg"
-              alt="Feminine fashion look"
-            />
+            <div class="style-image">
 
-            <span class="look-label">
-              Feminine Edit
-            </span>
+                <img
+                    src="9.jpg"
+                    alt="Everyday Modest"
+                >
 
-          </div>
+            </div>
 
+            <div class="style-info">
+
+                <div class="style-number">
+                    01 / Everyday
+                </div>
+
+                <h3>
+                    Everyday Modest
+                </h3>
+
+                <p>
+                    Simple silhouettes with
+                    polished finishing touches.
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- SOFT & FEMININE = 14.jpg -->
+
+        <article class="style-item">
+
+            <div class="style-image">
+
+                <img
+                    src="14.jpg"
+                    alt="Soft and Feminine style"
+                >
+
+            </div>
+
+            <div class="style-info">
+
+                <div class="style-number">
+                    02 / Feminine
+                </div>
+
+                <h3>
+                    Soft & Feminine
+                </h3>
+
+                <p>
+                    Gentle textures, colours and
+                    details that complete the look.
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- MODERN MODEST = 12.jpg -->
+
+        <article class="style-item">
+
+            <div class="style-image">
+
+                <img
+                    src="12.jpg"
+                    alt="Modern Modest style"
+                >
+
+            </div>
+
+            <div class="style-info">
+
+                <div class="style-number">
+                    03 / Editorial
+                </div>
+
+                <h3>
+                    Modern Modest
+                </h3>
+
+                <p>
+                    Contemporary styling with
+                    a covered, refined silhouette.
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- LITTLE DETAILS = 15.jpg -->
+
+        <article class="style-item">
+
+            <div class="style-image">
+
+                <img
+                    src="15.jpg"
+                    alt="Little Details"
+                >
+
+            </div>
+
+            <div class="style-info">
+
+                <div class="style-number">
+                    04 / Details
+                </div>
+
+                <h3>
+                    Little Details
+                </h3>
+
+                <p>
+                    Small styling details that
+                    make an outfit feel complete.
+                </p>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CAMPAIGNS
+===================================================== -->
+
+<section class="feature" id="campaigns">
+
+    <div class="feature-copy">
+
+        <div class="section-label">
+            Campaigns & Collaborations
         </div>
 
-      </div>
 
-    </section>
-
-
-
-    <!-- =======================================================
-         COLLABORATION
-    ======================================================== -->
-
-    <section class="collaboration">
-
-      <div class="collab-inner reveal">
-
-        <div class="small-label">
-          Open for collaboration
-        </div>
-
-
-        <h2 class="collab-title">
-
-          Let's create something
-          <em>beautiful.</em>
-
+        <h2>
+            Made to<br>
+            <em>connect.</em>
         </h2>
 
 
-        <p class="collab-description">
+        <p>
+            Fashion content that puts the
+            product naturally into the story.
 
-          I'm currently open to collaborating with brands
-          whose products naturally fit into my modest fashion
-          and lifestyle direction.
-
+            From styling-focused reels and
+            campaign visuals to editorial concepts,
+            every collaboration is approached
+            with intention and attention to detail.
         </p>
-
-
-        <div class="collab-tags">
-
-          <span class="collab-tag">
-            Modest Fashion
-          </span>
-
-          <span class="collab-tag">
-            Syar'i Fashion
-          </span>
-
-          <span class="collab-tag">
-            Hijab
-          </span>
-
-          <span class="collab-tag">
-            Apparel
-          </span>
-
-          <span class="collab-tag">
-            Accessories
-          </span>
-
-          <span class="collab-tag">
-            Beauty
-          </span>
-
-          <span class="collab-tag">
-            Lifestyle
-          </span>
-
-        </div>
 
 
         <a
-          href="#contact"
-          class="button button-primary"
+            href="#contact"
+            class="feature-link"
         >
-          Start a Conversation
+            Start a collaboration →
         </a>
 
-      </div>
-
-    </section>
+    </div>
 
 
+    <div class="feature-image">
 
-    <!-- =======================================================
-         CONTACT
-    ======================================================== -->
+        <img
+            src="12.jpg"
+            alt="Fashion campaign"
+        >
 
-    <section
-      class="section contact"
-      id="contact"
-    >
+    </div>
 
-      <div class="section-container">
-
-        <div class="contact-grid">
+</section>
 
 
-          <div class="contact-copy reveal">
 
-            <div class="section-header">
+<!-- =====================================================
+     APPROACH
+===================================================== -->
 
-              <div class="section-number">
-                06 / CONTACT
-              </div>
+<section class="approach">
 
-              <h2 class="section-title">
-                Let's work<br>
-                together.
-              </h2>
+    <div class="approach-header">
 
+        <div>
+
+            <div class="section-label">
+                Creative Approach
             </div>
 
-
-            <p>
-
-              Have a product, campaign or creative idea
-              in mind? I'd love to hear what you're building.
-
-            </p>
-
-          </div>
-
-
-
-          <div class="contact-card reveal">
-
-
-            <div class="contact-item">
-
-              <span class="contact-label">
-                Instagram
-              </span>
-
-              <a
-                class="contact-value"
-                href="https://instagram.com/ariskazhar"
-                target="_blank"
-                rel="noopener"
-              >
-                @ariskazhar
-              </a>
-
-            </div>
-
-
-
-            <div class="contact-item">
-
-              <span class="contact-label">
-                Email
-              </span>
-
-              <a
-                class="contact-value"
-                href="mailto:creatorhouseid@gmail.com"
-              >
-                creatorhouseid@gmail.com
-              </a>
-
-            </div>
-
-
-
-            <div class="contact-item">
-
-              <span class="contact-label">
-                Based in
-              </span>
-
-              <span class="contact-value">
-                Indonesia
-              </span>
-
-            </div>
-
-
-
-            <div class="contact-item">
-
-              <span class="contact-label">
-                Available for
-              </span>
-
-              <span class="contact-value">
-                Fashion · Modest · Lifestyle
-              </span>
-
-            </div>
-
-
-          </div>
+            <h2>
+                What makes<br>
+                a <em>good</em> look?
+            </h2>
 
         </div>
 
-      </div>
 
-    </section>
-
-  </main>
-
-
-
-  <!-- =========================================================
-       FOOTER
-  ========================================================= -->
-
-  <footer class="footer">
-
-    <div class="footer-container">
-
-      <div class="footer-logo">
-        ariska.
-      </div>
-
-      <div class="footer-copy">
-        Emerging modest fashion creator · Indonesia
-      </div>
+        <p>
+            A creative approach built around
+            modesty, authenticity, warmth
+            and strong visual storytelling.
+        </p>
 
     </div>
 
-  </footer>
+
+
+    <div class="approach-grid">
+
+
+        <article class="approach-card">
+
+            <div class="approach-number">
+                01
+            </div>
+
+            <h3>
+                Modest<br>
+                first.
+            </h3>
+
+            <p>
+                Covered silhouettes without
+                compromising visual appeal.
+            </p>
+
+        </article>
 
 
 
-  <!-- =========================================================
-       IMAGE LIGHTBOX
-  ========================================================= -->
+        <article class="approach-card">
 
-  <div
-    class="image-lightbox"
-    id="imageLightbox"
-    aria-hidden="true"
-  >
+            <div class="approach-number">
+                02
+            </div>
 
-    <div class="lightbox-content">
+            <h3>
+                Personal<br>
+                styling.
+            </h3>
 
-      <button
-        class="lightbox-close"
-        id="lightboxClose"
-        aria-label="Close image"
-      >
-        ×
-      </button>
+            <p>
+                Making every outfit feel
+                natural and individual.
+            </p>
 
-      <img
-        class="lightbox-image"
-        id="lightboxImage"
-        src=""
-        alt=""
-      />
+        </article>
+
+
+
+        <article class="approach-card">
+
+            <div class="approach-number">
+                03
+            </div>
+
+            <h3>
+                Visual<br>
+                storytelling.
+            </h3>
+
+            <p>
+                Turning products into
+                stories people can remember.
+            </p>
+
+        </article>
+
+
+
+        <article class="approach-card">
+
+            <div class="approach-number">
+                04
+            </div>
+
+            <h3>
+                Always<br>
+                authentic.
+            </h3>
+
+            <p>
+                Content that feels genuine,
+                warm and approachable.
+            </p>
+
+        </article>
+
 
     </div>
 
-  </div>
+</section>
 
 
 
-  <!-- =========================================================
-       JAVASCRIPT
-  ========================================================= -->
+<!-- =====================================================
+     LOOKBOOK
+===================================================== -->
 
-  <script>
+<section class="journal">
 
-    /* =========================================================
-       NAVBAR SCROLL
-    ========================================================= */
+    <div class="journal-header">
 
-    const navbar =
-      document.getElementById("navbar");
+        <div>
 
-    window.addEventListener(
-      "scroll",
-      function () {
+            <div class="section-label">
+                Visual Diary
+            </div>
 
-        if (window.scrollY > 30) {
+            <h2>
+                A little<br>
+                <em>fashion diary.</em>
+            </h2>
 
-          navbar.classList.add("scrolled");
+        </div>
 
-        } else {
 
-          navbar.classList.remove("scrolled");
+        <p>
+            Looks, textures, colours and
+            everyday moments from Ariska's
+            creative world.
+        </p>
 
-        }
+    </div>
 
-      }
-    );
 
 
-    /* =========================================================
-       MOBILE MENU
-    ========================================================= */
+    <div class="journal-grid">
 
-    const menuToggle =
-      document.getElementById("menuToggle");
 
-    const navMenu =
-      document.getElementById("navMenu");
+        <!-- LOOKBOOK 1 = 2.jpg -->
 
+        <div class="journal-item">
 
-    menuToggle.addEventListener(
-      "click",
-      function () {
+            <img
+                src="2.jpg"
+                alt="Ariska Lookbook 1"
+            >
 
-        navMenu.classList.toggle("active");
+        </div>
 
-      }
-    );
 
+        <!-- LOOKBOOK 2 = 7.jpg -->
 
-    document
-      .querySelectorAll(".nav-menu a")
-      .forEach(function (link) {
+        <div class="journal-item">
 
-        link.addEventListener(
-          "click",
-          function () {
+            <img
+                src="7.jpg"
+                alt="Ariska Lookbook 2"
+            >
 
-            navMenu.classList.remove("active");
+        </div>
 
-          }
-        );
 
-      });
+        <!-- LOOKBOOK 3 = 10.jpg -->
 
+        <div class="journal-item">
 
-    /* =========================================================
-       REVEAL ANIMATION
-    ========================================================= */
+            <img
+                src="10.jpg"
+                alt="Ariska Lookbook 3"
+            >
 
-    const revealElements =
-      document.querySelectorAll(".reveal");
+        </div>
 
 
-    const observer =
-      new IntersectionObserver(
-        function (entries) {
+    </div>
 
-          entries.forEach(
-            function (entry) {
+</section>
 
-              if (
-                entry.isIntersecting
-              ) {
 
-                entry.target.classList.add(
-                  "visible"
-                );
 
-                observer.unobserve(
-                  entry.target
-                );
+<!-- =====================================================
+     BEAUTY
+===================================================== -->
 
-              }
+<section class="beauty" id="beauty">
 
-            }
-          );
+    <div class="beauty-image">
 
-        },
-        {
-          threshold: 0.12
-        }
-      );
+        <img
+            src="15.jpg"
+            alt="Beauty content"
+        >
 
+    </div>
 
-    revealElements.forEach(
-      function (element) {
 
-        observer.observe(element);
+    <div class="beauty-copy">
 
-      }
-    );
+        <div class="section-label">
+            Beauty
+        </div>
 
 
-    /* =========================================================
-       IMAGE LIGHTBOX / ZOOM
-    ========================================================= */
+        <h2>
+            Beyond<br>
+            <em>fashion.</em>
+        </h2>
 
-    const imageLightbox =
-      document.getElementById(
-        "imageLightbox"
-      );
 
-    const lightboxImage =
-      document.getElementById(
-        "lightboxImage"
-      );
+        <p>
+            Beauty naturally becomes part of
+            Ariska's creative world.
 
-    const lightboxClose =
-      document.getElementById(
-        "lightboxClose"
-      );
+            From skincare and soft makeup to
+            the small finishing details that
+            complete an outfit, beauty content
+            extends the same warm and refined
+            visual identity.
+        </p>
 
 
-    const zoomableImages =
-      document.querySelectorAll(
-        ".hero-main-image img, " +
-        ".hero-small-image img, " +
-        ".about-image img, " +
-        ".pillar img, " +
-        ".look img"
-      );
+        <div class="tags">
 
+            <span>Skincare</span>
 
-    /* OPEN IMAGE */
+            <span>Makeup</span>
 
-    zoomableImages.forEach(
-      function (image) {
+            <span>Beauty</span>
 
-        image.addEventListener(
-          "click",
-          function () {
+            <span>Self-care</span>
 
-            lightboxImage.src =
-              image.src;
+        </div>
 
-            lightboxImage.alt =
-              image.alt;
+    </div>
 
-            imageLightbox.classList.add(
-              "active"
-            );
+</section>
 
-            imageLightbox.setAttribute(
-              "aria-hidden",
-              "false"
-            );
 
-            document.body.classList.add(
-              "lightbox-open"
-            );
 
-          }
-        );
+<!-- =====================================================
+     CONTACT
+===================================================== -->
 
-      }
-    );
+<section class="contact" id="contact">
 
+    <div class="contact-content">
 
-    /* CLOSE FUNCTION */
+        <div class="contact-label">
+            Collaborations · Campaigns · Partnerships
+        </div>
 
-    function closeLightbox() {
 
-      imageLightbox.classList.remove(
-        "active"
-      );
+        <h2>
+            Let's create<br>
+            <em>something good.</em>
+        </h2>
 
-      imageLightbox.setAttribute(
-        "aria-hidden",
-        "true"
-      );
 
-      document.body.classList.remove(
-        "lightbox-open"
-      );
+        <p>
+            Open for modest fashion,
+            fashion, beauty, lifestyle,
+            editorial, campaign and
+            creative collaborations.
+        </p>
 
-      setTimeout(
-        function () {
 
-          lightboxImage.src = "";
+        <a
+            href="mailto:creatorhouseid@gmail.com"
+            class="contact-button"
+        >
+            Work with Ariska →
+        </a>
 
-        },
-        300
-      );
+    </div>
 
-    }
+</section>
 
 
-    /* CLOSE BUTTON */
 
-    lightboxClose.addEventListener(
-      "click",
-      closeLightbox
-    );
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
+<footer class="footer">
 
-    /* CLICK OUTSIDE */
+    <div class="footer-name">
+        Ariska
+    </div>
 
-    imageLightbox.addEventListener(
-      "click",
-      function (event) {
+    <div class="footer-year">
+        © 2026
+    </div>
 
-        if (
-          event.target === imageLightbox
-        ) {
+    <div class="footer-center">
+        Modest Fashion · Beauty · Lifestyle
+    </div>
 
-          closeLightbox();
+</footer>
 
-        }
 
-      }
-    );
-
-
-    /* ESC KEY */
-
-    document.addEventListener(
-      "keydown",
-      function (event) {
-
-        if (
-          event.key === "Escape" &&
-          imageLightbox.classList.contains(
-            "active"
-          )
-        ) {
-
-          closeLightbox();
-
-        }
-
-      }
-    );
-
-
-  </script>
+</div>
 
 </body>
 </html>
